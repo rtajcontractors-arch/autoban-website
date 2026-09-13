@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section style={{ padding: "4rem 1.5rem 3rem", textAlign: "center", maxWidth: "760px", margin: "0 auto" }}>
+      <section style={{ padding: "3rem 1.5rem 2rem", textAlign: "center", maxWidth: "760px", margin: "0 auto" }}>
         <div style={{
           display: "inline-flex", alignItems: "center", gap: "6px",
           background: "var(--color-accent-light)", color: "var(--color-accent)",
@@ -82,7 +82,7 @@ export default function Home() {
       </section>
 
       {/* GOLDEN QUOTE */}
-      <section style={{ padding: "0 2rem 5rem" }}>
+      <section style={{ padding: "0 1.5rem 2.5rem" }}>
         <div style={{
           maxWidth: "700px", margin: "0 auto",
           background: "var(--color-accent-light)", border: "0.5px solid var(--color-accent-border)",
@@ -98,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* PILLARS */}
-      <section style={{ padding: "3rem 1.5rem", background: "var(--color-surface)" }}>
+      <section style={{ padding: "2rem 1.5rem", background: "var(--color-surface)" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", textAlign: "center", marginBottom: "6px" }}>المنصة</p>
           <h2 style={{ fontSize: "28px", fontWeight: 500, textAlign: "center", marginBottom: "0.5rem" }}>أربعة أعمدة، منظومة واحدة</h2>
@@ -127,7 +127,7 @@ export default function Home() {
       </section>
 
       {/* FEATURES */}
-      <section style={{ padding: "3rem 1.5rem" }}>
+      <section style={{ padding: "2rem 1.5rem" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", textAlign: "center", marginBottom: "6px" }}>المميزات</p>
           <h2 style={{ fontSize: "28px", fontWeight: 500, textAlign: "center", marginBottom: "0.5rem" }}>مُصمَّم لما يشغل بال المقاول</h2>
@@ -157,7 +157,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: "3rem 1.5rem" }}>
+      <section style={{ padding: "2rem 1.5rem" }}>
         <div style={{
           maxWidth: "700px", margin: "0 auto",
           background: "var(--color-accent-light)", border: "0.5px solid var(--color-accent-border)",

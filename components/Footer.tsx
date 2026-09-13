@@ -31,7 +31,7 @@ export default function Footer() {
     <footer style={{
       borderTop: "0.5px solid var(--color-border)",
       background: "var(--color-surface)",
-      padding: "3rem 2rem 1.5rem",
+      padding: "2.5rem 1.5rem 1.5rem",
     }}>
       <div style={{ maxWidth: "900px", margin: "0 auto" }}>
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: "2rem", marginBottom: "2rem" }}>

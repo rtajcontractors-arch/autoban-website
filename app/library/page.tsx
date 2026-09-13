@@ -35,7 +35,7 @@ export default function LibraryPage() {
   return (
     <>
       {/* HERO */}
-      <section style={{ padding: "6rem 2rem 4rem", textAlign: "center", maxWidth: "720px", margin: "0 auto" }}>
+      <section style={{ padding: "3rem 1.5rem 2.5rem", textAlign: "center", maxWidth: "720px", margin: "0 auto" }}>
         <div style={{
           display: "inline-flex", alignItems: "center", gap: "6px",
           background: "var(--color-accent-light)", color: "var(--color-accent)",
@@ -64,7 +64,7 @@ export default function LibraryPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* SOURCES */}
-      <section style={{ padding: "4rem 2rem" }}>
+      <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>المحتوى</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>مصدران، قيمة مضاعفة</h2>
@@ -113,7 +113,7 @@ export default function LibraryPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* CATEGORIES */}
-      <section style={{ padding: "4rem 2rem", background: "var(--color-surface)" }}>
+      <section style={{ padding: "2.5rem 1.5rem", background: "var(--color-surface)" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>الأقسام</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>تصفح حسب التخصص</h2>
@@ -143,7 +143,7 @@ export default function LibraryPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* ARTICLES */}
-      <section style={{ padding: "4rem 2rem" }}>
+      <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>أبرز المقالات</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "2rem" }}>محتوى يُفرق</h2>
@@ -188,7 +188,7 @@ export default function LibraryPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* DOCS */}
-      <section style={{ padding: "4rem 2rem", background: "var(--color-surface)" }}>
+      <section style={{ padding: "2.5rem 1.5rem", background: "var(--color-surface)" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>النماذج والوثائق</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>قوالب جاهزة للاستخدام</h2>
@@ -224,7 +224,7 @@ export default function LibraryPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* CONTRIBUTE */}
-      <section style={{ padding: "4rem 2rem" }}>
+      <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px", textAlign: "center" }}>ساهم في المعرفة</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem", textAlign: "center" }}>خبرتك تستحق أن تُشارَك</h2>
@@ -260,11 +260,11 @@ export default function LibraryPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: "4rem 2rem", background: "var(--color-surface)" }}>
+      <section style={{ padding: "2.5rem 1.5rem", background: "var(--color-surface)" }}>
         <div style={{
           maxWidth: "700px", margin: "0 auto",
           background: "var(--color-accent-light)", border: "0.5px solid var(--color-accent-border)",
-          borderRadius: "var(--radius-lg)", padding: "3rem 2rem", textAlign: "center",
+          borderRadius: "var(--radius-lg)", padding: "2rem 1.5rem", textAlign: "center",
         }}>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>استكشف المكتبة المعرفية</h2>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", marginBottom: "1.5rem" }}>

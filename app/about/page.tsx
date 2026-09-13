@@ -49,7 +49,7 @@ export default function AboutPage() {
   return (
     <>
       {/* HERO */}
-      <section style={{ padding: "6rem 2rem 4rem", textAlign: "center", maxWidth: "720px", margin: "0 auto" }}>
+      <section style={{ padding: "3rem 1.5rem 2.5rem", textAlign: "center", maxWidth: "720px", margin: "0 auto" }}>
         <div style={{
           display: "inline-flex", alignItems: "center", gap: "6px",
           background: "var(--color-accent-light)", color: "var(--color-accent)",
@@ -70,7 +70,7 @@ export default function AboutPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* PROBLEM */}
-      <section style={{ padding: "4rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
+      <section style={{ padding: "2.5rem 1.5rem", maxWidth: "900px", margin: "0 auto" }}>
         <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>المشكلة</p>
         <h2 style={{ fontSize: "26px", fontWeight: 500, marginBottom: "1rem" }}>ماذا كان ينقص السوق؟</h2>
         <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
@@ -93,7 +93,7 @@ export default function AboutPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* SOLUTION */}
-      <section style={{ padding: "4rem 2rem", background: "var(--color-surface)" }}>
+      <section style={{ padding: "2.5rem 1.5rem", background: "var(--color-surface)" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>الحل</p>
           <h2 style={{ fontSize: "26px", fontWeight: 500, marginBottom: "1.5rem" }}>فكرة بسيطة، تأثير عميق</h2>
@@ -126,7 +126,7 @@ export default function AboutPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* VISION */}
-      <section style={{ padding: "4rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
+      <section style={{ padding: "2.5rem 1.5rem", maxWidth: "900px", margin: "0 auto" }}>
         <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>رؤيتنا</p>
         <h2 style={{ fontSize: "26px", fontWeight: 500, marginBottom: "0.75rem" }}>إلى أين نتجه؟</h2>
         <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
@@ -154,7 +154,7 @@ export default function AboutPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* MARKETS */}
-      <section style={{ padding: "4rem 2rem", background: "var(--color-surface)" }}>
+      <section style={{ padding: "2.5rem 1.5rem", background: "var(--color-surface)" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>أسواقنا</p>
           <h2 style={{ fontSize: "26px", fontWeight: 500, marginBottom: "0.5rem" }}>دول الخليج ومصر — منصة واحدة</h2>
@@ -211,7 +211,7 @@ export default function AboutPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* STANDARDS */}
-      <section style={{ padding: "4rem 2rem", maxWidth: "900px", margin: "0 auto" }}>
+      <section style={{ padding: "2.5rem 1.5rem", maxWidth: "900px", margin: "0 auto" }}>
         <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>المعايير</p>
         <h2 style={{ fontSize: "26px", fontWeight: 500, marginBottom: "0.5rem" }}>متوافق مع المعايير الدولية والمحلية</h2>
         <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
@@ -232,7 +232,7 @@ export default function AboutPage() {
       </section>
 
       {/* VALUES */}
-      <section style={{ padding: "4rem 2rem", background: "var(--color-surface)" }}>
+      <section style={{ padding: "2.5rem 1.5rem", background: "var(--color-surface)" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>قيمنا</p>
           <h2 style={{ fontSize: "26px", fontWeight: 500, marginBottom: "1.5rem" }}>ما الذي يحركنا؟</h2>
@@ -252,11 +252,11 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: "4rem 2rem" }}>
+      <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{
           maxWidth: "700px", margin: "0 auto",
           background: "var(--color-accent-light)", border: "0.5px solid var(--color-accent-border)",
-          borderRadius: "var(--radius-lg)", padding: "3rem 2rem", textAlign: "center",
+          borderRadius: "var(--radius-lg)", padding: "2rem 1.5rem", textAlign: "center",
         }}>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>انضم إلى منظومة أوتوبان</h2>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", marginBottom: "1.5rem", lineHeight: 1.7 }}>

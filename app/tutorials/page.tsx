@@ -32,7 +32,7 @@ export default function TutorialsPage() {
   return (
     <>
       {/* HERO */}
-      <section style={{ padding: "6rem 2rem 4rem", textAlign: "center", maxWidth: "720px", margin: "0 auto" }}>
+      <section style={{ padding: "3rem 1.5rem 2.5rem", textAlign: "center", maxWidth: "720px", margin: "0 auto" }}>
         <div style={{
           display: "inline-flex", alignItems: "center", gap: "6px",
           background: "var(--color-accent-light)", color: "var(--color-accent)",
@@ -61,7 +61,7 @@ export default function TutorialsPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* TRACKS */}
-      <section style={{ padding: "4rem 2rem" }}>
+      <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>مسارات التعلم</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>ابدأ من حيث أنت</h2>
@@ -92,7 +92,7 @@ export default function TutorialsPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* FEATURED VIDEO */}
-      <section style={{ padding: "4rem 2rem", background: "var(--color-surface)" }}>
+      <section style={{ padding: "2.5rem 1.5rem", background: "var(--color-surface)" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>ابدأ من هنا</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "1.5rem" }}>الفيديو الأول — إعداد حسابك</h2>
@@ -152,7 +152,7 @@ export default function TutorialsPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* VIDEOS GRID */}
-      <section style={{ padding: "4rem 2rem" }}>
+      <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>جميع الفيديوهات</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "2rem" }}>تصفح حسب الموضوع</h2>
@@ -201,7 +201,7 @@ export default function TutorialsPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* LEARNING PATH */}
-      <section style={{ padding: "4rem 2rem", background: "var(--color-surface)" }}>
+      <section style={{ padding: "2.5rem 1.5rem", background: "var(--color-surface)" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px", textAlign: "center" }}>للمبتدئين</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem", textAlign: "center" }}>مسار البداية السريعة</h2>
@@ -232,11 +232,11 @@ export default function TutorialsPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: "4rem 2rem" }}>
+      <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{
           maxWidth: "700px", margin: "0 auto",
           background: "var(--color-accent-light)", border: "0.5px solid var(--color-accent-border)",
-          borderRadius: "var(--radius-lg)", padding: "3rem 2rem", textAlign: "center",
+          borderRadius: "var(--radius-lg)", padding: "2rem 1.5rem", textAlign: "center",
         }}>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>جاهز تبدأ؟</h2>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", marginBottom: "1.5rem" }}>

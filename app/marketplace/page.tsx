@@ -76,7 +76,7 @@ export default function MarketplacePage() {
   return (
     <>
       {/* HERO */}
-      <section style={{ padding: "6rem 2rem 4rem", textAlign: "center", maxWidth: "720px", margin: "0 auto" }}>
+      <section style={{ padding: "3rem 1.5rem 2.5rem", textAlign: "center", maxWidth: "720px", margin: "0 auto" }}>
         <div style={{
           display: "inline-flex", alignItems: "center", gap: "6px",
           background: "var(--color-accent-light)", color: "var(--color-accent)",
@@ -105,7 +105,7 @@ export default function MarketplacePage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* TWO SIDES */}
-      <section style={{ padding: "4rem 2rem" }}>
+      <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>من يستفيد؟</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>طرفان يحتاجان بعضهما</h2>
@@ -154,7 +154,7 @@ export default function MarketplacePage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* SEARCH + ACCOUNTANTS */}
-      <section style={{ padding: "4rem 2rem", background: "var(--color-surface)" }}>
+      <section style={{ padding: "2.5rem 1.5rem", background: "var(--color-surface)" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>البحث</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>ابحث عن المحاسب المناسب</h2>
@@ -234,7 +234,7 @@ export default function MarketplacePage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* HOW IT WORKS */}
-      <section style={{ padding: "4rem 2rem" }}>
+      <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>كيف يعمل؟</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>من البحث إلى التعاقد في خطوات</h2>
@@ -261,7 +261,7 @@ export default function MarketplacePage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* CERTIFICATION */}
-      <section style={{ padding: "4rem 2rem", background: "var(--color-surface)" }}>
+      <section style={{ padding: "2.5rem 1.5rem", background: "var(--color-surface)" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>الاعتماد</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>ضمان الجودة — مرحلتان</h2>
@@ -293,7 +293,7 @@ export default function MarketplacePage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* FOR ACCOUNTANTS */}
-      <section style={{ padding: "4rem 2rem" }}>
+      <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>للمحاسبين</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>أنت محاسب متخصص في المقاولات؟</h2>
@@ -318,11 +318,11 @@ export default function MarketplacePage() {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: "4rem 2rem", background: "var(--color-surface)" }}>
+      <section style={{ padding: "2.5rem 1.5rem", background: "var(--color-surface)" }}>
         <div style={{
           maxWidth: "700px", margin: "0 auto",
           background: "var(--color-accent-light)", border: "0.5px solid var(--color-accent-border)",
-          borderRadius: "var(--radius-lg)", padding: "3rem 2rem", textAlign: "center",
+          borderRadius: "var(--radius-lg)", padding: "2rem 1.5rem", textAlign: "center",
         }}>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>ابحث عن محاسبك المتخصص</h2>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", marginBottom: "1.5rem" }}>

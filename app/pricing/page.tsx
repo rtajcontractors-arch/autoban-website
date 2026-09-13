@@ -154,7 +154,7 @@ export default function PricingPage() {
 
   return (
     <>
-      <section style={{ padding: "5rem 2rem 2rem", textAlign: "center" }}>
+      <section style={{ padding: "3rem 1.5rem 1.5rem", textAlign: "center" }}>
         <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>الأسعار</p>
         <h1 style={{ fontSize: "36px", fontWeight: 500, marginBottom: "0.5rem" }}>سعر واضح، بدون مفاجآت</h1>
         <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", marginBottom: "2rem" }}>
@@ -288,7 +288,7 @@ export default function PricingPage() {
       </section>
 
       {/* Payment methods */}
-      <section style={{ padding: "3rem 2rem", background: "var(--color-surface)" }}>
+      <section style={{ padding: "2rem 1.5rem", background: "var(--color-surface)" }}>
         <p style={{ fontSize: "12px", color: "var(--color-accent)", textAlign: "center", marginBottom: "6px" }}>طرق الدفع</p>
         <h2 style={{ fontSize: "24px", fontWeight: 500, textAlign: "center", marginBottom: "1.5rem" }}>ادفع بالطريقة التي تناسبك</h2>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "10px", maxWidth: "700px", margin: "0 auto" }}>
@@ -313,11 +313,11 @@ export default function PricingPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: "4rem 2rem" }}>
+      <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{
           maxWidth: "700px", margin: "0 auto",
           background: "var(--color-accent-light)", border: "0.5px solid var(--color-accent-border)",
-          borderRadius: "var(--radius-lg)", padding: "3rem 2rem", textAlign: "center",
+          borderRadius: "var(--radius-lg)", padding: "2rem 1.5rem", textAlign: "center",
         }}>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.75rem" }}>ابدأ اليوم — شهر مجاني بدون بطاقة</h2>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", marginBottom: "1.5rem" }}>

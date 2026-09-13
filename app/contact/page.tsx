@@ -36,7 +36,7 @@ export default function ContactPage() {
   return (
     <>
       {/* HERO */}
-      <section style={{ padding: "6rem 2rem 4rem", textAlign: "center", maxWidth: "720px", margin: "0 auto" }}>
+      <section style={{ padding: "3rem 1.5rem 2.5rem", textAlign: "center", maxWidth: "720px", margin: "0 auto" }}>
         <div style={{
           display: "inline-flex", alignItems: "center", gap: "6px",
           background: "var(--color-accent-light)", color: "var(--color-accent)",
@@ -57,7 +57,7 @@ export default function ContactPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* CHANNELS */}
-      <section style={{ padding: "4rem 2rem" }}>
+      <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>كيف تتواصل؟</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>اختر الطريقة الأنسب لك</h2>
@@ -92,7 +92,7 @@ export default function ContactPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* FORM + INFO */}
-      <section style={{ padding: "4rem 2rem", background: "var(--color-surface)" }}>
+      <section style={{ padding: "2.5rem 1.5rem", background: "var(--color-surface)" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>راسلنا</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>أرسل رسالتك</h2>
@@ -197,7 +197,7 @@ export default function ContactPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* HOURS + COUNTRIES */}
-      <section style={{ padding: "4rem 2rem" }}>
+      <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem" }}>
             <div>
@@ -251,7 +251,7 @@ export default function ContactPage() {
       <div style={{ borderTop: "0.5px solid var(--color-border)", maxWidth: "900px", margin: "0 auto" }} />
 
       {/* FAQ */}
-      <section style={{ padding: "4rem 2rem", background: "var(--color-surface)" }}>
+      <section style={{ padding: "2.5rem 1.5rem", background: "var(--color-surface)" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px", textAlign: "center" }}>أسئلة شائعة</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem", textAlign: "center" }}>قبل أن تتواصل</h2>
@@ -278,11 +278,11 @@ export default function ContactPage() {
       </section>
 
       {/* CTA */}
-      <section style={{ padding: "4rem 2rem" }}>
+      <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{
           maxWidth: "700px", margin: "0 auto",
           background: "var(--color-accent-light)", border: "0.5px solid var(--color-accent-border)",
-          borderRadius: "var(--radius-lg)", padding: "3rem 2rem", textAlign: "center",
+          borderRadius: "var(--radius-lg)", padding: "2rem 1.5rem", textAlign: "center",
         }}>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>لا تتردد في التواصل</h2>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", marginBottom: "1.5rem" }}>
