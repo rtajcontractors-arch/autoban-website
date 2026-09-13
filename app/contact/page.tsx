@@ -2,9 +2,7 @@
 import { useState } from "react";
 import { Icon } from "@/components/icons";
 
-// TODO(أيمن): سجّل مجاناً على https://formspree.io وأنشئ نموذجاً جديداً،
-// ثم استبدل "YOUR_FORM_ID" أدناه بمعرّف النموذج (Form ID) الذي يعطيك إياه Formspree.
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwlkdodn";
 
 const channels = [
   { icon: "brand-whatsapp", title: "واتساب", desc: "الأسرع — تحدث مع فريقنا مباشرة", badge: "رد خلال ساعة", green: true, primary: true },
