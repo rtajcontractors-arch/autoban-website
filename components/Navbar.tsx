@@ -35,10 +35,10 @@ export default function Navbar() {
         borderBottom: "0.5px solid var(--color-border)",
         padding: "0 1.5rem",
         display: "grid", gridTemplateColumns: "auto 1fr auto",
-        alignItems: "center", direction: "ltr", height: "60px",
+        alignItems: "center", direction: "rtl", height: "60px",
       }}>
 
-        {/* Logo — يسار — يأخذ للرئيسية */}
+        {/* Logo — يمين — يأخذ للرئيسية */}
         <Link href="/" style={{
           fontSize: "20px", fontWeight: 700,
           color: "var(--color-text)", whiteSpace: "nowrap",
@@ -50,7 +50,7 @@ export default function Navbar() {
         {/* روابط الوسط — سطح المكتب */}
         <div style={{
           display: "flex", gap: "1rem", alignItems: "center",
-          justifyContent: "center", direction: "rtl",
+          justifyContent: "center",
         }} className="desktop-nav">
           <Link href="/" style={{ fontSize: "14px", color: "var(--color-text-secondary)" }}
             onMouseEnter={e => (e.currentTarget.style.color = "var(--color-accent)")}
@@ -64,8 +64,8 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* زر ابدأ مجاناً — يمين */}
-        <div style={{ display: "flex", alignItems: "center", gap: "10px", direction: "rtl" }}>
+        {/* زر ابدأ مجاناً — يسار */}
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <Link href="/pricing" style={{
             background: "var(--color-accent)", color: "white",
             padding: "8px 18px", borderRadius: "var(--radius)",

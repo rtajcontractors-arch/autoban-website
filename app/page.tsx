@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section style={{ padding: "3rem 1.5rem 2rem", textAlign: "center", maxWidth: "760px", margin: "0 auto" }}>
+      <section style={{ padding: "3rem 1.5rem 2rem", textAlign: "center", maxWidth: "1100px", margin: "0 auto" }}>
         <div style={{
           display: "inline-flex", alignItems: "center", gap: "6px",
           background: "var(--color-accent-light)", color: "var(--color-accent)",
@@ -100,7 +100,7 @@ export default function Home() {
 
       {/* PILLARS */}
       <section style={{ padding: "2rem 1.5rem", background: "var(--color-surface)" }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", textAlign: "center", marginBottom: "6px" }}>المنصة</p>
           <h2 style={{ fontSize: "28px", fontWeight: 500, textAlign: "center", marginBottom: "0.5rem" }}>أربعة أعمدة، منظومة واحدة</h2>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", textAlign: "center", marginBottom: "2.5rem" }}>
@@ -129,7 +129,7 @@ export default function Home() {
 
       {/* FEATURES */}
       <section style={{ padding: "2rem 1.5rem" }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", textAlign: "center", marginBottom: "6px" }}>المميزات</p>
           <h2 style={{ fontSize: "28px", fontWeight: 500, textAlign: "center", marginBottom: "0.5rem" }}>مُصمَّم لما يشغل بال المقاول</h2>
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", textAlign: "center", marginBottom: "2.5rem" }}>
