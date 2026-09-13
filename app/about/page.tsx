@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "من نحن — أوتوبان",
+  description: "قصة أوتوبان ورؤيتنا لبناء منظومة متكاملة لقطاع المقاولات في السعودية والكويت وقطر ومصر — برنامج محاسبي مخصص، مجتمع حصري، وسوق محاسبين معتمدين.",
+};
 
 const problems = [
   { icon: "ti-puzzle-off", title: "غياب التخصص", desc: "لا برنامج واحد في السوق بُني خصيصاً لمحاسبة المقاولات بكل تفاصيلها." },

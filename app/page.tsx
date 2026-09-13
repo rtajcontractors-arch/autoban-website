@@ -54,7 +54,7 @@ export default function Home() {
           برنامج محاسبة مخصص للمقاولين + مجتمع حصري + سوق محاسبين معتمدين — أوتوبان ليس برنامجاً، هو منظومة.
         </p>
 
-        <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", marginBottom: "3.5rem" }}>
+        <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", marginBottom: "2rem" }}>
           <Link href="/pricing" style={{
             background: "var(--color-accent)", color: "white",
             padding: "13px 30px", borderRadius: "var(--radius)",
@@ -70,7 +70,7 @@ export default function Home() {
         {/* Stats */}
         <div style={{
           display: "flex", justifyContent: "center", gap: "3rem",
-          paddingTop: "2.5rem", borderTop: "0.5px solid var(--color-border)", flexWrap: "wrap",
+          paddingTop: "1.5rem", borderTop: "0.5px solid var(--color-border)", flexWrap: "wrap",
         }}>
           {stats.map(s => (
             <div key={s.num} style={{ textAlign: "center" }}>

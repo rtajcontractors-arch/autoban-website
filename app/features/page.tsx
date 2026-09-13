@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "المميزات — أوتوبان",
+  description: "فوترة زاتكا الإلكترونية، الاستقطاعات والضمانات، الدفعة المقدمة، تعدد المشاريع، رواتب WPS، وتقارير مالية متقدمة — كل ما يحتاجه المقاول في برنامج محاسبة واحد.",
+};
 
 const mainFeatures = [
   {

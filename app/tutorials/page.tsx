@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "الشروحات — أوتوبان",
+  description: "شروحات فيديو خطوة بخطوة لاستخدام برنامج أوتوبان — من إعداد الحساب وأول فاتورة إلى الفوترة الإلكترونية وزاتكا والاستقطاعات.",
+};
 
 const tracks = [
   { icon: "ti-rocket", title: "البداية السريعة", desc: "إعداد حسابك وأول فاتورة في أقل من ٣٠ دقيقة.", count: "٥ فيديوهات", duration: "٢٥ دقيقة" },

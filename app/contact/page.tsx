@@ -1,6 +1,10 @@
 "use client";
 import { useState } from "react";
 
+// TODO(أيمن): سجّل مجاناً على https://formspree.io وأنشئ نموذجاً جديداً،
+// ثم استبدل "YOUR_FORM_ID" أدناه بمعرّف النموذج (Form ID) الذي يعطيك إياه Formspree.
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
 const channels = [
   { icon: "ti-brand-whatsapp", title: "واتساب", desc: "الأسرع — تحدث مع فريقنا مباشرة", badge: "رد خلال ساعة", green: true, primary: true },
   { icon: "ti-mail", title: "البريد الإلكتروني", desc: "للاستفسارات التفصيلية والمراسلات الرسمية", badge: "رد خلال ٢٤ ساعة", yellow: true },
@@ -32,6 +36,28 @@ const faqs = [
 
 export default function ContactPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setFormStatus("sending");
+    const form = e.currentTarget;
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        setFormStatus("success");
+        form.reset();
+      } else {
+        setFormStatus("error");
+      }
+    } catch {
+      setFormStatus("error");
+    }
+  }
 
   return (
     <>
@@ -103,8 +129,8 @@ export default function ContactPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
               {[
                 { icon: "ti-brand-whatsapp", title: "واتساب", val: "+966 5X XXX XXXX" },
-                { icon: "ti-mail", title: "البريد الإلكتروني", val: "hello@autobahnen.com" },
-                { icon: "ti-mail", title: "الدعم التقني", val: "support@autobahnen.com" },
+                { icon: "ti-mail", title: "البريد الإلكتروني", val: "hello@autoban.app" },
+                { icon: "ti-mail", title: "الدعم التقني", val: "support@autoban.app" },
                 { icon: "ti-map-pin", title: "المقر الرئيسي", val: "المملكة العربية السعودية — منطقة القصيم" },
               ].map(info => (
                 <div key={info.title} style={{
@@ -128,16 +154,16 @@ export default function ContactPage() {
             </div>
 
             {/* Form */}
-            <div style={{
+            <form onSubmit={handleSubmit} style={{
               background: "var(--color-surface-2)", border: "0.5px solid var(--color-border)",
               borderRadius: "var(--radius-lg)", padding: "1.5rem",
             }}>
               <h3 style={{ fontSize: "16px", fontWeight: 500, marginBottom: "1.25rem" }}>أرسل رسالتك مباشرة</h3>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginBottom: "1rem" }}>
-                {[{ label: "الاسم الكامل", placeholder: "اسمك الكريم", type: "text" }, { label: "رقم الجوال", placeholder: "+966 5X XXX XXXX", type: "tel" }].map(f => (
+                {[{ name: "name", label: "الاسم الكامل", placeholder: "اسمك الكريم", type: "text" }, { name: "phone", label: "رقم الجوال", placeholder: "+966 5X XXX XXXX", type: "tel" }].map(f => (
                   <div key={f.label}>
                     <label style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>{f.label}</label>
-                    <input type={f.type} placeholder={f.placeholder} style={{
+                    <input name={f.name} required type={f.type} placeholder={f.placeholder} style={{
                       width: "100%", background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
                       borderRadius: "var(--radius)", padding: "9px 12px", fontSize: "13px", color: "var(--color-text)",
                       fontFamily: "inherit", direction: "rtl", outline: "none",
@@ -147,7 +173,7 @@ export default function ContactPage() {
               </div>
               <div style={{ marginBottom: "1rem" }}>
                 <label style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>البريد الإلكتروني</label>
-                <input type="email" placeholder="example@company.com" style={{
+                <input name="email" required type="email" placeholder="example@company.com" style={{
                   width: "100%", background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
                   borderRadius: "var(--radius)", padding: "9px 12px", fontSize: "13px", color: "var(--color-text)",
                   fontFamily: "inherit", direction: "rtl", outline: "none",
@@ -155,7 +181,7 @@ export default function ContactPage() {
               </div>
               <div style={{ marginBottom: "1rem" }}>
                 <label style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>الدولة</label>
-                <select style={{
+                <select name="country" style={{
                   width: "100%", background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
                   borderRadius: "var(--radius)", padding: "9px 12px", fontSize: "13px", color: "var(--color-text)",
                   fontFamily: "inherit", direction: "rtl", outline: "none",
@@ -165,7 +191,7 @@ export default function ContactPage() {
               </div>
               <div style={{ marginBottom: "1rem" }}>
                 <label style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>موضوع التواصل</label>
-                <select style={{
+                <select name="subject" style={{
                   width: "100%", background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
                   borderRadius: "var(--radius)", padding: "9px 12px", fontSize: "13px", color: "var(--color-text)",
                   fontFamily: "inherit", direction: "rtl", outline: "none",
@@ -175,21 +201,32 @@ export default function ContactPage() {
               </div>
               <div style={{ marginBottom: "1rem" }}>
                 <label style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>رسالتك</label>
-                <textarea placeholder="اكتب رسالتك هنا..." style={{
+                <textarea name="message" required placeholder="اكتب رسالتك هنا..." style={{
                   width: "100%", background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
                   borderRadius: "var(--radius)", padding: "9px 12px", fontSize: "13px", color: "var(--color-text)",
                   fontFamily: "inherit", direction: "rtl", outline: "none", resize: "vertical", minHeight: "100px",
                 }} />
               </div>
-              <button style={{
+              <button type="submit" disabled={formStatus === "sending"} style={{
                 width: "100%", background: "var(--color-accent)", color: "white",
                 border: "none", borderRadius: "var(--radius)", padding: "11px",
-                fontSize: "14px", cursor: "pointer", fontFamily: "inherit",
+                fontSize: "14px", cursor: formStatus === "sending" ? "not-allowed" : "pointer", fontFamily: "inherit",
                 display: "flex", alignItems: "center", justifyContent: "center", gap: "6px",
+                opacity: formStatus === "sending" ? 0.7 : 1,
               }}>
-                <i className="ti ti-send" /> أرسل الرسالة
+                <i className="ti ti-send" /> {formStatus === "sending" ? "جارِ الإرسال..." : "أرسل الرسالة"}
               </button>
-            </div>
+              {formStatus === "success" && (
+                <p style={{ fontSize: "13px", color: "#22C55E", marginTop: "10px", textAlign: "center" }}>
+                  تم إرسال رسالتك بنجاح — سنتواصل معك قريباً.
+                </p>
+              )}
+              {formStatus === "error" && (
+                <p style={{ fontSize: "13px", color: "#EF4444", marginTop: "10px", textAlign: "center" }}>
+                  تعذّر إرسال الرسالة. حاول مرة أخرى أو تواصل معنا عبر الواتساب.
+                </p>
+              )}
+            </form>
           </div>
         </div>
       </section>

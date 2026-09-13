@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "المكتبة المعرفية — أوتوبان",
+  description: "محتوى رسمي وخبرات ميدانية في محاسبة المقاولات، زاتكا والضريبة، الاستقطاعات، ورواتب WPS — مرجعك الشامل لقطاع المقاولات.",
+};
 
 const categories = [
   { icon: "ti-calculator", title: "محاسبة المقاولات", desc: "معايير، قيود، تقارير — الأساس المحاسبي للقطاع.", count: "٤٢" },

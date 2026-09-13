@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "سوق المحاسبين المعتمدين — أوتوبان",
+  description: "تواصل مع محاسبين معتمدين متخصصين في محاسبة المقاولات، فوترة زاتكا، والاستقطاعات — اختر المحاسب الأنسب لمشروعك.",
+};
 
 const accountants = [
   {

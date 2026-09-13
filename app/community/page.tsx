@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "المجتمع الحصري — أوتوبان",
+  description: "شبكة تجمع المقاولين الرئيسيين ومقاولي الباطن والموردين والمحاسبين في قطاع المقاولات — فرص عمل وشراكات وتواصل مباشر.",
+};
 
 const members = [
   { icon: "ti-helmet", title: "مقاول رئيسي", desc: "شركات المقاولات الرئيسية — يبحثون عن باطن موثوق وموردين وكوادر متخصصة.", tags: ["مشاريع كبرى", "عقود"] },

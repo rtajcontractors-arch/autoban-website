@@ -4,7 +4,7 @@ export default function PrivacyPage() {
       <section style={{ padding: "3rem 1.5rem 1.5rem", maxWidth: "780px", margin: "0 auto" }}>
         <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>قانوني</p>
         <h1 style={{ fontSize: "36px", fontWeight: 500, marginBottom: "0.5rem" }}>سياسة الخصوصية</h1>
-        <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginBottom: "3rem" }}>
+        <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginBottom: "2rem" }}>
           آخر تحديث: سبتمبر ٢٠٢٦
         </p>
 
