@@ -130,8 +130,8 @@ export default function ContactPage() {
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
               {[
                 { icon: "brand-whatsapp", title: "واتساب", val: "+966 5X XXX XXXX" },
-                { icon: "mail", title: "البريد الإلكتروني", val: "hello@autoban.app" },
-                { icon: "mail", title: "الدعم التقني", val: "support@autoban.app" },
+                { icon: "mail", title: "البريد الإلكتروني", val: "ayman15477@gmail.com" },
+                { icon: "mail", title: "الدعم التقني", val: "ayman15477@gmail.com" },
                 { icon: "map-pin", title: "المقر الرئيسي", val: "المملكة العربية السعودية — منطقة القصيم" },
               ].map(info => (
                 <div key={info.title} style={{
