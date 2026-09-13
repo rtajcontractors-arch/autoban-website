@@ -211,9 +211,9 @@ export default function PricingPage() {
               {t.pill && (
                 <span style={{
                   position: "absolute", top: -8, left: -6,
-                  background: "rgba(34,197,94,0.15)", color: "#22C55E",
+                  background: "#16A34A", color: "white",
                   fontSize: "10px", padding: "2px 6px", borderRadius: "10px",
-                  border: "0.5px solid rgba(34,197,94,0.3)", whiteSpace: "nowrap",
+                  whiteSpace: "nowrap",
                 }}>{t.pill}</span>
               )}
             </button>

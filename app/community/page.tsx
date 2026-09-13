@@ -16,6 +16,7 @@ const members = [
   { icon: "building", title: "مكتب محاسبة ومراجعة", desc: "مكاتب معتمدة تقدم التدقيق والمراجعة والإقرارات الضريبية لشركات المقاولات.", tags: ["تدقيق", "مراجعة", "ضريبة"], isNew: true },
   { icon: "briefcase", title: "استشاري متخصص", desc: "مستشارون في إدارة المشاريع والعقود والمطالبات بخبرة ميدانية.", tags: ["عقود", "مطالبات"] },
   { icon: "ruler-2", title: "مكتب استشارات هندسية", desc: "مكاتب التصميم والإشراف وإدارة المشاريع — الشريك الهندسي للمقاول.", tags: ["تصميم", "إشراف", "إدارة مشاريع"], isNew: true },
+  { icon: "trending-up", title: "استشاري مالي", desc: "متخصصون في التمويل والتخطيط المالي وإدارة السيولة لمشاريع المقاولات.", tags: ["تمويل", "تخطيط مالي"], isNew: true },
 ];
 
 const activities = [
@@ -75,7 +76,7 @@ const ecoFlows = [
 
 const joinSteps = [
   { num: "١", title: "اشترك في أوتوبان", desc: "اختر باقة الاحترافية أو المتكاملة وابدأ شهرك المجاني." },
-  { num: "٢", title: "حدد فئتك", desc: "من السبع فئات — كل فئة لها مساحتها ودورها في الشبكة." },
+  { num: "٢", title: "حدد فئتك", desc: "من الثماني فئات — كل فئة لها مساحتها ودورها في الشبكة." },
   { num: "٣", title: "أكمل ملفك", desc: "تخصصك، منطقتك، خبرتك — هذا ما يجعل شبكتك قيّمة." },
   { num: "٤", title: "شارك وابنِ علاقاتك", desc: "كلما شاركت، كلما كبرت شبكتك في القطاع." },
 ];
@@ -101,7 +102,7 @@ export default function CommunityPage() {
           المجتمع الوحيد في المنطقة الذي يجمع كل أطراف منظومة المقاولات — حصري للمشتركين في أوتوبان.
         </p>
         <div style={{ display: "flex", justifyContent: "center", gap: "3rem", paddingTop: "2rem", borderTop: "0.5px solid var(--color-border)", flexWrap: "wrap" }}>
-          {[{ num: "٧ فئات", label: "من الأعضاء" }, { num: "حصري", label: "للمشتركين فقط" }, { num: "٢٤/٧", label: "نقاشات وفرص" }].map(s => (
+          {[{ num: "٨ فئات", label: "من الأعضاء" }, { num: "حصري", label: "للمشتركين فقط" }, { num: "٢٤/٧", label: "نقاشات وفرص" }].map(s => (
             <div key={s.num} style={{ textAlign: "center" }}>
               <div style={{ fontSize: "24px", fontWeight: 500, color: "var(--color-accent)" }}>{s.num}</div>
               <div style={{ fontSize: "13px", color: "var(--color-text-secondary)", marginTop: "3px" }}>{s.label}</div>
@@ -116,9 +117,9 @@ export default function CommunityPage() {
       <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>الأعضاء</p>
-          <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>سبع فئات — منظومة متكاملة</h2>
+          <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>ثماني فئات — منظومة متكاملة</h2>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginBottom: "2rem" }}>كل طرف في دورة حياة مشروع المقاولات موجود هنا</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(175px,1fr))", gap: "12px" }}>
+          <div className="grid-4" style={{ gap: "12px" }}>
             {members.map(m => (
               <div key={m.title} style={{
                 background: m.isNew ? "var(--color-accent-light)" : "var(--color-surface)",
@@ -229,7 +230,7 @@ export default function CommunityPage() {
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>داخل المجتمع</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>ماذا يحدث هنا؟</h2>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginBottom: "2rem" }}>أكثر من مجرد منتدى — شبكة تجارية ومعرفية متخصصة</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(190px,1fr))", gap: "12px" }}>
+          <div className="grid-3" style={{ gap: "12px" }}>
             {activities.map(a => (
               <div key={a.title} style={{
                 background: "var(--color-surface)", border: "0.5px solid var(--color-border)",

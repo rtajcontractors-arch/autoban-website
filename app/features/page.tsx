@@ -194,7 +194,7 @@ export default function FeaturesPage() {
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>المزيد</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>مميزات تكمل المنظومة</h2>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginBottom: "2rem" }}>تفاصيل تجعل العمل اليومي أسرع وأدق</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px,1fr))", gap: "12px" }}>
+          <div className="grid-3" style={{ gap: "12px" }}>
             {miniFeatures.map(m => (
               <div key={m.title} style={{
                 background: "var(--color-surface-2)", border: "0.5px solid var(--color-border)",

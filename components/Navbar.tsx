@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/features", label: "المميزات" },
@@ -15,6 +16,7 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!open) return;
@@ -52,9 +54,20 @@ export default function Navbar() {
           display: "flex", gap: "1.25rem", alignItems: "center",
           justifyContent: "center",
         }} className="desktop-nav">
-          <Link href="/" className="nav-link" style={{ fontSize: "15px", fontWeight: 500 }}>الرئيسية</Link>
+          <Link
+            href="/"
+            className={`nav-link${pathname === "/" ? " nav-link-active" : ""}`}
+            aria-current={pathname === "/" ? "page" : undefined}
+            style={{ fontSize: "15px", fontWeight: 500 }}
+          >الرئيسية</Link>
           {links.map(l => (
-            <Link key={l.href} href={l.href} className="nav-link" style={{ fontSize: "15px", fontWeight: 500 }}>{l.label}</Link>
+            <Link
+              key={l.href}
+              href={l.href}
+              className={`nav-link${pathname === l.href ? " nav-link-active" : ""}`}
+              aria-current={pathname === l.href ? "page" : undefined}
+              style={{ fontSize: "15px", fontWeight: 500 }}
+            >{l.label}</Link>
           ))}
         </div>
 
@@ -94,12 +107,18 @@ export default function Navbar() {
           zIndex: 99, boxShadow: "0 8px 24px rgba(0,0,0,0.12)",
         }}>
           {[{ href: "/", label: "الرئيسية" }, ...links].map(l => (
-            <Link key={l.href} href={l.href} onClick={() => setOpen(false)} style={{
-              fontSize: "15px", color: "var(--color-text)",
-              padding: "10px 0",
-              borderBottom: "0.5px solid var(--color-border)",
-              display: "block",
-            }}>{l.label}</Link>
+            <Link
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              aria-current={pathname === l.href ? "page" : undefined}
+              style={{
+                fontSize: "15px", fontWeight: pathname === l.href ? 700 : 400,
+                color: pathname === l.href ? "var(--color-accent)" : "var(--color-text)",
+                padding: "10px 0",
+                borderBottom: "0.5px solid var(--color-border)",
+                display: "block",
+              }}>{l.label}</Link>
           ))}
           <Link href="/pricing" onClick={() => setOpen(false)} style={{
             background: "var(--color-accent)", color: "white",
@@ -137,6 +156,12 @@ export default function Navbar() {
           color: var(--color-accent);
         }
         .nav-link:hover::after {
+          width: 100%;
+        }
+        .nav-link-active {
+          color: var(--color-accent);
+        }
+        .nav-link-active::after {
           width: 100%;
         }
         .cta-btn {
