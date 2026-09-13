@@ -147,7 +147,7 @@ export default function Home() {
           <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", textAlign: "center", marginBottom: "2.5rem" }}>
             برامج المحاسبة العامة لا تفهم هذه التفاصيل — أوتوبان بُني لها
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "14px" }}>
+          <div className="grid-3" style={{ gap: "14px" }}>
             {features.map(f => (
               <div key={f.title} className="hover-card" style={{
                 background: "var(--color-surface)",

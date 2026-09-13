@@ -201,7 +201,7 @@ export default function LibraryPage() {
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>النماذج والوثائق</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>قوالب جاهزة للاستخدام</h2>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginBottom: "2rem" }}>وفّر وقتك — قوالب معتمدة تستخدمها مباشرة</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px,1fr))", gap: "12px" }}>
+          <div className="grid-3" style={{ gap: "12px" }}>
             {docs.map(d => (
               <div key={d.title} style={{
                 background: "var(--color-surface-2)", border: "0.5px solid var(--color-border)",

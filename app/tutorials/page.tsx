@@ -74,7 +74,7 @@ export default function TutorialsPage() {
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>مسارات التعلم</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>ابدأ من حيث أنت</h2>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginBottom: "2rem" }}>اختر المسار المناسب لمستواك واحتياجك</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px,1fr))", gap: "12px" }}>
+          <div className="grid-5" style={{ gap: "12px" }}>
             {tracks.map((t, i) => (
               <div key={t.title} style={{
                 background: i === 0 ? "var(--color-accent-light)" : "var(--color-surface)",
