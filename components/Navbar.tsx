@@ -49,18 +49,12 @@ export default function Navbar() {
 
         {/* روابط الوسط — سطح المكتب */}
         <div style={{
-          display: "flex", gap: "1rem", alignItems: "center",
+          display: "flex", gap: "1.25rem", alignItems: "center",
           justifyContent: "center",
         }} className="desktop-nav">
-          <Link href="/" style={{ fontSize: "14px", color: "var(--color-text-secondary)" }}
-            onMouseEnter={e => (e.currentTarget.style.color = "var(--color-accent)")}
-            onMouseLeave={e => (e.currentTarget.style.color = "var(--color-text-secondary)")}
-          >الرئيسية</Link>
+          <Link href="/" className="nav-link" style={{ fontSize: "15px", fontWeight: 500 }}>الرئيسية</Link>
           {links.map(l => (
-            <Link key={l.href} href={l.href} style={{ fontSize: "14px", color: "var(--color-text-secondary)" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "var(--color-accent)")}
-              onMouseLeave={e => (e.currentTarget.style.color = "var(--color-text-secondary)")}
-            >{l.label}</Link>
+            <Link key={l.href} href={l.href} className="nav-link" style={{ fontSize: "15px", fontWeight: 500 }}>{l.label}</Link>
           ))}
         </div>
 
@@ -123,6 +117,34 @@ export default function Navbar() {
         }
         @media (min-width: 901px) {
           .mobile-btn { display: none !important; }
+        }
+        .nav-link {
+          position: relative;
+          padding-bottom: 4px;
+          color: var(--color-text-secondary);
+        }
+        .nav-link::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 0;
+          height: 2px;
+          background: var(--color-accent);
+          transition: width 0.2s ease;
+        }
+        .nav-link:hover {
+          color: var(--color-accent);
+        }
+        .nav-link:hover::after {
+          width: 100%;
+        }
+        .cta-btn {
+          display: inline-block;
+        }
+        .cta-btn:hover {
+          filter: brightness(1.1);
+          transform: scale(1.02);
         }
       `}</style>
     </>
