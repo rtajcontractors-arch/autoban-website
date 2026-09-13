@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Icon } from "@/components/icons";
 
 const features = [
   { icon: "receipt-2", title: "فواتير زاتكا", desc: "متوافق بالكامل مع المرحلتين الأولى والثانية" },
@@ -34,7 +35,7 @@ export default function Home() {
           fontSize: "12px", padding: "5px 14px", borderRadius: "20px",
           border: "0.5px solid var(--color-accent-border)", marginBottom: "1.5rem",
         }}>
-          <i className="ti ti-building-skyscraper" /> المنصة المتكاملة لقطاع المقاولات
+          <Icon name="building-skyscraper" size={14} /> المنصة المتكاملة لقطاع المقاولات
         </div>
 
         <h1 style={{
@@ -116,7 +117,7 @@ export default function Home() {
                   borderRadius: "var(--radius)", display: "flex", alignItems: "center",
                   justifyContent: "center", marginBottom: "1rem",
                 }}>
-                  <i className={`ti ti-${p.icon}`} style={{ color: "var(--color-accent)", fontSize: 20 }} />
+                  <Icon name={p.icon} size={20} style={{ color: "var(--color-accent)" }} />
                 </div>
                 <h3 style={{ fontSize: "15px", fontWeight: 500, marginBottom: "5px" }}>{p.title}</h3>
                 <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{p.desc}</p>
@@ -140,7 +141,7 @@ export default function Home() {
                 background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
                 borderRadius: "var(--radius-lg)", padding: "1.25rem",
               }}>
-                <i className={`ti ti-${f.icon}`} style={{ color: "var(--color-accent)", fontSize: 22, display: "block", marginBottom: "10px" }} />
+                <Icon name={f.icon} size={22} style={{ color: "var(--color-accent)", display: "block", marginBottom: "10px" }} />
                 <h4 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{f.title}</h4>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{f.desc}</p>
               </div>

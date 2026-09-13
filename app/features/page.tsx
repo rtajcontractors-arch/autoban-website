@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Icon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "المميزات — أوتوبان",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 
 const mainFeatures = [
   {
-    icon: "ti-receipt-2",
+    icon: "receipt-2",
     title: "فوترة زاتكا — المرحلتان",
     desc: "إصدار الفواتير الإلكترونية المتوافقة مع متطلبات هيئة الزكاة والضريبة والجمارك، المرحلة الأولى والثانية — بضغطة واحدة.",
     bullets: ["ملف XML متوافق مع ZATCA", "رمز QR مدمج في كل فاتورة", "إرسال تلقائي لبوابة زاتكا", "أرشفة وبحث فوري"],
@@ -21,7 +22,7 @@ const mainFeatures = [
     ],
   },
   {
-    icon: "ti-lock-dollar",
+    icon: "lock-dollar",
     title: "الاستقطاعات والدفعة المقدمة",
     desc: "أكثر ما يُعقّد محاسبة المقاولات — أوتوبان يحسبها تلقائياً ويتابعها على مدى دورة العقد بالكامل.",
     bullets: ["احتساب تلقائي لنسب الاستقطاع", "تتبع الدفعة المقدمة واسترداداتها", "ضمانات الحسن الأداء لكل عقد", "تنبيهات عند استحقاق الاسترداد"],
@@ -35,7 +36,7 @@ const mainFeatures = [
     reverse: true,
   },
   {
-    icon: "ti-building-skyscraper",
+    icon: "building-skyscraper",
     title: "إدارة تعدد المشاريع",
     desc: "كل مشروع له حساباته المستقلة — تكاليف، إيرادات، ربحية. ولوحة تحكم موحدة ترى الصورة الكاملة.",
     bullets: ["عزل كامل للتكاليف لكل مشروع", "مقارنة ربحية المشاريع", "تقرير إتمام نسبة الإنجاز", "مشاريع غير محدودة"],
@@ -47,7 +48,7 @@ const mainFeatures = [
     ],
   },
   {
-    icon: "ti-users",
+    icon: "users",
     title: "الرواتب ونظام WPS",
     desc: "كشوف رواتب متوافقة مع نظام العمل السعودي ونظام حماية الأجور — من الاحتساب حتى الرفع تلقائياً.",
     bullets: ["احتساب الراتب الأساسي والبدلات", "خصومات التأمينات الاجتماعية", "توليد ملف WPS جاهز", "إشعارات الدفع للموظفين"],
@@ -60,7 +61,7 @@ const mainFeatures = [
     reverse: true,
   },
   {
-    icon: "ti-report-analytics",
+    icon: "report-analytics",
     title: "التقارير المالية الكاملة",
     desc: "قوائم مالية معيارية طبقاً للمعايير الدولية والمحلية — جاهزة في ثوانٍ لا أيام.",
     bullets: ["الميزانية العمومية", "قائمة الدخل", "قائمة التدفقات النقدية", "تقارير ربحية المشاريع", "مراجعة الانحرافات"],
@@ -75,12 +76,12 @@ const mainFeatures = [
 ];
 
 const miniFeatures = [
-  { icon: "ti-building", title: "تعدد الشركات", desc: "أدر أكثر من شركة أو فرع من حساب واحد مع عزل كامل للبيانات." },
-  { icon: "ti-device-mobile", title: "واجهة عربية كاملة", desc: "النظام بالكامل بالعربية، متجاوب مع الجوال والحاسب واللوحي." },
-  { icon: "ti-cloud", title: "سحابي بالكامل", desc: "لا تثبيت، لا صيانة — وصول من أي مكان وأي جهاز في أي وقت." },
-  { icon: "ti-shield-check", title: "أمان عالي المستوى", desc: "تشفير AES-256 ونسخ احتياطية يومية على خوادم منطقة الشرق الأوسط." },
-  { icon: "ti-api", title: "تكامل API", desc: "ربط أوتوبان مع أنظمتك الحالية عبر API مفتوح وموثق." },
-  { icon: "ti-bell", title: "تنبيهات ذكية", desc: "إشعارات تلقائية عند استحقاق الدفعات والاستقطاعات وتواريخ العقود." },
+  { icon: "building", title: "تعدد الشركات", desc: "أدر أكثر من شركة أو فرع من حساب واحد مع عزل كامل للبيانات." },
+  { icon: "device-mobile", title: "واجهة عربية كاملة", desc: "النظام بالكامل بالعربية، متجاوب مع الجوال والحاسب واللوحي." },
+  { icon: "cloud", title: "سحابي بالكامل", desc: "لا تثبيت، لا صيانة — وصول من أي مكان وأي جهاز في أي وقت." },
+  { icon: "shield-check", title: "أمان عالي المستوى", desc: "تشفير AES-256 ونسخ احتياطية يومية على خوادم منطقة الشرق الأوسط." },
+  { icon: "api", title: "تكامل API", desc: "ربط أوتوبان مع أنظمتك الحالية عبر API مفتوح وموثق." },
+  { icon: "bell", title: "تنبيهات ذكية", desc: "إشعارات تلقائية عند استحقاق الدفعات والاستقطاعات وتواريخ العقود." },
 ];
 
 type VisualRow = {
@@ -133,7 +134,7 @@ export default function FeaturesPage() {
           fontSize: "12px", padding: "5px 14px", borderRadius: "20px",
           border: "0.5px solid var(--color-accent-border)", marginBottom: "1.5rem",
         }}>
-          <i className="ti ti-sparkles" /> المميزات
+          <Icon name="sparkles" size={14} /> المميزات
         </div>
         <h1 style={{ fontSize: "clamp(28px,4vw,42px)", fontWeight: 500, lineHeight: 1.25, marginBottom: "1rem" }}>
           برنامج يفهم
@@ -164,7 +165,7 @@ export default function FeaturesPage() {
                 borderRadius: "var(--radius)", display: "flex",
                 alignItems: "center", justifyContent: "center", marginBottom: "1rem",
               }}>
-                <i className={`ti ${f.icon}`} style={{ color: "var(--color-accent)", fontSize: 22 }} />
+                <Icon name={f.icon} size={22} style={{ color: "var(--color-accent)" }} />
               </div>
               <h2 style={{ fontSize: "22px", fontWeight: 500, marginBottom: "0.75rem" }}>{f.title}</h2>
               <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "1.25rem" }}>{f.desc}</p>
@@ -175,7 +176,7 @@ export default function FeaturesPage() {
                     display: "flex", alignItems: "flex-start", gap: "8px",
                     borderBottom: "0.5px solid var(--color-border)",
                   }}>
-                    <i className="ti ti-check" style={{ color: "var(--color-accent)", fontSize: 14, flexShrink: 0, marginTop: 2 }} />
+                    <Icon name="check" size={14} style={{ color: "var(--color-accent)", flexShrink: 0, marginTop: 2 }} />
                     {b}
                   </li>
                 ))}
@@ -200,7 +201,7 @@ export default function FeaturesPage() {
                 background: "var(--color-surface-2)", border: "0.5px solid var(--color-border)",
                 borderRadius: "var(--radius-lg)", padding: "1.1rem",
               }}>
-                <i className={`ti ${m.icon}`} style={{ color: "var(--color-accent)", fontSize: 20, display: "block", marginBottom: "8px" }} />
+                <Icon name={m.icon} size={20} style={{ color: "var(--color-accent)", display: "block", marginBottom: "8px" }} />
                 <h4 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{m.title}</h4>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{m.desc}</p>
               </div>

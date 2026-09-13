@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Icon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "من نحن — أوتوبان",
@@ -7,24 +8,24 @@ export const metadata: Metadata = {
 };
 
 const problems = [
-  { icon: "ti-puzzle-off", title: "غياب التخصص", desc: "لا برنامج واحد في السوق بُني خصيصاً لمحاسبة المقاولات بكل تفاصيلها." },
-  { icon: "ti-lock-dollar", title: "تعقيد الاستقطاعات", desc: "الاستقطاعات وضمانات الحسن الأداء والدفعات المقدمة تُحسَب يدوياً أو بأخطاء." },
-  { icon: "ti-user-x", title: "صعوبة الاستخدام", desc: "البرامج المحاسبية معقدة — المقاول يحتاج محاسباً متفرغاً لمجرد إدخال البيانات." },
-  { icon: "ti-chart-off", title: "نتائج غير دقيقة", desc: "البرامج العامة لا تنتج تقارير مالية طبقاً لمعايير محاسبة المقاولات الدولية." },
+  { icon: "puzzle-off", title: "غياب التخصص", desc: "لا برنامج واحد في السوق بُني خصيصاً لمحاسبة المقاولات بكل تفاصيلها." },
+  { icon: "lock-dollar", title: "تعقيد الاستقطاعات", desc: "الاستقطاعات وضمانات الحسن الأداء والدفعات المقدمة تُحسَب يدوياً أو بأخطاء." },
+  { icon: "user-x", title: "صعوبة الاستخدام", desc: "البرامج المحاسبية معقدة — المقاول يحتاج محاسباً متفرغاً لمجرد إدخال البيانات." },
+  { icon: "chart-off", title: "نتائج غير دقيقة", desc: "البرامج العامة لا تنتج تقارير مالية طبقاً لمعايير محاسبة المقاولات الدولية." },
 ];
 
 const solutions = [
-  { icon: "ti-user-check", title: "واجهة يفهمها المقاول", desc: "لا يحتاج المقاول أن يكون محاسباً — البرنامج يترجم العمليات لمحاسبة احترافية تلقائياً." },
-  { icon: "ti-certificate", title: "دقة المعايير الدولية", desc: "النتائج المالية مطابقة للمعايير المحاسبية الدولية والمتطلبات المحلية لكل دولة." },
-  { icon: "ti-calculator", title: "محاسبة مقاولات حقيقية", desc: "استقطاعات، دفعة مقدمة، ضمانات، تعدد مشاريع — كل ما يخص المقاول محسوب تلقائياً." },
-  { icon: "ti-building-community", title: "منظومة لا مجرد برنامج", desc: "برنامج + مجتمع + سوق محاسبين + مكتبة معرفية — كل ما يحتاجه المقاول في مكان واحد." },
+  { icon: "user-check", title: "واجهة يفهمها المقاول", desc: "لا يحتاج المقاول أن يكون محاسباً — البرنامج يترجم العمليات لمحاسبة احترافية تلقائياً." },
+  { icon: "certificate", title: "دقة المعايير الدولية", desc: "النتائج المالية مطابقة للمعايير المحاسبية الدولية والمتطلبات المحلية لكل دولة." },
+  { icon: "calculator", title: "محاسبة مقاولات حقيقية", desc: "استقطاعات، دفعة مقدمة، ضمانات، تعدد مشاريع — كل ما يخص المقاول محسوب تلقائياً." },
+  { icon: "building-community", title: "منظومة لا مجرد برنامج", desc: "برنامج + مجتمع + سوق محاسبين + مكتبة معرفية — كل ما يحتاجه المقاول في مكان واحد." },
 ];
 
 const vision = [
-  { icon: "ti-target", title: "التخصص أولاً", desc: "قطاع واحد، عمق لا يملكه أحد — المقاولات هي تخصصنا الوحيد والأبدي." },
-  { icon: "ti-users", title: "مجتمع حقيقي", desc: "شبكة مقاولين ومحاسبين متخصصين تبني علاقات تجارية حقيقية." },
-  { icon: "ti-certificate", title: "جهة اعتماد", desc: "شهادة أوتوبان للمحاسب المتخصص في المقاولات — معيار جديد في القطاع." },
-  { icon: "ti-world", title: "توسع إقليمي", desc: "نفس النموذج، نفس التخصص — في دول الخليج ومصر." },
+  { icon: "target", title: "التخصص أولاً", desc: "قطاع واحد، عمق لا يملكه أحد — المقاولات هي تخصصنا الوحيد والأبدي." },
+  { icon: "users", title: "مجتمع حقيقي", desc: "شبكة مقاولين ومحاسبين متخصصين تبني علاقات تجارية حقيقية." },
+  { icon: "certificate", title: "جهة اعتماد", desc: "شهادة أوتوبان للمحاسب المتخصص في المقاولات — معيار جديد في القطاع." },
+  { icon: "world", title: "توسع إقليمي", desc: "نفس النموذج، نفس التخصص — في دول الخليج ومصر." },
 ];
 
 const markets = [
@@ -62,7 +63,7 @@ export default function AboutPage() {
           fontSize: "12px", padding: "5px 14px", borderRadius: "20px",
           border: "0.5px solid var(--color-accent-border)", marginBottom: "1.5rem",
         }}>
-          <i className="ti ti-heart" /> قصتنا
+          <Icon name="heart" size={14} /> قصتنا
         </div>
         <h1 style={{ fontSize: "clamp(28px,4vw,42px)", fontWeight: 500, lineHeight: 1.25, marginBottom: "1rem" }}>
           بُنيَ من داخل القطاع
@@ -88,7 +89,7 @@ export default function AboutPage() {
               background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
               borderRadius: "var(--radius-lg)", padding: "1.1rem",
             }}>
-              <i className={`ti ${p.icon}`} style={{ color: "#F59E0B", fontSize: 20, display: "block", marginBottom: "8px" }} />
+              <Icon name={p.icon} size={20} style={{ color: "#F59E0B", display: "block", marginBottom: "8px" }} />
               <h4 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{p.title}</h4>
               <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{p.desc}</p>
             </div>
@@ -120,7 +121,7 @@ export default function AboutPage() {
                 background: "var(--color-surface-2)", border: "0.5px solid var(--color-border)",
                 borderRadius: "var(--radius-lg)", padding: "1.1rem",
               }}>
-                <i className={`ti ${s.icon}`} style={{ color: "var(--color-accent)", fontSize: 20, display: "block", marginBottom: "8px" }} />
+                <Icon name={s.icon} size={20} style={{ color: "var(--color-accent)", display: "block", marginBottom: "8px" }} />
                 <h4 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{s.title}</h4>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{s.desc}</p>
               </div>
@@ -146,7 +147,7 @@ export default function AboutPage() {
                 borderRadius: "var(--radius)", display: "flex", alignItems: "center",
                 justifyContent: "center", flexShrink: 0,
               }}>
-                <i className={`ti ${v.icon}`} style={{ color: "var(--color-accent)", fontSize: 18 }} />
+                <Icon name={v.icon} size={18} style={{ color: "var(--color-accent)" }} />
               </div>
               <div>
                 <h4 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{v.title}</h4>
@@ -230,7 +231,7 @@ export default function AboutPage() {
               background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
               borderRadius: "var(--radius)", padding: "9px 14px", fontSize: "13px",
             }}>
-              <i className="ti ti-certificate" style={{ color: "var(--color-accent)", fontSize: 16 }} />
+              <Icon name="certificate" size={16} style={{ color: "var(--color-accent)" }} />
               {s}
             </div>
           ))}

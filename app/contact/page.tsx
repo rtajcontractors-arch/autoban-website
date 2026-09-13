@@ -1,15 +1,16 @@
 "use client";
 import { useState } from "react";
+import { Icon } from "@/components/icons";
 
 // TODO(أيمن): سجّل مجاناً على https://formspree.io وأنشئ نموذجاً جديداً،
 // ثم استبدل "YOUR_FORM_ID" أدناه بمعرّف النموذج (Form ID) الذي يعطيك إياه Formspree.
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
 
 const channels = [
-  { icon: "ti-brand-whatsapp", title: "واتساب", desc: "الأسرع — تحدث مع فريقنا مباشرة", badge: "رد خلال ساعة", green: true, primary: true },
-  { icon: "ti-mail", title: "البريد الإلكتروني", desc: "للاستفسارات التفصيلية والمراسلات الرسمية", badge: "رد خلال ٢٤ ساعة", yellow: true },
-  { icon: "ti-video", title: "عرض توضيحي", desc: "جلسة مباشرة نشرح فيها البرنامج لفريقك", badge: "يُحجز مسبقاً", blue: true },
-  { icon: "ti-headset", title: "فريق المبيعات", desc: "للباقات المؤسسية والعروض المخصصة", badge: "بالتنسيق المسبق", blue: true },
+  { icon: "brand-whatsapp", title: "واتساب", desc: "الأسرع — تحدث مع فريقنا مباشرة", badge: "رد خلال ساعة", green: true, primary: true },
+  { icon: "mail", title: "البريد الإلكتروني", desc: "للاستفسارات التفصيلية والمراسلات الرسمية", badge: "رد خلال ٢٤ ساعة", yellow: true },
+  { icon: "video", title: "عرض توضيحي", desc: "جلسة مباشرة نشرح فيها البرنامج لفريقك", badge: "يُحجز مسبقاً", blue: true },
+  { icon: "headset", title: "فريق المبيعات", desc: "للباقات المؤسسية والعروض المخصصة", badge: "بالتنسيق المسبق", blue: true },
 ];
 
 const hours = [
@@ -69,7 +70,7 @@ export default function ContactPage() {
           fontSize: "12px", padding: "5px 14px", borderRadius: "20px",
           border: "0.5px solid var(--color-accent-border)", marginBottom: "1.5rem",
         }}>
-          <i className="ti ti-message-circle" /> تواصل معنا
+          <Icon name="message-circle" size={14} /> تواصل معنا
         </div>
         <h1 style={{ fontSize: "clamp(28px,4vw,42px)", fontWeight: 500, lineHeight: 1.25, marginBottom: "1rem" }}>
           نحن هنا
@@ -100,7 +101,7 @@ export default function ContactPage() {
                   background: c.primary ? "var(--color-accent)" : "var(--color-accent-light)",
                   display: "flex", alignItems: "center", justifyContent: "center",
                 }}>
-                  <i className={`ti ${c.icon}`} style={{ color: c.primary ? "white" : "var(--color-accent)", fontSize: 24 }} />
+                  <Icon name={c.icon} size={24} style={{ color: c.primary ? "white" : "var(--color-accent)" }} />
                 </div>
                 <h4 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "3px" }}>{c.title}</h4>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", marginBottom: "8px", lineHeight: 1.5 }}>{c.desc}</p>
@@ -128,10 +129,10 @@ export default function ContactPage() {
             {/* Info */}
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
               {[
-                { icon: "ti-brand-whatsapp", title: "واتساب", val: "+966 5X XXX XXXX" },
-                { icon: "ti-mail", title: "البريد الإلكتروني", val: "hello@autoban.app" },
-                { icon: "ti-mail", title: "الدعم التقني", val: "support@autoban.app" },
-                { icon: "ti-map-pin", title: "المقر الرئيسي", val: "المملكة العربية السعودية — منطقة القصيم" },
+                { icon: "brand-whatsapp", title: "واتساب", val: "+966 5X XXX XXXX" },
+                { icon: "mail", title: "البريد الإلكتروني", val: "hello@autoban.app" },
+                { icon: "mail", title: "الدعم التقني", val: "support@autoban.app" },
+                { icon: "map-pin", title: "المقر الرئيسي", val: "المملكة العربية السعودية — منطقة القصيم" },
               ].map(info => (
                 <div key={info.title} style={{
                   background: "var(--color-surface-2)", border: "0.5px solid var(--color-border)",
@@ -143,7 +144,7 @@ export default function ContactPage() {
                     borderRadius: "var(--radius)", display: "flex", alignItems: "center",
                     justifyContent: "center", flexShrink: 0,
                   }}>
-                    <i className={`ti ${info.icon}`} style={{ color: "var(--color-accent)", fontSize: 18 }} />
+                    <Icon name={info.icon} size={18} style={{ color: "var(--color-accent)" }} />
                   </div>
                   <div>
                     <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>{info.title}</h4>
@@ -159,6 +160,8 @@ export default function ContactPage() {
               borderRadius: "var(--radius-lg)", padding: "1.5rem",
             }}>
               <h3 style={{ fontSize: "16px", fontWeight: 500, marginBottom: "1.25rem" }}>أرسل رسالتك مباشرة</h3>
+              {/* حقل فخّ للبوتات — يتعرف عليه Formspree تلقائياً ويتجاهل أي رسالة تملأه */}
+              <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" style={{ position: "absolute", left: "-9999px", width: 0, height: 0, opacity: 0 }} aria-hidden="true" />
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginBottom: "1rem" }}>
                 {[{ name: "name", label: "الاسم الكامل", placeholder: "اسمك الكريم", type: "text" }, { name: "phone", label: "رقم الجوال", placeholder: "+966 5X XXX XXXX", type: "tel" }].map(f => (
                   <div key={f.label}>
@@ -214,7 +217,7 @@ export default function ContactPage() {
                 display: "flex", alignItems: "center", justifyContent: "center", gap: "6px",
                 opacity: formStatus === "sending" ? 0.7 : 1,
               }}>
-                <i className="ti ti-send" /> {formStatus === "sending" ? "جارِ الإرسال..." : "أرسل الرسالة"}
+                <Icon name="send" size={14} /> {formStatus === "sending" ? "جارِ الإرسال..." : "أرسل الرسالة"}
               </button>
               {formStatus === "success" && (
                 <p style={{ fontSize: "13px", color: "#22C55E", marginTop: "10px", textAlign: "center" }}>
@@ -303,7 +306,7 @@ export default function ContactPage() {
                   background: "none", border: "none", cursor: "pointer", gap: "12px",
                 }}>
                   {f.q}
-                  <i className={`ti ti-chevron-${openFaq === i ? "up" : "down"}`} style={{ color: "var(--color-text-secondary)", fontSize: 16, flexShrink: 0 }} />
+                  <Icon name={openFaq === i ? "chevron-up" : "chevron-down"} size={16} style={{ color: "var(--color-text-secondary)", flexShrink: 0 }} />
                 </button>
                 {openFaq === i && (
                   <div style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.7, paddingBottom: "1rem" }}>{f.a}</div>

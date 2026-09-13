@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Icon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "المكتبة المعرفية — أوتوبان",
@@ -7,32 +8,32 @@ export const metadata: Metadata = {
 };
 
 const categories = [
-  { icon: "ti-calculator", title: "محاسبة المقاولات", desc: "معايير، قيود، تقارير — الأساس المحاسبي للقطاع.", count: "٤٢" },
-  { icon: "ti-receipt-2", title: "زاتكا والضريبة", desc: "الفوترة الإلكترونية، VAT، الإقرارات الضريبية.", count: "٢٨" },
-  { icon: "ti-file-contract", title: "العقود والمطالبات", desc: "بنود العقود، المطالبات، تسوية النزاعات.", count: "٣٥" },
-  { icon: "ti-users", title: "نظام العمل والرواتب", desc: "نظام العمل السعودي، WPS، التأمينات.", count: "٢٢" },
-  { icon: "ti-building-skyscraper", title: "إدارة المشاريع", desc: "تخطيط، جدولة، تكاليف، متابعة الإنجاز.", count: "١٨" },
-  { icon: "ti-lock-dollar", title: "الاستقطاعات والضمانات", desc: "احتساب، متابعة، استرداد — دليل عملي شامل.", count: "١٥" },
-  { icon: "ti-certificate", title: "المعايير المحاسبية", desc: "IFRS، SOCPA، المعايير المصرية والخليجية.", count: "٣١" },
-  { icon: "ti-trending-up", title: "التحليل المالي", desc: "قراءة التقارير، مؤشرات الأداء، قرارات التسعير.", count: "٢٤" },
+  { icon: "calculator", title: "محاسبة المقاولات", desc: "معايير، قيود، تقارير — الأساس المحاسبي للقطاع.", count: "٤٢" },
+  { icon: "receipt-2", title: "زاتكا والضريبة", desc: "الفوترة الإلكترونية، VAT، الإقرارات الضريبية.", count: "٢٨" },
+  { icon: "file-contract", title: "العقود والمطالبات", desc: "بنود العقود، المطالبات، تسوية النزاعات.", count: "٣٥" },
+  { icon: "users", title: "نظام العمل والرواتب", desc: "نظام العمل السعودي، WPS، التأمينات.", count: "٢٢" },
+  { icon: "building-skyscraper", title: "إدارة المشاريع", desc: "تخطيط، جدولة، تكاليف، متابعة الإنجاز.", count: "١٨" },
+  { icon: "lock-dollar", title: "الاستقطاعات والضمانات", desc: "احتساب، متابعة، استرداد — دليل عملي شامل.", count: "١٥" },
+  { icon: "certificate", title: "المعايير المحاسبية", desc: "IFRS، SOCPA، المعايير المصرية والخليجية.", count: "٣١" },
+  { icon: "trending-up", title: "التحليل المالي", desc: "قراءة التقارير، مؤشرات الأداء، قرارات التسعير.", count: "٢٤" },
 ];
 
 const articles = [
-  { icon: "ti-receipt-2", cat: "زاتكا", official: true, title: "دليل الفوترة الإلكترونية للمقاولين — المرحلة الثانية", desc: "شرح شامل لمتطلبات زاتكا في مرحلة الربط مع التركيز على خصوصية فواتير المقاولات.", time: "٨ دقائق" },
-  { icon: "ti-lock-dollar", cat: "استقطاعات", official: true, title: "كيف تحسب الاستقطاع وضمان الحسن الأداء بدقة؟", desc: "دليل عملي خطوة بخطوة لاحتساب الاستقطاعات على الدفعات الوسيطة والنهائية.", time: "١٢ دقيقة" },
-  { icon: "ti-file-contract", cat: "عقود", official: false, title: "٥ بنود تحتاجها في كل عقد مقاولات لحماية حقوقك", desc: "من واقع تجربة ١٥ سنة في القطاع — بنود لا تتنازل عنها قبل التوقيع.", time: "٦ دقائق" },
-  { icon: "ti-trending-up", cat: "تحليل", official: true, title: "كيف تقرأ قائمة الدخل لمشروع مقاولات؟", desc: "شرح مبسط للقوائم المالية بأمثلة من واقع مشاريع البناء والتشييد.", time: "١٠ دقائق" },
-  { icon: "ti-users", cat: "رواتب", official: true, title: "نظام WPS للمقاولين — من الاحتساب حتى الرفع", desc: "دليل عملي لإعداد ملف WPS المتوافق مع متطلبات وزارة الموارد البشرية.", time: "٧ دقائق" },
-  { icon: "ti-alert-triangle", cat: "دروس", official: false, title: "أخطاء محاسبية شائعة في مشاريع المقاولات وكيف تتجنبها", desc: "من تجربة محاسب متخصص — أكثر ١٠ أخطاء تكررت في الشركات الصغيرة والمتوسطة.", time: "٩ دقائق" },
+  { icon: "receipt-2", cat: "زاتكا", official: true, title: "دليل الفوترة الإلكترونية للمقاولين — المرحلة الثانية", desc: "شرح شامل لمتطلبات زاتكا في مرحلة الربط مع التركيز على خصوصية فواتير المقاولات.", time: "٨ دقائق" },
+  { icon: "lock-dollar", cat: "استقطاعات", official: true, title: "كيف تحسب الاستقطاع وضمان الحسن الأداء بدقة؟", desc: "دليل عملي خطوة بخطوة لاحتساب الاستقطاعات على الدفعات الوسيطة والنهائية.", time: "١٢ دقيقة" },
+  { icon: "file-contract", cat: "عقود", official: false, title: "٥ بنود تحتاجها في كل عقد مقاولات لحماية حقوقك", desc: "من واقع تجربة ١٥ سنة في القطاع — بنود لا تتنازل عنها قبل التوقيع.", time: "٦ دقائق" },
+  { icon: "trending-up", cat: "تحليل", official: true, title: "كيف تقرأ قائمة الدخل لمشروع مقاولات؟", desc: "شرح مبسط للقوائم المالية بأمثلة من واقع مشاريع البناء والتشييد.", time: "١٠ دقائق" },
+  { icon: "users", cat: "رواتب", official: true, title: "نظام WPS للمقاولين — من الاحتساب حتى الرفع", desc: "دليل عملي لإعداد ملف WPS المتوافق مع متطلبات وزارة الموارد البشرية.", time: "٧ دقائق" },
+  { icon: "alert-triangle", cat: "دروس", official: false, title: "أخطاء محاسبية شائعة في مشاريع المقاولات وكيف تتجنبها", desc: "من تجربة محاسب متخصص — أكثر ١٠ أخطاء تكررت في الشركات الصغيرة والمتوسطة.", time: "٩ دقائق" },
 ];
 
 const docs = [
-  { icon: "ti-file-contract", title: "نموذج عقد مقاولات", desc: "عقد رئيسي شامل البنود الأساسية" },
-  { icon: "ti-file-contract", title: "نموذج عقد باطن", desc: "عقد مقاول باطن مع بنود الضمان" },
-  { icon: "ti-calculator", title: "جدول احتساب الاستقطاعات", desc: "Excel جاهز لكل أنواع الاستقطاع" },
-  { icon: "ti-report", title: "تقرير إتمام المشروع", desc: "قالب تقرير الإنجاز للعميل" },
-  { icon: "ti-cash", title: "جدول الدفعة المقدمة", desc: "تتبع صرف الدفعة واسترداداتها" },
-  { icon: "ti-file-invoice", title: "نموذج كشف حساب", desc: "كشف حساب بين المقاول والعميل" },
+  { icon: "file-contract", title: "نموذج عقد مقاولات", desc: "عقد رئيسي شامل البنود الأساسية" },
+  { icon: "file-contract", title: "نموذج عقد باطن", desc: "عقد مقاول باطن مع بنود الضمان" },
+  { icon: "calculator", title: "جدول احتساب الاستقطاعات", desc: "Excel جاهز لكل أنواع الاستقطاع" },
+  { icon: "report", title: "تقرير إتمام المشروع", desc: "قالب تقرير الإنجاز للعميل" },
+  { icon: "cash", title: "جدول الدفعة المقدمة", desc: "تتبع صرف الدفعة واسترداداتها" },
+  { icon: "file-invoice", title: "نموذج كشف حساب", desc: "كشف حساب بين المقاول والعميل" },
 ];
 
 const contribSteps = ["١ — اكتب مقالتك", "٢ — أرسلها للمراجعة", "٣ — تُنشر باسمك", "٤ — المجتمع يقيّمها"];
@@ -48,7 +49,7 @@ export default function LibraryPage() {
           fontSize: "12px", padding: "5px 14px", borderRadius: "20px",
           border: "0.5px solid var(--color-accent-border)", marginBottom: "1.5rem",
         }}>
-          <i className="ti ti-books" /> المكتبة المعرفية
+          <Icon name="books" size={14} /> المكتبة المعرفية
         </div>
         <h1 style={{ fontSize: "clamp(28px,4vw,42px)", fontWeight: 500, lineHeight: 1.25, marginBottom: "1rem" }}>
           المرجع المتخصص
@@ -78,12 +79,12 @@ export default function LibraryPage() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
             {[
               {
-                icon: "ti-building-bank", title: "المحتوى الرسمي", featured: true,
+                icon: "building-bank", title: "المحتوى الرسمي", featured: true,
                 desc: "يكتبه فريق أوتوبان من متخصصين في المحاسبة والقانون والهندسة.",
                 items: ["مقالات تقنية محاسبية موثقة", "شرح اللوائح والأنظمة المحدثة", "نماذج عقود وقوالب جاهزة", "تحديثات زاتكا ونظام العمل"],
               },
               {
-                icon: "ti-users", title: "محتوى المجتمع", featured: false,
+                icon: "users", title: "محتوى المجتمع", featured: false,
                 desc: "يكتبه المحاسبون والمقاولون من واقع تجاربهم الميدانية.",
                 items: ["حالات عملية من مشاريع حقيقية", "دروس مستفادة وأخطاء شائعة", "مقارنات وتحليلات من الميدان", "تقييم المجتمع يضمن الجودة"],
               },
@@ -98,14 +99,14 @@ export default function LibraryPage() {
                   background: s.featured ? "var(--color-accent)" : "var(--color-accent-light)",
                   display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1rem",
                 }}>
-                  <i className={`ti ${s.icon}`} style={{ color: s.featured ? "white" : "var(--color-accent)", fontSize: 22 }} />
+                  <Icon name={s.icon} size={22} style={{ color: s.featured ? "white" : "var(--color-accent)" }} />
                 </div>
                 <h3 style={{ fontSize: "16px", fontWeight: 500, marginBottom: "4px" }}>{s.title}</h3>
                 <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", marginBottom: "1rem", lineHeight: 1.6 }}>{s.desc}</p>
                 <ul style={{ listStyle: "none" }}>
                   {s.items.map(item => (
                     <li key={item} style={{ fontSize: "13px", padding: "5px 0", display: "flex", alignItems: "flex-start", gap: "8px", borderBottom: "0.5px solid var(--color-border)" }}>
-                      <i className="ti ti-check" style={{ color: "var(--color-accent)", fontSize: 14, flexShrink: 0, marginTop: 2 }} />
+                      <Icon name="check" size={14} style={{ color: "var(--color-accent)", flexShrink: 0, marginTop: 2 }} />
                       {item}
                     </li>
                   ))}
@@ -135,7 +136,7 @@ export default function LibraryPage() {
                   borderRadius: "var(--radius)", display: "flex", alignItems: "center",
                   justifyContent: "center", marginBottom: "0.75rem",
                 }}>
-                  <i className={`ti ${c.icon}`} style={{ color: "var(--color-accent)", fontSize: 19 }} />
+                  <Icon name={c.icon} size={19} style={{ color: "var(--color-accent)" }} />
                 </div>
                 <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "3px" }}>{c.title}</h4>
                 <p style={{ fontSize: "11px", color: "var(--color-text-secondary)", lineHeight: 1.5, marginBottom: "6px" }}>{c.desc}</p>
@@ -164,18 +165,18 @@ export default function LibraryPage() {
                   display: "flex", alignItems: "center", justifyContent: "center",
                   borderBottom: "0.5px solid var(--color-border)",
                 }}>
-                  <i className={`ti ${a.icon}`} style={{ color: "var(--color-accent)", fontSize: 32 }} />
+                  <Icon name={a.icon} size={32} style={{ color: "var(--color-accent)" }} />
                 </div>
                 <div style={{ padding: "1rem", flex: 1, display: "flex", flexDirection: "column" }}>
                   <div style={{ fontSize: "11px", color: "var(--color-accent)", marginBottom: "5px", display: "flex", alignItems: "center", gap: "4px" }}>
-                    <i className={`ti ${a.official ? "ti-building-bank" : "ti-users"}`} style={{ fontSize: 12 }} />
+                    <Icon name={a.official ? "building-bank" : "users"} size={12} />
                     {a.official ? "رسمي" : "مجتمع"} — {a.cat}
                   </div>
                   <h4 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "5px", lineHeight: 1.4 }}>{a.title}</h4>
                   <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6, flex: 1, marginBottom: "0.75rem" }}>{a.desc}</p>
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                     <span style={{ fontSize: "11px", color: "var(--color-text-muted)", display: "flex", alignItems: "center", gap: "4px" }}>
-                      <i className="ti ti-clock" style={{ fontSize: 12 }} />{a.time}
+                      <Icon name="clock" size={12} />{a.time}
                     </span>
                     <span style={{
                       fontSize: "10px", padding: "2px 7px", borderRadius: "8px",
@@ -211,7 +212,7 @@ export default function LibraryPage() {
                   borderRadius: "var(--radius)", display: "flex", alignItems: "center",
                   justifyContent: "center", flexShrink: 0,
                 }}>
-                  <i className={`ti ${d.icon}`} style={{ color: "var(--color-accent)", fontSize: 20 }} />
+                  <Icon name={d.icon} size={20} style={{ color: "var(--color-accent)" }} />
                 </div>
                 <div style={{ flex: 1 }}>
                   <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>{d.title}</h4>
@@ -245,7 +246,7 @@ export default function LibraryPage() {
               width: 48, height: 48, background: "var(--color-accent-light)",
               borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
             }}>
-              <i className="ti ti-edit" style={{ color: "var(--color-accent)", fontSize: 24 }} />
+              <Icon name="edit" size={24} style={{ color: "var(--color-accent)" }} />
             </div>
             <div>
               <h3 style={{ fontSize: "15px", fontWeight: 500, marginBottom: "4px" }}>كيف تكتب في المكتبة؟</h3>

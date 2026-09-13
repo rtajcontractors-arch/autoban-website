@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Icon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "سوق المحاسبين المعتمدين — أوتوبان",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 
 const accountants = [
   {
-    icon: "ti-user",
+    icon: "user",
     name: "م. خالد العمري",
     title: "محاسب مقاولات — ١٢ سنة خبرة",
     stars: 5,
@@ -20,7 +21,7 @@ const accountants = [
     type: "فردي",
   },
   {
-    icon: "ti-building",
+    icon: "building",
     name: "مكتب الرشيد للمحاسبة",
     title: "مكتب معتمد — ٨ محاسبين",
     stars: 5,
@@ -32,7 +33,7 @@ const accountants = [
     type: "مكتب",
   },
   {
-    icon: "ti-user",
+    icon: "user",
     name: "أ. سارة المطيري",
     title: "محاسبة مقاولات — ٧ سنوات",
     stars: 4,
@@ -89,7 +90,7 @@ export default function MarketplacePage() {
           fontSize: "12px", padding: "5px 14px", borderRadius: "20px",
           border: "0.5px solid var(--color-accent-border)", marginBottom: "1.5rem",
         }}>
-          <i className="ti ti-briefcase" /> سوق المحاسبين
+          <Icon name="briefcase" size={14} /> سوق المحاسبين
         </div>
         <h1 style={{ fontSize: "clamp(28px,4vw,42px)", fontWeight: 500, lineHeight: 1.25, marginBottom: "1rem" }}>
           المحاسب المتخصص
@@ -119,12 +120,12 @@ export default function MarketplacePage() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
             {[
               {
-                icon: "ti-building-skyscraper", title: "شركة المقاولات", featured: true,
+                icon: "building-skyscraper", title: "شركة المقاولات", featured: true,
                 desc: "تبحث عن محاسب يفهم طبيعة عملها — لا وقت لتدريب شخص من الصفر.",
                 items: ["محاسب يعرف الاستقطاعات والدفعة المقدمة", "خبرة موثقة في مشاريع مشابهة", "اعتماد مُتحقَّق من أوتوبان", "تعاقد مباشر بلا وسيط"],
               },
               {
-                icon: "ti-calculator", title: "المحاسب المتخصص", featured: false,
+                icon: "calculator", title: "المحاسب المتخصص", featured: false,
                 desc: "يمتلك خبرة عميقة في المقاولات لكنه يبحث عن العميل الذي يقدّر هذا التخصص.",
                 items: ["ملف مهني يعرض خبرته بوضوح", "عملاء مؤهلون ومستعدون للتعاون", "شهادة أوتوبان تُميّزه في السوق", "تقييمات حقيقية تبني سمعته"],
               },
@@ -139,14 +140,14 @@ export default function MarketplacePage() {
                   background: side.featured ? "var(--color-accent)" : "var(--color-accent-light)",
                   display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "1rem",
                 }}>
-                  <i className={`ti ${side.icon}`} style={{ color: side.featured ? "white" : "var(--color-accent)", fontSize: 22 }} />
+                  <Icon name={side.icon} size={22} style={{ color: side.featured ? "white" : "var(--color-accent)" }} />
                 </div>
                 <h3 style={{ fontSize: "16px", fontWeight: 500, marginBottom: "4px" }}>{side.title}</h3>
                 <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", marginBottom: "1rem", lineHeight: 1.6 }}>{side.desc}</p>
                 <ul style={{ listStyle: "none" }}>
                   {side.items.map(item => (
                     <li key={item} style={{ fontSize: "13px", padding: "5px 0", display: "flex", alignItems: "flex-start", gap: "8px", borderBottom: "0.5px solid var(--color-border)" }}>
-                      <i className="ti ti-check" style={{ color: "var(--color-accent)", fontSize: 14, flexShrink: 0, marginTop: 2 }} />
+                      <Icon name="check" size={14} style={{ color: "var(--color-accent)", flexShrink: 0, marginTop: 2 }} />
                       {item}
                     </li>
                   ))}
@@ -173,7 +174,7 @@ export default function MarketplacePage() {
             borderRadius: "var(--radius)", padding: "10px 14px",
             maxWidth: "560px", margin: "0 auto 1.25rem",
           }}>
-            <i className="ti ti-search" style={{ color: "var(--color-text-muted)", fontSize: 16 }} />
+            <Icon name="search" size={16} style={{ color: "var(--color-text-muted)" }} />
             <span style={{ fontSize: "13px", color: "var(--color-text-muted)" }}>ابحث بالاسم أو التخصص أو المنطقة...</span>
           </div>
 
@@ -201,7 +202,7 @@ export default function MarketplacePage() {
                     width: 46, height: 46, background: "var(--color-accent-light)",
                     borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
                   }}>
-                    <i className={`ti ${a.icon}`} style={{ color: "var(--color-accent)", fontSize: 22 }} />
+                    <Icon name={a.icon} size={22} style={{ color: "var(--color-accent)" }} />
                   </div>
                   <div>
                     <div style={{ fontSize: "14px", fontWeight: 500 }}>{a.name}</div>
@@ -224,7 +225,7 @@ export default function MarketplacePage() {
                 </div>
                 <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                   <span style={{ fontSize: "12px", color: "var(--color-text-muted)", display: "flex", alignItems: "center", gap: "4px" }}>
-                    <i className="ti ti-map-pin" style={{ fontSize: 13 }} />{a.location}
+                    <Icon name="map-pin" size={13} />{a.location}
                   </span>
                   <button style={{
                     fontSize: "12px", background: "var(--color-accent)", color: "white",
@@ -285,7 +286,7 @@ export default function MarketplacePage() {
                 <ul style={{ listStyle: "none" }}>
                   {c.items.map(item => (
                     <li key={item} style={{ fontSize: "12px", color: "var(--color-text-secondary)", padding: "4px 0", display: "flex", alignItems: "flex-start", gap: "7px", borderBottom: "0.5px solid var(--color-border)" }}>
-                      <i className="ti ti-check" style={{ color: "var(--color-accent)", fontSize: 13, flexShrink: 0, marginTop: 2 }} />
+                      <Icon name="check" size={13} style={{ color: "var(--color-accent)", flexShrink: 0, marginTop: 2 }} />
                       {item}
                     </li>
                   ))}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Icon } from "@/components/icons";
 
 const cols = [
   {
@@ -50,7 +51,7 @@ export default function Footer() {
                   border: "0.5px solid var(--color-border)", borderRadius: "var(--radius)",
                   display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer",
                 }}>
-                  <i className={`ti ti-${icon}`} style={{ color: "var(--color-text-secondary)", fontSize: 16 }} />
+                  <Icon name={icon} size={16} style={{ color: "var(--color-text-secondary)" }} />
                 </div>
               ))}
             </div>

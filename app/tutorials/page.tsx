@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Icon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "الشروحات — أوتوبان",
@@ -7,23 +8,23 @@ export const metadata: Metadata = {
 };
 
 const tracks = [
-  { icon: "ti-rocket", title: "البداية السريعة", desc: "إعداد حسابك وأول فاتورة في أقل من ٣٠ دقيقة.", count: "٥ فيديوهات", duration: "٢٥ دقيقة" },
-  { icon: "ti-receipt-2", title: "الفوترة وزاتكا", desc: "كل ما يخص الفواتير الإلكترونية والمتطلبات الضريبية.", count: "٧ فيديوهات", duration: "٤٠ دقيقة" },
-  { icon: "ti-building-skyscraper", title: "إدارة المشاريع", desc: "إنشاء مشروع، تتبع التكاليف، متابعة الإنجاز.", count: "٦ فيديوهات", duration: "٣٥ دقيقة" },
-  { icon: "ti-users", title: "الرواتب وWPS", desc: "كشوف الرواتب وملف WPS خطوة بخطوة.", count: "٤ فيديوهات", duration: "٢٢ دقيقة" },
-  { icon: "ti-chart-bar", title: "التقارير والتحليل", desc: "قراءة التقارير المالية وتحليل أداء المشاريع.", count: "٨ فيديوهات", duration: "٥٠ دقيقة" },
+  { icon: "rocket", title: "البداية السريعة", desc: "إعداد حسابك وأول فاتورة في أقل من ٣٠ دقيقة.", count: "٥ فيديوهات", duration: "٢٥ دقيقة" },
+  { icon: "receipt-2", title: "الفوترة وزاتكا", desc: "كل ما يخص الفواتير الإلكترونية والمتطلبات الضريبية.", count: "٧ فيديوهات", duration: "٤٠ دقيقة" },
+  { icon: "building-skyscraper", title: "إدارة المشاريع", desc: "إنشاء مشروع، تتبع التكاليف، متابعة الإنجاز.", count: "٦ فيديوهات", duration: "٣٥ دقيقة" },
+  { icon: "users", title: "الرواتب وWPS", desc: "كشوف الرواتب وملف WPS خطوة بخطوة.", count: "٤ فيديوهات", duration: "٢٢ دقيقة" },
+  { icon: "chart-bar", title: "التقارير والتحليل", desc: "قراءة التقارير المالية وتحليل أداء المشاريع.", count: "٨ فيديوهات", duration: "٥٠ دقيقة" },
 ];
 
 const videos = [
-  { icon: "ti-rocket", cat: "البداية", title: "إعداد شركتك من الصفر", desc: "إنشاء الشركة وضبط الإعدادات الأساسية.", dur: "٥:٣٠", level: "مبتدئ", views: "٢,٤٠٠", green: true },
-  { icon: "ti-building-skyscraper", cat: "مشاريع", title: "إضافة مشروعك الأول", desc: "إنشاء مشروع وربطه بالعميل وتحديد الميزانية.", dur: "٤:١٥", level: "مبتدئ", views: "١,٨٠٠", green: true },
-  { icon: "ti-receipt-2", cat: "زاتكا", title: "إصدار فاتورة زاتكا خطوة بخطوة", desc: "من إدخال البيانات حتى الإرسال لهيئة زاتكا.", dur: "٦:٤٥", level: "مبتدئ", views: "٣,١٠٠", green: true },
-  { icon: "ti-lock-dollar", cat: "استقطاعات", title: "إعداد الاستقطاعات وضمان الحسن الأداء", desc: "كيف تضبط نسب الاستقطاع وتتابع الاسترداد.", dur: "٨:٢٠", level: "متوسط", views: "١,٥٠٠", yellow: true },
-  { icon: "ti-cash", cat: "استقطاعات", title: "إدارة الدفعة المقدمة واسترداداتها", desc: "تتبع صرف الدفعة المقدمة على مدى دورة العقد.", dur: "٧:٠٠", level: "متوسط", views: "١,٢٠٠", yellow: true },
-  { icon: "ti-users", cat: "رواتب", title: "إعداد كشف الرواتب الشهري", desc: "من إضافة الموظفين حتى تصدير ملف WPS.", dur: "٥:٥٠", level: "مبتدئ", views: "٢,٠٠٠", green: true },
-  { icon: "ti-chart-bar", cat: "تقارير", title: "كيف تقرأ تقاريرك المالية؟", desc: "شرح مبسط للميزانية العمومية وقائمة الدخل.", dur: "١٠:١٥", level: "متوسط", views: "٩٨٠", yellow: true },
-  { icon: "ti-git-compare", cat: "تقارير", title: "مراجعة الانحرافات بين المخطط والفعلي", desc: "كيف تكتشف الانحرافات المالية قبل أن تتفاقم.", dur: "٩:٣٠", level: "متقدم", views: "٧٥٠", blue: true },
-  { icon: "ti-building", cat: "متقدم", title: "إدارة أكثر من شركة من حساب واحد", desc: "إعداد تعدد الشركات والفروع مع العزل الكامل للبيانات.", dur: "٦:٠٠", level: "متقدم", views: "٦٢٠", blue: true },
+  { icon: "rocket", cat: "البداية", title: "إعداد شركتك من الصفر", desc: "إنشاء الشركة وضبط الإعدادات الأساسية.", dur: "٥:٣٠", level: "مبتدئ", views: "٢,٤٠٠", green: true },
+  { icon: "building-skyscraper", cat: "مشاريع", title: "إضافة مشروعك الأول", desc: "إنشاء مشروع وربطه بالعميل وتحديد الميزانية.", dur: "٤:١٥", level: "مبتدئ", views: "١,٨٠٠", green: true },
+  { icon: "receipt-2", cat: "زاتكا", title: "إصدار فاتورة زاتكا خطوة بخطوة", desc: "من إدخال البيانات حتى الإرسال لهيئة زاتكا.", dur: "٦:٤٥", level: "مبتدئ", views: "٣,١٠٠", green: true },
+  { icon: "lock-dollar", cat: "استقطاعات", title: "إعداد الاستقطاعات وضمان الحسن الأداء", desc: "كيف تضبط نسب الاستقطاع وتتابع الاسترداد.", dur: "٨:٢٠", level: "متوسط", views: "١,٥٠٠", yellow: true },
+  { icon: "cash", cat: "استقطاعات", title: "إدارة الدفعة المقدمة واسترداداتها", desc: "تتبع صرف الدفعة المقدمة على مدى دورة العقد.", dur: "٧:٠٠", level: "متوسط", views: "١,٢٠٠", yellow: true },
+  { icon: "users", cat: "رواتب", title: "إعداد كشف الرواتب الشهري", desc: "من إضافة الموظفين حتى تصدير ملف WPS.", dur: "٥:٥٠", level: "مبتدئ", views: "٢,٠٠٠", green: true },
+  { icon: "chart-bar", cat: "تقارير", title: "كيف تقرأ تقاريرك المالية؟", desc: "شرح مبسط للميزانية العمومية وقائمة الدخل.", dur: "١٠:١٥", level: "متوسط", views: "٩٨٠", yellow: true },
+  { icon: "git-compare", cat: "تقارير", title: "مراجعة الانحرافات بين المخطط والفعلي", desc: "كيف تكتشف الانحرافات المالية قبل أن تتفاقم.", dur: "٩:٣٠", level: "متقدم", views: "٧٥٠", blue: true },
+  { icon: "building", cat: "متقدم", title: "إدارة أكثر من شركة من حساب واحد", desc: "إعداد تعدد الشركات والفروع مع العزل الكامل للبيانات.", dur: "٦:٠٠", level: "متقدم", views: "٦٢٠", blue: true },
 ];
 
 const pathSteps = [
@@ -45,7 +46,7 @@ export default function TutorialsPage() {
           fontSize: "12px", padding: "5px 14px", borderRadius: "20px",
           border: "0.5px solid var(--color-accent-border)", marginBottom: "1.5rem",
         }}>
-          <i className="ti ti-player-play" /> الشروحات
+          <Icon name="player-play" size={14} /> الشروحات
         </div>
         <h1 style={{ fontSize: "clamp(28px,4vw,42px)", fontWeight: 500, lineHeight: 1.25, marginBottom: "1rem" }}>
           تعلّم أوتوبان
@@ -84,7 +85,7 @@ export default function TutorialsPage() {
                   borderRadius: "var(--radius)", display: "flex", alignItems: "center",
                   justifyContent: "center", marginBottom: "0.75rem",
                 }}>
-                  <i className={`ti ${t.icon}`} style={{ color: i === 0 ? "white" : "var(--color-accent)", fontSize: 19 }} />
+                  <Icon name={t.icon} size={19} style={{ color: i === 0 ? "white" : "var(--color-accent)" }} />
                 </div>
                 <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "3px" }}>{t.title}</h4>
                 <p style={{ fontSize: "11px", color: "var(--color-text-secondary)", lineHeight: 1.5, marginBottom: "6px" }}>{t.desc}</p>
@@ -115,7 +116,7 @@ export default function TutorialsPage() {
                 width: 56, height: 56, background: "var(--color-accent)", borderRadius: "50%",
                 display: "flex", alignItems: "center", justifyContent: "center",
               }}>
-                <i className="ti ti-player-play" style={{ color: "white", fontSize: 26, marginRight: "-3px" }} />
+                <Icon name="player-play" size={26} style={{ color: "white", marginRight: "-3px" }} />
               </div>
               <div style={{
                 position: "absolute", bottom: 10, left: 10,
@@ -129,16 +130,16 @@ export default function TutorialsPage() {
                 background: "rgba(245,158,11,0.1)", color: "#F59E0B",
                 fontSize: "11px", padding: "3px 10px", borderRadius: "8px", marginBottom: "0.75rem", width: "fit-content",
               }}>
-                <i className="ti ti-star" /> ابدأ هنا
+                <Icon name="star" size={13} /> ابدأ هنا
               </div>
               <h3 style={{ fontSize: "18px", fontWeight: 500, marginBottom: "0.5rem", lineHeight: 1.3 }}>إعداد شركتك على أوتوبان — من الصفر</h3>
               <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.7, marginBottom: "1rem" }}>
                 في هذا الفيديو ستتعلم كيف تُنشئ شركتك، تضبط السنة المالية، تضيف موظفيك، وتعد بيانات زاتكا — كل ذلك في أقل من ٦ دقائق.
               </p>
               <div style={{ display: "flex", gap: "12px", fontSize: "12px", color: "var(--color-text-muted)", marginBottom: "1rem" }}>
-                {[{ icon: "ti-clock", val: "٥:٣٠" }, { icon: "ti-eye", val: "٢,٤٠٠ مشاهدة" }, { icon: "ti-signal", val: "مبتدئ" }].map(m => (
+                {[{ icon: "clock", val: "٥:٣٠" }, { icon: "eye", val: "٢,٤٠٠ مشاهدة" }, { icon: "signal", val: "مبتدئ" }].map(m => (
                   <span key={m.val} style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                    <i className={`ti ${m.icon}`} />{m.val}
+                    <Icon name={m.icon} size={12} />{m.val}
                   </span>
                 ))}
               </div>
@@ -148,7 +149,7 @@ export default function TutorialsPage() {
                 padding: "8px 18px", borderRadius: "var(--radius)",
                 border: "none", cursor: "pointer", fontSize: "13px", width: "fit-content",
               }}>
-                <i className="ti ti-player-play" /> شاهد الآن
+                <Icon name="player-play" size={14} /> شاهد الآن
               </button>
             </div>
           </div>
@@ -176,7 +177,7 @@ export default function TutorialsPage() {
                     width: 44, height: 44, background: "var(--color-accent)", borderRadius: "50%",
                     display: "flex", alignItems: "center", justifyContent: "center",
                   }}>
-                    <i className="ti ti-player-play" style={{ color: "white", fontSize: 20, marginRight: "-2px" }} />
+                    <Icon name="player-play" size={20} style={{ color: "white", marginRight: "-2px" }} />
                   </div>
                   <div style={{
                     position: "absolute", bottom: 8, left: 8,
@@ -190,12 +191,12 @@ export default function TutorialsPage() {
                 </div>
                 <div style={{ padding: "0.9rem" }}>
                   <div style={{ fontSize: "11px", color: "var(--color-accent)", marginBottom: "4px", display: "flex", alignItems: "center", gap: "3px" }}>
-                    <i className={`ti ${v.icon}`} style={{ fontSize: 12 }} />{v.cat}
+                    <Icon name={v.icon} size={12} />{v.cat}
                   </div>
                   <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "4px", lineHeight: 1.4 }}>{v.title}</h4>
                   <p style={{ fontSize: "11px", color: "var(--color-text-secondary)", lineHeight: 1.5, marginBottom: "0.65rem" }}>{v.desc}</p>
                   <div style={{ fontSize: "11px", color: "var(--color-text-muted)", display: "flex", alignItems: "center", gap: "3px" }}>
-                    <i className="ti ti-eye" style={{ fontSize: 12 }} />{v.views}
+                    <Icon name="eye" size={12} />{v.views}
                   </div>
                 </div>
               </div>
@@ -229,7 +230,7 @@ export default function TutorialsPage() {
                   <p style={{ fontSize: "11px", color: "var(--color-text-secondary)" }}>{s.desc}</p>
                 </div>
                 <div style={{ fontSize: "11px", color: "var(--color-text-muted)", display: "flex", alignItems: "center", gap: "3px", flexShrink: 0 }}>
-                  <i className="ti ti-clock" style={{ fontSize: 13 }} />{s.dur}
+                  <Icon name="clock" size={13} />{s.dur}
                 </div>
               </div>
             ))}

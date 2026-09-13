@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { Icon } from "@/components/icons";
 
 type BillingType = "monthly" | "biannual" | "annual";
 
@@ -12,36 +13,36 @@ const plans = {
   },
   biannual: {
     basic: { p: 18, period: "شهرياً (٦ أشهر)", rows: [
-      { cls: "discount", icon: "ti-discount", text: "خصم ١٠٪ على الباقة السداسية" },
-      { cls: "saving",   icon: "ti-calculator", text: "تدفع ١٠٨$ بدلاً من ١٢٠$ (توفير ١٢$)" },
-      { cls: "free",     icon: "ti-calendar-plus", text: "+ شهر مجاني عند التعاقد" },
+      { cls: "discount", icon: "discount", text: "خصم ١٠٪ على الباقة السداسية" },
+      { cls: "saving",   icon: "calculator", text: "تدفع ١٠٨$ بدلاً من ١٢٠$ (توفير ١٢$)" },
+      { cls: "free",     icon: "calendar-plus", text: "+ شهر مجاني عند التعاقد" },
     ]},
     pro:   { p: 85, period: "شهرياً (٦ أشهر)", rows: [
-      { cls: "discount", icon: "ti-discount", text: "خصم ١٥٪ على الباقة السداسية" },
-      { cls: "saving",   icon: "ti-calculator", text: "تدفع ٥١٠$ بدلاً من ٦٠٠$ (توفير ٩٠$)" },
-      { cls: "free",     icon: "ti-calendar-plus", text: "+ شهر مجاني عند التعاقد" },
+      { cls: "discount", icon: "discount", text: "خصم ١٥٪ على الباقة السداسية" },
+      { cls: "saving",   icon: "calculator", text: "تدفع ٥١٠$ بدلاً من ٦٠٠$ (توفير ٩٠$)" },
+      { cls: "free",     icon: "calendar-plus", text: "+ شهر مجاني عند التعاقد" },
     ]},
     ent:   { p: 160, period: "شهرياً (٦ أشهر)", rows: [
-      { cls: "discount", icon: "ti-discount", text: "خصم ٢٠٪ على الباقة السداسية" },
-      { cls: "saving",   icon: "ti-calculator", text: "تدفع ٩٦٠$ بدلاً من ١٢٠٠$ (توفير ٢٤٠$)" },
-      { cls: "free",     icon: "ti-calendar-plus", text: "+ شهر مجاني عند التعاقد" },
+      { cls: "discount", icon: "discount", text: "خصم ٢٠٪ على الباقة السداسية" },
+      { cls: "saving",   icon: "calculator", text: "تدفع ٩٦٠$ بدلاً من ١٢٠٠$ (توفير ٢٤٠$)" },
+      { cls: "free",     icon: "calendar-plus", text: "+ شهر مجاني عند التعاقد" },
     ]},
   },
   annual: {
     basic: { p: 17, period: "شهرياً (سنوي)", rows: [
-      { cls: "discount", icon: "ti-discount", text: "خصم ١٥٪ على الباقة السنوية" },
-      { cls: "saving",   icon: "ti-calculator", text: "تدفع ٢٠٤$ بدلاً من ٢٤٠$ (توفير ٣٦$)" },
-      { cls: "free",     icon: "ti-calendar-plus", text: "+ شهران مجانيان عند التعاقد" },
+      { cls: "discount", icon: "discount", text: "خصم ١٥٪ على الباقة السنوية" },
+      { cls: "saving",   icon: "calculator", text: "تدفع ٢٠٤$ بدلاً من ٢٤٠$ (توفير ٣٦$)" },
+      { cls: "free",     icon: "calendar-plus", text: "+ شهران مجانيان عند التعاقد" },
     ]},
     pro:   { p: 80, period: "شهرياً (سنوي)", rows: [
-      { cls: "discount", icon: "ti-discount", text: "خصم ٢٠٪ على الباقة السنوية" },
-      { cls: "saving",   icon: "ti-calculator", text: "تدفع ٩٦٠$ بدلاً من ١٢٠٠$ (توفير ٢٤٠$)" },
-      { cls: "free",     icon: "ti-calendar-plus", text: "+ شهران مجانيان عند التعاقد" },
+      { cls: "discount", icon: "discount", text: "خصم ٢٠٪ على الباقة السنوية" },
+      { cls: "saving",   icon: "calculator", text: "تدفع ٩٦٠$ بدلاً من ١٢٠٠$ (توفير ٢٤٠$)" },
+      { cls: "free",     icon: "calendar-plus", text: "+ شهران مجانيان عند التعاقد" },
     ]},
     ent:   { p: 150, period: "شهرياً (سنوي)", rows: [
-      { cls: "discount", icon: "ti-discount", text: "خصم ٢٥٪ على الباقة السنوية" },
-      { cls: "saving",   icon: "ti-calculator", text: "تدفع ١٨٠٠$ بدلاً من ٢٤٠٠$ (توفير ٦٠٠$)" },
-      { cls: "free",     icon: "ti-calendar-plus", text: "+ شهران مجانيان عند التعاقد" },
+      { cls: "discount", icon: "discount", text: "خصم ٢٥٪ على الباقة السنوية" },
+      { cls: "saving",   icon: "calculator", text: "تدفع ١٨٠٠$ بدلاً من ٢٤٠٠$ (توفير ٦٠٠$)" },
+      { cls: "free",     icon: "calendar-plus", text: "+ شهران مجانيان عند التعاقد" },
     ]},
   },
 };
@@ -70,12 +71,12 @@ function PlanCard({ planKey, billing, featured }: { planKey: "basic"|"pro"|"ent"
   const data = plans[billing][planKey];
   const names = { basic: "الأساسية", pro: "الاحترافية", ent: "المتكاملة" };
   const extras: { icon: string; text: string }[] = planKey === "pro" ? [
-    { icon: "ti-chart-bar", text: "تقارير متقدمة وتحليل مالي" },
-    { icon: "ti-git-compare", text: "مراجعة الانحرافات لكل مشروع" },
-    { icon: "ti-users-group", text: "المجتمع الحصري للمقاولين" },
+    { icon: "chart-bar", text: "تقارير متقدمة وتحليل مالي" },
+    { icon: "git-compare", text: "مراجعة الانحرافات لكل مشروع" },
+    { icon: "users-group", text: "المجتمع الحصري للمقاولين" },
   ] : planKey === "ent" ? [
-    { icon: "ti-briefcase", text: "سوق المحاسبين المعتمدين" },
-    { icon: "ti-certificate", text: "اعتماد أوتوبان التخصصي" },
+    { icon: "briefcase", text: "سوق المحاسبين المعتمدين" },
+    { icon: "certificate", text: "اعتماد أوتوبان التخصصي" },
   ] : [];
 
   return (
@@ -100,7 +101,7 @@ function PlanCard({ planKey, billing, featured }: { planKey: "basic"|"pro"|"ent"
       <div style={{ minHeight: "84px", display: "flex", flexDirection: "column", gap: "5px", marginBottom: "12px" }}>
         {data.rows.length > 0 ? data.rows.map((r, i) => (
           <div key={i} style={infoRowStyle(r.cls)}>
-            <i className={`ti ${r.icon}`} style={{ fontSize: "13px", flexShrink: 0 }} />
+            <Icon name={r.icon} size={13} style={{ flexShrink: 0 }} />
             <span>{r.text}</span>
           </div>
         )) : <div style={{ height: "84px" }} />}
@@ -116,7 +117,7 @@ function PlanCard({ planKey, billing, featured }: { planKey: "basic"|"pro"|"ent"
           <ul style={{ listStyle: "none", flex: 1, marginBottom: "1.25rem" }}>
             {extras.map((e, i) => (
               <li key={i} style={{ fontSize: "13px", padding: "5px 0", display: "flex", alignItems: "flex-start", gap: "8px", borderBottom: "0.5px solid var(--color-border)" }}>
-                <i className={`ti ${e.icon}`} style={{ color: "var(--color-accent)", fontSize: "15px", flexShrink: 0, marginTop: "1px" }} />
+                <Icon name={e.icon} size={15} style={{ color: "var(--color-accent)", flexShrink: 0, marginTop: "1px" }} />
                 {e.text}
               </li>
             ))}
@@ -172,7 +173,7 @@ export default function PricingPage() {
             width: 40, height: 40, background: "var(--color-accent-light)",
             borderRadius: "var(--radius)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
           }}>
-            <i className="ti ti-building-skyscraper" style={{ color: "var(--color-accent)", fontSize: 20 }} />
+            <Icon name="building-skyscraper" size={20} style={{ color: "var(--color-accent)" }} />
           </div>
           <div style={{ textAlign: "right" }}>
             <strong style={{ fontSize: "14px", display: "block", marginBottom: "2px" }}>
@@ -191,7 +192,7 @@ export default function PricingPage() {
           borderRadius: "var(--radius)", padding: "8px 20px",
           fontSize: "13px", color: "#22C55E", marginBottom: "2rem",
         }}>
-          <i className="ti ti-gift" /> شهر تجربة مجاني لجميع الباقات — بدون بطاقة
+          <Icon name="gift" size={14} /> شهر تجربة مجاني لجميع الباقات — بدون بطاقة
         </div>
 
         {/* Billing tabs */}
@@ -275,8 +276,8 @@ export default function PricingPage() {
                   const val = row[k];
                   return (
                     <td key={k} style={{ padding: "9px 12px", border: "0.5px solid var(--color-border)", textAlign: "center" }}>
-                      {val === true ? <i className="ti ti-check" style={{ color: "#22C55E", fontSize: 16 }} />
-                       : val === false ? <i className="ti ti-x" style={{ color: "var(--color-text-muted)", fontSize: 16 }} />
+                      {val === true ? <Icon name="check" size={16} style={{ color: "#22C55E" }} />
+                       : val === false ? <Icon name="x" size={16} style={{ color: "var(--color-text-muted)" }} />
                        : <span style={{ fontSize: "12px", background: "var(--color-accent-light)", color: "var(--color-accent)", padding: "2px 7px", borderRadius: "8px" }}>{val}</span>}
                     </td>
                   );
@@ -293,11 +294,11 @@ export default function PricingPage() {
         <h2 style={{ fontSize: "24px", fontWeight: 500, textAlign: "center", marginBottom: "1.5rem" }}>ادفع بالطريقة التي تناسبك</h2>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "10px", maxWidth: "700px", margin: "0 auto" }}>
           {[
-            { icon: "ti-credit-card", label: "فيزا / ماستركارد" },
-            { icon: "ti-device-mobile", label: "Apple Pay" },
-            { icon: "ti-currency-riyal", label: "مدى" },
-            { icon: "ti-building-bank", label: "تحويل بنكي" },
-            { icon: "ti-file-invoice", label: "فاتورة للشركات" },
+            { icon: "credit-card", label: "فيزا / ماستركارد" },
+            { icon: "device-mobile", label: "Apple Pay" },
+            { icon: "currency-riyal", label: "مدى" },
+            { icon: "building-bank", label: "تحويل بنكي" },
+            { icon: "file-invoice", label: "فاتورة للشركات" },
           ].map(m => (
             <div key={m.label} style={{
               display: "flex", alignItems: "center", gap: "8px",
@@ -305,7 +306,7 @@ export default function PricingPage() {
               borderRadius: "var(--radius)", padding: "10px 16px",
               fontSize: "13px",
             }}>
-              <i className={`ti ${m.icon}`} style={{ color: "var(--color-accent)", fontSize: 18 }} />
+              <Icon name={m.icon} size={18} style={{ color: "var(--color-accent)" }} />
               {m.label}
             </div>
           ))}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Icon } from "@/components/icons";
 
 export const metadata: Metadata = {
   title: "المجتمع الحصري — أوتوبان",
@@ -7,27 +8,27 @@ export const metadata: Metadata = {
 };
 
 const members = [
-  { icon: "ti-helmet", title: "مقاول رئيسي", desc: "شركات المقاولات الرئيسية — يبحثون عن باطن موثوق وموردين وكوادر متخصصة.", tags: ["مشاريع كبرى", "عقود"] },
-  { icon: "ti-tools", title: "مقاول باطن", desc: "متخصصون في تخصص محدد — كهرباء، سباكة، تشطيبات — يبحثون عن فرص.", tags: ["كهرباء", "تشطيبات"] },
-  { icon: "ti-truck", title: "مورّد متخصص", desc: "موردو مواد البناء والمعدات — يصلون لشبكة مقاولين مؤهلين مباشرة.", tags: ["مواد بناء", "معدات"] },
-  { icon: "ti-calculator", title: "محاسب متخصص", desc: "محاسبون معتمدون بخبرة في المقاولات للتشغيل اليومي والاستشارات.", tags: ["SOCPA", "زاتكا"] },
-  { icon: "ti-building", title: "مكتب محاسبة ومراجعة", desc: "مكاتب معتمدة تقدم التدقيق والمراجعة والإقرارات الضريبية لشركات المقاولات.", tags: ["تدقيق", "مراجعة", "ضريبة"], isNew: true },
-  { icon: "ti-briefcase", title: "استشاري متخصص", desc: "مستشارون في إدارة المشاريع والعقود والمطالبات بخبرة ميدانية.", tags: ["عقود", "مطالبات"] },
-  { icon: "ti-ruler-2", title: "مكتب استشارات هندسية", desc: "مكاتب التصميم والإشراف وإدارة المشاريع — الشريك الهندسي للمقاول.", tags: ["تصميم", "إشراف", "إدارة مشاريع"], isNew: true },
+  { icon: "helmet", title: "مقاول رئيسي", desc: "شركات المقاولات الرئيسية — يبحثون عن باطن موثوق وموردين وكوادر متخصصة.", tags: ["مشاريع كبرى", "عقود"] },
+  { icon: "tools", title: "مقاول باطن", desc: "متخصصون في تخصص محدد — كهرباء، سباكة، تشطيبات — يبحثون عن فرص.", tags: ["كهرباء", "تشطيبات"] },
+  { icon: "truck", title: "مورّد متخصص", desc: "موردو مواد البناء والمعدات — يصلون لشبكة مقاولين مؤهلين مباشرة.", tags: ["مواد بناء", "معدات"] },
+  { icon: "calculator", title: "محاسب متخصص", desc: "محاسبون معتمدون بخبرة في المقاولات للتشغيل اليومي والاستشارات.", tags: ["SOCPA", "زاتكا"] },
+  { icon: "building", title: "مكتب محاسبة ومراجعة", desc: "مكاتب معتمدة تقدم التدقيق والمراجعة والإقرارات الضريبية لشركات المقاولات.", tags: ["تدقيق", "مراجعة", "ضريبة"], isNew: true },
+  { icon: "briefcase", title: "استشاري متخصص", desc: "مستشارون في إدارة المشاريع والعقود والمطالبات بخبرة ميدانية.", tags: ["عقود", "مطالبات"] },
+  { icon: "ruler-2", title: "مكتب استشارات هندسية", desc: "مكاتب التصميم والإشراف وإدارة المشاريع — الشريك الهندسي للمقاول.", tags: ["تصميم", "إشراف", "إدارة مشاريع"], isNew: true },
 ];
 
 const activities = [
-  { icon: "ti-message-circle", title: "نقاشات متخصصة", desc: "أسئلة محاسبية وهندسية وقانونية يجيب عليها متخصصون حقيقيون." },
-  { icon: "ti-handshake", title: "فرص تعاون وشراكة", desc: "مقاول يبحث عن باطن، مكتب هندسي يبحث عن مقاول، مورد يعرض صفقة." },
-  { icon: "ti-tag", title: "عروض الموردين", desc: "عروض حصرية لأعضاء أوتوبان على مواد البناء والمعدات." },
-  { icon: "ti-book", title: "مشاركة الخبرات", desc: "دروس مستفادة من مشاريع حقيقية — نجاحات وأخطاء يتعلم منها الجميع." },
-  { icon: "ti-news", title: "آخر المستجدات", desc: "زاتكا، أسعار مواد البناء، أنظمة العمل، اشتراطات البناء." },
-  { icon: "ti-star", title: "تقييم الأطراف", desc: "تقييمات حقيقية للموردين والمحاسبين والمكاتب الهندسية من شركاء القطاع." },
+  { icon: "message-circle", title: "نقاشات متخصصة", desc: "أسئلة محاسبية وهندسية وقانونية يجيب عليها متخصصون حقيقيون." },
+  { icon: "handshake", title: "فرص تعاون وشراكة", desc: "مقاول يبحث عن باطن، مكتب هندسي يبحث عن مقاول، مورد يعرض صفقة." },
+  { icon: "tag", title: "عروض الموردين", desc: "عروض حصرية لأعضاء أوتوبان على مواد البناء والمعدات." },
+  { icon: "book", title: "مشاركة الخبرات", desc: "دروس مستفادة من مشاريع حقيقية — نجاحات وأخطاء يتعلم منها الجميع." },
+  { icon: "news", title: "آخر المستجدات", desc: "زاتكا، أسعار مواد البناء، أنظمة العمل، اشتراطات البناء." },
+  { icon: "star", title: "تقييم الأطراف", desc: "تقييمات حقيقية للموردين والمحاسبين والمكاتب الهندسية من شركاء القطاع." },
 ];
 
 const posts = [
   {
-    icon: "ti-helmet",
+    icon: "helmet",
     author: "أبو فهد المقاول — الرياض",
     time: "منذ ساعتين",
     body: "عندي مشروع مدرسة في القصيم، أبحث عن مقاول باطن متخصص في الكهرباء ومكتب استشارات هندسية للإشراف — الكمية حوالي ٢.٥ م ريال. من لديه خبرة يتواصل.",
@@ -36,7 +37,7 @@ const posts = [
     replies: "٨",
   },
   {
-    icon: "ti-building",
+    icon: "building",
     author: "مكتب الرشيد للمحاسبة — جدة",
     time: "منذ ٤ ساعات",
     body: "نقدم خدمات التدقيق والمراجعة المتخصصة في شركات المقاولات — إقرارات زاتكا، قوائم مالية معتمدة، تقارير للجهات التمويلية. متاح للتواصل مع الشركات في المنطقة الغربية.",
@@ -45,7 +46,7 @@ const posts = [
     replies: "١١",
   },
   {
-    icon: "ti-truck",
+    icon: "truck",
     author: "شركة الخليج لمواد البناء — جدة",
     time: "منذ ٣ ساعات",
     body: "عرض حصري لأعضاء أوتوبان: خصم ١٢٪ على حديد التسليح لهذا الشهر مع توصيل مجاني للمشاريع داخل المدن الرئيسية. الكميات محدودة.",
@@ -54,7 +55,7 @@ const posts = [
     replies: "١٤",
   },
   {
-    icon: "ti-ruler-2",
+    icon: "ruler-2",
     author: "مكتب الإبداع للاستشارات الهندسية — الدمام",
     time: "أمس",
     body: "درس مستفاد: في مشروع حديث واجهنا نزاعاً حول بنود العقد بسبب غموض في مواصفات التشطيبات. سأشارك ملاحظاتنا في تسلسل قادم حول كيف تحمي شركتك قبل توقيع العقد.",
@@ -89,7 +90,7 @@ export default function CommunityPage() {
           fontSize: "12px", padding: "5px 14px", borderRadius: "20px",
           border: "0.5px solid var(--color-accent-border)", marginBottom: "1.5rem",
         }}>
-          <i className="ti ti-users-group" /> المجتمع الحصري
+          <Icon name="users-group" size={14} /> المجتمع الحصري
         </div>
         <h1 style={{ fontSize: "clamp(28px,4vw,42px)", fontWeight: 500, lineHeight: 1.25, marginBottom: "1rem" }}>
           شبكة قطاع المقاولات
@@ -128,7 +129,7 @@ export default function CommunityPage() {
                   background: m.isNew ? "var(--color-accent)" : "var(--color-accent-light)",
                   display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "0.65rem",
                 }}>
-                  <i className={`ti ${m.icon}`} style={{ color: m.isNew ? "white" : "var(--color-accent)", fontSize: 20 }} />
+                  <Icon name={m.icon} size={20} style={{ color: m.isNew ? "white" : "var(--color-accent)" }} />
                 </div>
                 {m.isNew && (
                   <span style={{
@@ -169,16 +170,16 @@ export default function CommunityPage() {
             <div style={{ fontSize: "13px", color: "var(--color-text-muted)", textAlign: "center", marginBottom: "1.25rem" }}>العلاقات داخل المنظومة</div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "8px", marginBottom: "1.25rem" }}>
               {[
-                { icon: "ti-helmet", label: "مقاول رئيسي" },
-                { icon: "ti-tools", label: "مقاول باطن" },
-                { icon: "ti-truck", label: "مورّد" },
-                { icon: "ti-calculator", label: "محاسب" },
+                { icon: "helmet", label: "مقاول رئيسي" },
+                { icon: "tools", label: "مقاول باطن" },
+                { icon: "truck", label: "مورّد" },
+                { icon: "calculator", label: "محاسب" },
               ].map(n => (
                 <div key={n.label} style={{
                   background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
                   borderRadius: "var(--radius)", padding: "8px 6px", textAlign: "center",
                 }}>
-                  <i className={`ti ${n.icon}`} style={{ color: "var(--color-accent)", fontSize: 18, display: "block", marginBottom: "3px" }} />
+                  <Icon name={n.icon} size={18} style={{ color: "var(--color-accent)", display: "block", marginBottom: "3px" }} />
                   <span style={{ fontSize: "11px" }}>{n.label}</span>
                 </div>
               ))}
@@ -186,18 +187,18 @@ export default function CommunityPage() {
                 background: "var(--color-accent-light)", border: "0.5px solid var(--color-accent-border)",
                 borderRadius: "var(--radius)", padding: "8px 6px", textAlign: "center", gridColumn: "span 2",
               }}>
-                <i className="ti ti-building-skyscraper" style={{ color: "var(--color-accent)", fontSize: 20, display: "block", marginBottom: "3px" }} />
+                <Icon name="building-skyscraper" size={20} style={{ color: "var(--color-accent)", display: "block", marginBottom: "3px" }} />
                 <span style={{ fontSize: "12px", color: "var(--color-accent)", fontWeight: 500 }}>منصة أوتوبان</span>
               </div>
               {[
-                { icon: "ti-building", label: "مكتب محاسبة" },
-                { icon: "ti-briefcase", label: "استشاري" },
+                { icon: "building", label: "مكتب محاسبة" },
+                { icon: "briefcase", label: "استشاري" },
               ].map(n => (
                 <div key={n.label} style={{
                   background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
                   borderRadius: "var(--radius)", padding: "8px 6px", textAlign: "center",
                 }}>
-                  <i className={`ti ${n.icon}`} style={{ color: "var(--color-accent)", fontSize: 18, display: "block", marginBottom: "3px" }} />
+                  <Icon name={n.icon} size={18} style={{ color: "var(--color-accent)", display: "block", marginBottom: "3px" }} />
                   <span style={{ fontSize: "11px" }}>{n.label}</span>
                 </div>
               ))}
@@ -210,7 +211,7 @@ export default function CommunityPage() {
                   background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
                   borderRadius: "7px", padding: "6px 10px",
                 }}>
-                  <i className="ti ti-arrow-right" style={{ color: "var(--color-accent)", fontSize: 13, flexShrink: 0 }} />
+                  <Icon name="arrow-right" size={13} style={{ color: "var(--color-accent)", flexShrink: 0 }} />
                   {f}
                 </div>
               ))}
@@ -238,7 +239,7 @@ export default function CommunityPage() {
                   borderRadius: "var(--radius)", display: "flex", alignItems: "center",
                   justifyContent: "center", marginBottom: "0.65rem",
                 }}>
-                  <i className={`ti ${a.icon}`} style={{ color: "var(--color-accent)", fontSize: 17 }} />
+                  <Icon name={a.icon} size={17} style={{ color: "var(--color-accent)" }} />
                 </div>
                 <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "3px" }}>{a.title}</h4>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{a.desc}</p>
@@ -267,7 +268,7 @@ export default function CommunityPage() {
                     width: 34, height: 34, background: "var(--color-accent-light)",
                     borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
                   }}>
-                    <i className={`ti ${p.icon}`} style={{ color: "var(--color-accent)", fontSize: 17 }} />
+                    <Icon name={p.icon} size={17} style={{ color: "var(--color-accent)" }} />
                   </div>
                   <div>
                     <div style={{ fontSize: "13px", fontWeight: 500 }}>{p.author}</div>
@@ -281,9 +282,9 @@ export default function CommunityPage() {
                     border: "0.5px solid var(--color-accent-border)", padding: "2px 8px", borderRadius: "8px",
                   }}>{p.tag}</span>
                   <div style={{ display: "flex", gap: "10px", marginRight: "auto" }}>
-                    {[{ icon: "ti-heart", val: p.likes }, { icon: "ti-message", val: `${p.replies} ردود` }].map(a => (
+                    {[{ icon: "heart", val: p.likes }, { icon: "message", val: `${p.replies} ردود` }].map(a => (
                       <span key={a.icon} style={{ fontSize: "12px", color: "var(--color-text-muted)", display: "flex", alignItems: "center", gap: "4px" }}>
-                        <i className={`ti ${a.icon}`} style={{ fontSize: 14 }} />{a.val}
+                        <Icon name={a.icon} size={14} />{a.val}
                       </span>
                     ))}
                   </div>
@@ -307,7 +308,7 @@ export default function CommunityPage() {
             borderRadius: "var(--radius-lg)", padding: "1.25rem",
             display: "flex", alignItems: "flex-start", gap: "16px", marginBottom: "1.5rem",
           }}>
-            <i className="ti ti-lock" style={{ fontSize: 26, color: "var(--color-accent)", flexShrink: 0 }} />
+            <Icon name="lock" size={26} style={{ color: "var(--color-accent)", flexShrink: 0 }} />
             <div>
               <h3 style={{ fontSize: "15px", fontWeight: 500, marginBottom: "4px" }}>مجتمع مغلق — لأسباب وجيهة</h3>
               <p style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
