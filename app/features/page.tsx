@@ -5,6 +5,7 @@ import { Icon } from "@/components/icons";
 export const metadata: Metadata = {
   title: "المميزات — أوتوبان",
   description: "فوترة زاتكا الإلكترونية، الاستقطاعات والضمانات، الدفعة المقدمة، تعدد المشاريع، رواتب WPS، وتقارير مالية متقدمة — كل ما يحتاجه المقاول في برنامج محاسبة واحد.",
+  alternates: { canonical: "/features" },
 };
 
 const mainFeatures = [
@@ -151,10 +152,8 @@ export default function FeaturesPage() {
           padding: "2.5rem 1.5rem",
           background: idx % 2 !== 0 ? "var(--color-surface)" : "transparent",
         }}>
-          <div style={{
+          <div className="grid-2" style={{
             maxWidth: "900px", margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
             gap: "2rem",
             alignItems: "center",
             direction: f.reverse ? "ltr" : "rtl",

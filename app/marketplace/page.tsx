@@ -5,6 +5,7 @@ import { Icon } from "@/components/icons";
 export const metadata: Metadata = {
   title: "سوق المحاسبين المعتمدين — أوتوبان",
   description: "تواصل مع محاسبين معتمدين متخصصين في محاسبة المقاولات، فوترة زاتكا، والاستقطاعات — اختر المحاسب الأنسب لمشروعك.",
+  alternates: { canonical: "/marketplace" },
 };
 
 const accountants = [
@@ -117,7 +118,7 @@ export default function MarketplacePage() {
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>من يستفيد؟</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>طرفان يحتاجان بعضهما</h2>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginBottom: "2rem" }}>السوق يخدم الشركات والمحاسبين في آنٍ واحد</p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+          <div className="grid-2" style={{ gap: "16px" }}>
             {[
               {
                 icon: "building-skyscraper", title: "شركة المقاولات", featured: true,
@@ -273,7 +274,7 @@ export default function MarketplacePage() {
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>الاعتماد</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>ضمان الجودة — مرحلتان</h2>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginBottom: "2rem" }}>كل محاسب في السوق مُتحقَّق منه — لا أسماء عشوائية</p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+          <div className="grid-2" style={{ gap: "16px" }}>
             {certPhases.map(c => (
               <div key={c.title} style={{
                 background: c.featured ? "var(--color-accent-light)" : "var(--color-surface-2)",

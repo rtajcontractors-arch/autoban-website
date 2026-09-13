@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const links = [
@@ -15,6 +15,15 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
 
   return (
     <>
@@ -64,11 +73,17 @@ export default function Navbar() {
           }} className="cta-btn">ابدأ مجاناً</Link>
 
           {/* زر الجوال */}
-          <button onClick={() => setOpen(!open)} className="mobile-btn" style={{
-            display: "none", background: "none", border: "none",
-            cursor: "pointer", color: "var(--color-text)",
-            fontSize: "22px", padding: "4px", lineHeight: 1,
-          }}>
+          <button
+            onClick={() => setOpen(!open)}
+            className="mobile-btn"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "إغلاق القائمة" : "فتح القائمة"}
+            style={{
+              display: "none", background: "none", border: "none",
+              cursor: "pointer", color: "var(--color-text)",
+              fontSize: "22px", padding: "4px", lineHeight: 1,
+            }}>
             {open ? "✕" : "☰"}
           </button>
         </div>
@@ -76,7 +91,7 @@ export default function Navbar() {
 
       {/* القائمة المنسدلة للجوال */}
       {open && (
-        <div style={{
+        <div id="mobile-menu" role="navigation" aria-label="القائمة الرئيسية" style={{
           position: "fixed", top: "60px", right: 0, left: 0,
           background: "var(--color-surface)",
           borderBottom: "0.5px solid var(--color-border)",

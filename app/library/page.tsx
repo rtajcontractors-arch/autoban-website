@@ -5,6 +5,7 @@ import { Icon } from "@/components/icons";
 export const metadata: Metadata = {
   title: "المكتبة المعرفية — أوتوبان",
   description: "محتوى رسمي وخبرات ميدانية في محاسبة المقاولات، زاتكا والضريبة، الاستقطاعات، ورواتب WPS — مرجعك الشامل لقطاع المقاولات.",
+  alternates: { canonical: "/library" },
 };
 
 const categories = [
@@ -76,7 +77,7 @@ export default function LibraryPage() {
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>المحتوى</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>مصدران، قيمة مضاعفة</h2>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginBottom: "2rem" }}>المحتوى الرسمي يبني المصداقية — ومحتوى المجتمع يضيف الحياة الميدانية</p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+          <div className="grid-2" style={{ gap: "16px" }}>
             {[
               {
                 icon: "building-bank", title: "المحتوى الرسمي", featured: true,

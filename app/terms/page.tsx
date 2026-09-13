@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "الشروط والأحكام — أوتوبان",
+  description: "الشروط والأحكام الخاصة باستخدام منصة أوتوبان وخدماتها.",
+  alternates: { canonical: "/terms" },
+};
+
 export default function TermsPage() {
   return (
     <>

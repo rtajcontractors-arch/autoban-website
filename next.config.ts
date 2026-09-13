@@ -6,8 +6,10 @@ const csp = [
   "default-src 'self'",
   // Next.js dev mode needs 'unsafe-eval' for Fast Refresh/HMR — never used in production builds.
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
-  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-  "font-src 'self' https://fonts.gstatic.com",
+  // 'unsafe-inline' is required because the site renders styling via inline style attributes.
+  "style-src 'self' 'unsafe-inline'",
+  // Fonts are self-hosted via next/font — no external font host needed.
+  "font-src 'self'",
   "img-src 'self' data:",
   // Dev mode needs the HMR websocket; never present in production builds.
   `connect-src 'self' https://formspree.io${isDev ? " ws://localhost:*" : ""}`,
@@ -23,9 +25,13 @@ const securityHeaders = [
   { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
   { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+  { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
+  { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
+  { key: "X-DNS-Prefetch-Control", value: "off" },
 ];
 
 const nextConfig: NextConfig = {
+  poweredByHeader: false,
   async headers() {
     return [
       {

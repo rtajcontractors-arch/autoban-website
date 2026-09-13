@@ -90,7 +90,7 @@ export default function Home() {
           borderRadius: "var(--radius-lg)", padding: "2.5rem", textAlign: "center",
         }}>
           <div style={{ fontSize: "clamp(18px, 3vw, 26px)", fontWeight: 500, color: "var(--color-text)", lineHeight: 1.4 }}>
-            "سهل للمقاول — دقيق للمحاسب"
+            &quot;سهل للمقاول — دقيق للمحاسب&quot;
           </div>
           <div style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginTop: "8px" }}>
             هذه الجملة هي جوهر أوتوبان — وهو ما لا يقدمه أي منافس في السوق اليوم

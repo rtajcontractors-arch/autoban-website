@@ -5,6 +5,7 @@ import { Icon } from "@/components/icons";
 export const metadata: Metadata = {
   title: "الشروحات — أوتوبان",
   description: "شروحات فيديو خطوة بخطوة لاستخدام برنامج أوتوبان — من إعداد الحساب وأول فاتورة إلى الفوترة الإلكترونية وزاتكا والاستقطاعات.",
+  alternates: { canonical: "/tutorials" },
 };
 
 const tracks = [
@@ -103,10 +104,9 @@ export default function TutorialsPage() {
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>ابدأ من هنا</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "1.5rem" }}>الفيديو الأول — إعداد حسابك</h2>
-          <div style={{
+          <div className="grid-2" style={{
             background: "var(--color-surface-2)", border: "0.5px solid var(--color-border)",
             borderRadius: "var(--radius-lg)", overflow: "hidden",
-            display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0,
           }}>
             <div style={{
               background: "var(--color-accent-light)", minHeight: "200px",

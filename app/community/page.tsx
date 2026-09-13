@@ -5,6 +5,7 @@ import { Icon } from "@/components/icons";
 export const metadata: Metadata = {
   title: "المجتمع الحصري — أوتوبان",
   description: "شبكة تجمع المقاولين الرئيسيين ومقاولي الباطن والموردين والمحاسبين في قطاع المقاولات — فرص عمل وشراكات وتواصل مباشر.",
+  alternates: { canonical: "/community" },
 };
 
 const members = [
@@ -168,7 +169,7 @@ export default function CommunityPage() {
             borderRadius: "var(--radius-lg)", padding: "1.75rem", maxWidth: "720px", margin: "0 auto",
           }}>
             <div style={{ fontSize: "13px", color: "var(--color-text-muted)", textAlign: "center", marginBottom: "1.25rem" }}>العلاقات داخل المنظومة</div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "8px", marginBottom: "1.25rem" }}>
+            <div className="grid-4" style={{ gap: "8px", marginBottom: "1.25rem" }}>
               {[
                 { icon: "helmet", label: "مقاول رئيسي" },
                 { icon: "tools", label: "مقاول باطن" },

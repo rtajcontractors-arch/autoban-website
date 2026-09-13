@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "سياسة الخصوصية — أوتوبان",
+  description: "سياسة الخصوصية الخاصة بمنصة أوتوبان وكيفية جمع بياناتك واستخدامها وحمايتها.",
+  alternates: { canonical: "/privacy" },
+};
+
 export default function PrivacyPage() {
   return (
     <>

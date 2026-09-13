@@ -201,7 +201,7 @@ export default function PricingPage() {
           borderRadius: "var(--radius)", overflow: "hidden", marginBottom: "2.5rem",
         }}>
           {tabs.map(t => (
-            <button key={t.key} onClick={() => setBilling(t.key)} style={{
+            <button key={t.key} onClick={() => setBilling(t.key)} aria-pressed={billing === t.key} style={{
               padding: "8px 20px", fontSize: "14px", cursor: "pointer",
               background: billing === t.key ? "var(--color-accent)" : "transparent",
               color: billing === t.key ? "white" : "var(--color-text-secondary)",
@@ -256,7 +256,8 @@ export default function PricingPage() {
       {/* Compare table */}
       <section style={{ padding: "2rem", maxWidth: "900px", margin: "0 auto 4rem" }}>
         <h2 style={{ fontSize: "20px", fontWeight: 500, textAlign: "center", marginBottom: "1.5rem" }}>مقارنة الباقات</h2>
-        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "13px" }}>
+        <div style={{ overflowX: "auto" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "13px", minWidth: "480px" }}>
           <thead>
             <tr>
               {["البند", "الأساسية", "الاحترافية", "المتكاملة"].map(h => (
@@ -286,6 +287,7 @@ export default function PricingPage() {
             ))}
           </tbody>
         </table>
+        </div>
       </section>
 
       {/* Payment methods */}

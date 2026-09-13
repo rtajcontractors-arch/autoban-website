@@ -5,6 +5,7 @@ import { Icon } from "@/components/icons";
 export const metadata: Metadata = {
   title: "من نحن — أوتوبان",
   description: "قصة أوتوبان ورؤيتنا لبناء منظومة متكاملة لقطاع المقاولات في السعودية والكويت وقطر ومصر — برنامج محاسبي مخصص، مجتمع حصري، وسوق محاسبين معتمدين.",
+  alternates: { canonical: "/about" },
 };
 
 const problems = [
@@ -109,7 +110,7 @@ export default function AboutPage() {
             borderRadius: "var(--radius-lg)", padding: "2rem", textAlign: "center", marginBottom: "2rem",
           }}>
             <div style={{ fontSize: "clamp(18px,3vw,24px)", fontWeight: 500, lineHeight: 1.4 }}>
-              "<span style={{ color: "var(--color-accent)" }}>سهل للمقاول</span> — دقيق للمحاسب"
+              &quot;<span style={{ color: "var(--color-accent)" }}>سهل للمقاول</span> — دقيق للمحاسب&quot;
             </div>
             <div style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginTop: "8px" }}>
               هذه الجملة هي جوهر أوتوبان — وهو ما لا يقدمه أي منافس في السوق اليوم
@@ -139,7 +140,7 @@ export default function AboutPage() {
         <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", lineHeight: 1.8, marginBottom: "1.5rem" }}>
           نؤمن بأن التخصص العميق هو المصدر الحقيقي للتميز. هدفنا أن يصبح أوتوبان المرجع الرقمي الأول لقطاع المقاولات في دول الخليج ومصر.
         </p>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+        <div className="grid-2" style={{ gap: "16px" }}>
           {vision.map(v => (
             <div key={v.title} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
               <div style={{

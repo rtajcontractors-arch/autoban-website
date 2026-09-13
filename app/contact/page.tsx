@@ -122,7 +122,7 @@ export default function ContactPage() {
           <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>راسلنا</p>
           <h2 style={{ fontSize: "24px", fontWeight: 500, marginBottom: "0.5rem" }}>أرسل رسالتك</h2>
           <p style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginBottom: "2rem" }}>سنرد عليك في أقرب وقت ممكن</p>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: "2rem", alignItems: "start" }}>
+          <div className="grid-2-asym" style={{ gap: "2rem", alignItems: "start" }}>
 
             {/* Info */}
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
@@ -160,11 +160,11 @@ export default function ContactPage() {
               <h3 style={{ fontSize: "16px", fontWeight: 500, marginBottom: "1.25rem" }}>أرسل رسالتك مباشرة</h3>
               {/* حقل فخّ للبوتات — يتعرف عليه Formspree تلقائياً ويتجاهل أي رسالة تملأه */}
               <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" style={{ position: "absolute", left: "-9999px", width: 0, height: 0, opacity: 0 }} aria-hidden="true" />
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginBottom: "1rem" }}>
+              <div className="grid-2" style={{ gap: "12px", marginBottom: "1rem" }}>
                 {[{ name: "name", label: "الاسم الكامل", placeholder: "اسمك الكريم", type: "text" }, { name: "phone", label: "رقم الجوال", placeholder: "+966 5X XXX XXXX", type: "tel" }].map(f => (
                   <div key={f.label}>
-                    <label style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>{f.label}</label>
-                    <input name={f.name} required type={f.type} placeholder={f.placeholder} style={{
+                    <label htmlFor={f.name} style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>{f.label}</label>
+                    <input id={f.name} name={f.name} required type={f.type} placeholder={f.placeholder} style={{
                       width: "100%", background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
                       borderRadius: "var(--radius)", padding: "9px 12px", fontSize: "13px", color: "var(--color-text)",
                       fontFamily: "inherit", direction: "rtl", outline: "none",
@@ -173,16 +173,16 @@ export default function ContactPage() {
                 ))}
               </div>
               <div style={{ marginBottom: "1rem" }}>
-                <label style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>البريد الإلكتروني</label>
-                <input name="email" required type="email" placeholder="example@company.com" style={{
+                <label htmlFor="email" style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>البريد الإلكتروني</label>
+                <input id="email" name="email" required type="email" placeholder="example@company.com" style={{
                   width: "100%", background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
                   borderRadius: "var(--radius)", padding: "9px 12px", fontSize: "13px", color: "var(--color-text)",
                   fontFamily: "inherit", direction: "rtl", outline: "none",
                 }} />
               </div>
               <div style={{ marginBottom: "1rem" }}>
-                <label style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>الدولة</label>
-                <select name="country" style={{
+                <label htmlFor="country" style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>الدولة</label>
+                <select id="country" name="country" style={{
                   width: "100%", background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
                   borderRadius: "var(--radius)", padding: "9px 12px", fontSize: "13px", color: "var(--color-text)",
                   fontFamily: "inherit", direction: "rtl", outline: "none",
@@ -191,8 +191,8 @@ export default function ContactPage() {
                 </select>
               </div>
               <div style={{ marginBottom: "1rem" }}>
-                <label style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>موضوع التواصل</label>
-                <select name="subject" style={{
+                <label htmlFor="subject" style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>موضوع التواصل</label>
+                <select id="subject" name="subject" style={{
                   width: "100%", background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
                   borderRadius: "var(--radius)", padding: "9px 12px", fontSize: "13px", color: "var(--color-text)",
                   fontFamily: "inherit", direction: "rtl", outline: "none",
@@ -201,8 +201,8 @@ export default function ContactPage() {
                 </select>
               </div>
               <div style={{ marginBottom: "1rem" }}>
-                <label style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>رسالتك</label>
-                <textarea name="message" required placeholder="اكتب رسالتك هنا..." style={{
+                <label htmlFor="message" style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>رسالتك</label>
+                <textarea id="message" name="message" required placeholder="اكتب رسالتك هنا..." style={{
                   width: "100%", background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
                   borderRadius: "var(--radius)", padding: "9px 12px", fontSize: "13px", color: "var(--color-text)",
                   fontFamily: "inherit", direction: "rtl", outline: "none", resize: "vertical", minHeight: "100px",
@@ -217,16 +217,18 @@ export default function ContactPage() {
               }}>
                 <Icon name="send" size={14} /> {formStatus === "sending" ? "جارِ الإرسال..." : "أرسل الرسالة"}
               </button>
-              {formStatus === "success" && (
-                <p style={{ fontSize: "13px", color: "#22C55E", marginTop: "10px", textAlign: "center" }}>
-                  تم إرسال رسالتك بنجاح — سنتواصل معك قريباً.
-                </p>
-              )}
-              {formStatus === "error" && (
-                <p style={{ fontSize: "13px", color: "#EF4444", marginTop: "10px", textAlign: "center" }}>
-                  تعذّر إرسال الرسالة. حاول مرة أخرى أو تواصل معنا عبر الواتساب.
-                </p>
-              )}
+              <div aria-live="polite">
+                {formStatus === "success" && (
+                  <p style={{ fontSize: "13px", color: "#22C55E", marginTop: "10px", textAlign: "center" }}>
+                    تم إرسال رسالتك بنجاح — سنتواصل معك قريباً.
+                  </p>
+                )}
+                {formStatus === "error" && (
+                  <p style={{ fontSize: "13px", color: "#EF4444", marginTop: "10px", textAlign: "center" }}>
+                    تعذّر إرسال الرسالة. حاول مرة أخرى أو تواصل معنا عبر الواتساب.
+                  </p>
+                )}
+              </div>
             </form>
           </div>
         </div>
@@ -237,7 +239,7 @@ export default function ContactPage() {
       {/* HOURS + COUNTRIES */}
       <section style={{ padding: "2.5rem 1.5rem" }}>
         <div style={{ maxWidth: "920px", margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "3rem" }}>
+          <div className="grid-2" style={{ gap: "3rem" }}>
             <div>
               <p style={{ fontSize: "12px", color: "var(--color-accent)", marginBottom: "6px" }}>أوقات العمل</p>
               <h2 style={{ fontSize: "20px", fontWeight: 500, marginBottom: "1.25rem" }}>متى نكون متاحين؟</h2>
@@ -297,17 +299,21 @@ export default function ContactPage() {
           <div style={{ maxWidth: "680px", margin: "0 auto" }}>
             {faqs.map((f, i) => (
               <div key={f.q} style={{ borderBottom: "0.5px solid var(--color-border)" }}>
-                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{
-                  display: "flex", alignItems: "center", justifyContent: "space-between",
-                  padding: "1rem 0", width: "100%", textAlign: "right",
-                  fontSize: "14px", color: "var(--color-text)",
-                  background: "none", border: "none", cursor: "pointer", gap: "12px",
-                }}>
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  aria-expanded={openFaq === i}
+                  aria-controls={`faq-answer-${i}`}
+                  style={{
+                    display: "flex", alignItems: "center", justifyContent: "space-between",
+                    padding: "1rem 0", width: "100%", textAlign: "right",
+                    fontSize: "14px", color: "var(--color-text)",
+                    background: "none", border: "none", cursor: "pointer", gap: "12px",
+                  }}>
                   {f.q}
                   <Icon name={openFaq === i ? "chevron-up" : "chevron-down"} size={16} style={{ color: "var(--color-text-secondary)", flexShrink: 0 }} />
                 </button>
                 {openFaq === i && (
-                  <div style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.7, paddingBottom: "1rem" }}>{f.a}</div>
+                  <div id={`faq-answer-${i}`} style={{ fontSize: "13px", color: "var(--color-text-secondary)", lineHeight: 1.7, paddingBottom: "1rem" }}>{f.a}</div>
                 )}
               </div>
             ))}
