@@ -88,7 +88,7 @@ export default function TutorialsPage() {
                 }}>
                   <Icon name={t.icon} size={19} style={{ color: i === 0 ? "white" : "var(--color-accent)" }} />
                 </div>
-                <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "3px" }}>{t.title}</h4>
+                <h3 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "3px" }}>{t.title}</h3>
                 <p style={{ fontSize: "11px", color: "var(--color-text-secondary)", lineHeight: 1.5, marginBottom: "6px" }}>{t.desc}</p>
                 <div style={{ fontSize: "11px", color: "var(--color-text-muted)" }}>{t.count} • {t.duration}</div>
               </div>
@@ -193,7 +193,7 @@ export default function TutorialsPage() {
                   <div style={{ fontSize: "11px", color: "var(--color-accent)", marginBottom: "4px", display: "flex", alignItems: "center", gap: "3px" }}>
                     <Icon name={v.icon} size={12} />{v.cat}
                   </div>
-                  <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "4px", lineHeight: 1.4 }}>{v.title}</h4>
+                  <h3 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "4px", lineHeight: 1.4 }}>{v.title}</h3>
                   <p style={{ fontSize: "11px", color: "var(--color-text-secondary)", lineHeight: 1.5, marginBottom: "0.65rem" }}>{v.desc}</p>
                   <div style={{ fontSize: "11px", color: "var(--color-text-muted)", display: "flex", alignItems: "center", gap: "3px" }}>
                     <Icon name="eye" size={12} />{v.views}
@@ -226,7 +226,7 @@ export default function TutorialsPage() {
                   justifyContent: "center", fontSize: "13px", fontWeight: 500, flexShrink: 0,
                 }}>{s.num}</div>
                 <div style={{ flex: 1 }}>
-                  <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>{s.title}</h4>
+                  <h3 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>{s.title}</h3>
                   <p style={{ fontSize: "11px", color: "var(--color-text-secondary)" }}>{s.desc}</p>
                 </div>
                 <div style={{ fontSize: "11px", color: "var(--color-text-muted)", display: "flex", alignItems: "center", gap: "3px", flexShrink: 0 }}>
@@ -254,11 +254,6 @@ export default function TutorialsPage() {
               background: "var(--color-accent)", color: "white",
               padding: "12px 28px", borderRadius: "var(--radius)", fontSize: "15px", fontWeight: 500,
             }}>ابدأ شهرك المجاني</Link>
-            <Link href="/pricing" style={{
-              background: "transparent", color: "var(--color-text)",
-              padding: "12px 28px", borderRadius: "var(--radius)",
-              border: "0.5px solid var(--color-border-strong)", fontSize: "15px",
-            }}>عرض الباقات</Link>
           </div>
         </div>
       </section>

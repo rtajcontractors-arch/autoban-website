@@ -140,7 +140,7 @@ export default function CommunityPage() {
                     padding: "1px 7px", borderRadius: "8px", marginBottom: "5px", width: "fit-content",
                   }}>مضاف حديثاً</span>
                 )}
-                <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "4px" }}>{m.title}</h4>
+                <h3 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "4px" }}>{m.title}</h3>
                 <p style={{ fontSize: "11px", color: "var(--color-text-secondary)", lineHeight: 1.6, marginBottom: "0.65rem", flex: 1 }}>{m.desc}</p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "4px" }}>
                   {m.tags.map(t => (
@@ -243,7 +243,7 @@ export default function CommunityPage() {
                 }}>
                   <Icon name={a.icon} size={17} style={{ color: "var(--color-accent)" }} />
                 </div>
-                <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "3px" }}>{a.title}</h4>
+                <h3 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "3px" }}>{a.title}</h3>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{a.desc}</p>
               </div>
             ))}

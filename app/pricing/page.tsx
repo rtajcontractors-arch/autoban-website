@@ -50,7 +50,7 @@ const plans = {
 const infoRowStyle = (cls: string) => {
   const base = { display:"flex", alignItems:"center", gap:"6px", fontSize:"12px", borderRadius:"6px", padding:"5px 8px" };
   if (cls === "discount") return { ...base, background:"rgba(245,158,11,0.12)", color:"#F59E0B" };
-  if (cls === "saving")   return { ...base, background:"rgba(255,255,255,0.04)", color:"#94A3B8", border:"0.5px solid rgba(255,255,255,0.08)" };
+  if (cls === "saving")   return { ...base, background:"rgba(255,255,255,0.04)", color:"var(--color-text-muted)", border:"0.5px solid rgba(255,255,255,0.08)" };
   if (cls === "free")     return { ...base, background:"rgba(34,197,94,0.1)", color:"#22C55E", border:"0.5px solid rgba(34,197,94,0.2)" };
   return base;
 };

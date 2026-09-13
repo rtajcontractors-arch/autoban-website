@@ -258,7 +258,7 @@ export default function MarketplacePage() {
                   borderRadius: "50%", display: "flex", alignItems: "center",
                   justifyContent: "center", fontSize: "15px", fontWeight: 500, margin: "0 auto 0.75rem",
                 }}>{s.num}</div>
-                <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "4px" }}>{s.title}</h4>
+                <h3 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "4px" }}>{s.title}</h3>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{s.desc}</p>
               </div>
             ))}
@@ -317,7 +317,7 @@ export default function MarketplacePage() {
                   borderRadius: "50%", display: "flex", alignItems: "center",
                   justifyContent: "center", fontSize: "15px", fontWeight: 500, margin: "0 auto 0.75rem",
                 }}>{s.num}</div>
-                <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "4px" }}>{s.title}</h4>
+                <h3 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "4px" }}>{s.title}</h3>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{s.desc}</p>
               </div>
             ))}
@@ -340,12 +340,7 @@ export default function MarketplacePage() {
             <Link href="/pricing" style={{
               background: "var(--color-accent)", color: "white",
               padding: "12px 28px", borderRadius: "var(--radius)", fontSize: "15px", fontWeight: 500,
-            }}>ادخل السوق الآن</Link>
-            <Link href="/pricing" style={{
-              background: "transparent", color: "var(--color-text)",
-              padding: "12px 28px", borderRadius: "var(--radius)",
-              border: "0.5px solid var(--color-border-strong)", fontSize: "15px",
-            }}>انضم كمحاسب</Link>
+            }}>ابدأ الآن — كشركة أو كمحاسب</Link>
           </div>
         </div>
       </section>

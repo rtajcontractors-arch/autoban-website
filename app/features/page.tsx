@@ -201,7 +201,7 @@ export default function FeaturesPage() {
                 borderRadius: "var(--radius-lg)", padding: "1.1rem",
               }}>
                 <Icon name={m.icon} size={20} style={{ color: "var(--color-accent)", display: "block", marginBottom: "8px" }} />
-                <h4 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{m.title}</h4>
+                <h3 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{m.title}</h3>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{m.desc}</p>
               </div>
             ))}
@@ -225,11 +225,6 @@ export default function FeaturesPage() {
               background: "var(--color-accent)", color: "white",
               padding: "12px 28px", borderRadius: "var(--radius)", fontSize: "15px", fontWeight: 500,
             }}>ابدأ شهرك المجاني</Link>
-            <Link href="/pricing" style={{
-              background: "transparent", color: "var(--color-text)",
-              padding: "12px 28px", borderRadius: "var(--radius)",
-              border: "0.5px solid var(--color-border-strong)", fontSize: "15px",
-            }}>عرض الأسعار</Link>
           </div>
         </div>
       </section>

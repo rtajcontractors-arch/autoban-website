@@ -139,7 +139,7 @@ export default function LibraryPage() {
                 }}>
                   <Icon name={c.icon} size={19} style={{ color: "var(--color-accent)" }} />
                 </div>
-                <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "3px" }}>{c.title}</h4>
+                <h3 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "3px" }}>{c.title}</h3>
                 <p style={{ fontSize: "11px", color: "var(--color-text-secondary)", lineHeight: 1.5, marginBottom: "6px" }}>{c.desc}</p>
                 <div style={{ fontSize: "11px", color: "var(--color-text-muted)" }}>{c.count} مقالة</div>
               </div>
@@ -173,7 +173,7 @@ export default function LibraryPage() {
                     <Icon name={a.official ? "building-bank" : "users"} size={12} />
                     {a.official ? "رسمي" : "مجتمع"} — {a.cat}
                   </div>
-                  <h4 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "5px", lineHeight: 1.4 }}>{a.title}</h4>
+                  <h3 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "5px", lineHeight: 1.4 }}>{a.title}</h3>
                   <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6, flex: 1, marginBottom: "0.75rem" }}>{a.desc}</p>
                   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                     <span style={{ fontSize: "11px", color: "var(--color-text-muted)", display: "flex", alignItems: "center", gap: "4px" }}>
@@ -216,7 +216,7 @@ export default function LibraryPage() {
                   <Icon name={d.icon} size={20} style={{ color: "var(--color-accent)" }} />
                 </div>
                 <div style={{ flex: 1 }}>
-                  <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>{d.title}</h4>
+                  <h3 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>{d.title}</h3>
                   <p style={{ fontSize: "11px", color: "var(--color-text-secondary)", marginBottom: "5px" }}>{d.desc}</p>
                   <button style={{
                     fontSize: "11px", background: "var(--color-accent)", color: "white",

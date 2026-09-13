@@ -154,7 +154,7 @@ export default function Home() {
                 borderRadius: "var(--radius-lg)", padding: "1.25rem",
               }}>
                 <Icon name={f.icon} size={22} style={{ color: "var(--color-accent)", display: "block", marginBottom: "10px" }} />
-                <h4 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{f.title}</h4>
+                <h3 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{f.title}</h3>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{f.desc}</p>
               </div>
             ))}

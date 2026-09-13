@@ -91,7 +91,7 @@ export default function AboutPage() {
               borderRadius: "var(--radius-lg)", padding: "1.1rem",
             }}>
               <Icon name={p.icon} size={20} style={{ color: "#F59E0B", display: "block", marginBottom: "8px" }} />
-              <h4 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{p.title}</h4>
+              <h3 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{p.title}</h3>
               <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{p.desc}</p>
             </div>
           ))}
@@ -123,7 +123,7 @@ export default function AboutPage() {
                 borderRadius: "var(--radius-lg)", padding: "1.1rem",
               }}>
                 <Icon name={s.icon} size={20} style={{ color: "var(--color-accent)", display: "block", marginBottom: "8px" }} />
-                <h4 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{s.title}</h4>
+                <h3 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{s.title}</h3>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{s.desc}</p>
               </div>
             ))}
@@ -151,7 +151,7 @@ export default function AboutPage() {
                 <Icon name={v.icon} size={18} style={{ color: "var(--color-accent)" }} />
               </div>
               <div>
-                <h4 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{v.title}</h4>
+                <h3 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{v.title}</h3>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{v.desc}</p>
               </div>
             </div>
@@ -183,7 +183,7 @@ export default function AboutPage() {
               }}>
                 <span style={{ fontSize: "26px" }}>{m.flag}</span>
                 <div>
-                  <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>{m.name}</h4>
+                  <h3 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>{m.name}</h3>
                   <p style={{ fontSize: "11px", color: "var(--color-text-secondary)", marginBottom: "4px" }}>{m.desc}</p>
                   <span style={{
                     fontSize: "10px", padding: "2px 7px", borderRadius: "8px",
@@ -207,7 +207,7 @@ export default function AboutPage() {
             }}>
               <span style={{ fontSize: "26px" }}>🇪🇬</span>
               <div>
-                <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>مصر</h4>
+                <h3 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>مصر</h3>
                 <p style={{ fontSize: "11px", color: "var(--color-text-secondary)", marginBottom: "4px" }}>معايير المحاسبة المصرية</p>
                 <span style={{ fontSize: "10px", padding: "2px 7px", borderRadius: "8px", background: "rgba(245,158,11,0.1)", color: "#F59E0B" }}>قريباً</span>
               </div>
@@ -251,7 +251,7 @@ export default function AboutPage() {
                 borderRadius: "var(--radius-lg)", padding: "1.25rem", textAlign: "center",
               }}>
                 <div style={{ fontSize: "32px", fontWeight: 500, color: "var(--color-accent)", marginBottom: "6px" }}>{v.num}</div>
-                <h4 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{v.title}</h4>
+                <h3 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "4px" }}>{v.title}</h3>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>{v.desc}</p>
               </div>
             ))}

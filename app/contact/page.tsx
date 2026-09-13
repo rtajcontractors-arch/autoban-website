@@ -101,7 +101,7 @@ export default function ContactPage() {
                 }}>
                   <Icon name={c.icon} size={24} style={{ color: c.primary ? "white" : "var(--color-accent)" }} />
                 </div>
-                <h4 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "3px" }}>{c.title}</h4>
+                <h3 style={{ fontSize: "14px", fontWeight: 500, marginBottom: "3px" }}>{c.title}</h3>
                 <p style={{ fontSize: "12px", color: "var(--color-text-secondary)", marginBottom: "8px", lineHeight: 1.5 }}>{c.desc}</p>
                 <span style={{
                   display: "inline-block", fontSize: "11px", padding: "2px 10px", borderRadius: "8px",
@@ -145,7 +145,7 @@ export default function ContactPage() {
                     <Icon name={info.icon} size={18} style={{ color: "var(--color-accent)" }} />
                   </div>
                   <div>
-                    <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>{info.title}</h4>
+                    <h3 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>{info.title}</h3>
                     <p style={{ fontSize: "12px", color: "var(--color-accent)" }}>{info.val}</p>
                   </div>
                 </div>
@@ -272,7 +272,7 @@ export default function ContactPage() {
                   }}>
                     <span style={{ fontSize: "24px" }}>{c.flag}</span>
                     <div>
-                      <h4 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>{c.name}</h4>
+                      <h3 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>{c.name}</h3>
                       <p style={{ fontSize: "11px", color: "var(--color-text-secondary)", marginBottom: "4px" }}>{c.desc}</p>
                       <span style={{
                         fontSize: "10px", padding: "1px 7px", borderRadius: "6px",
