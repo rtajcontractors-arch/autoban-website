@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+:root {
+  --font-arabic: 'Tajawal', 'Cairo', system-ui, sans-serif;
+  --color-bg: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-2: #f1f5f9;
+  --color-border: rgba(0,0,0,0.08);
+  --color-border-strong: rgba(0,0,0,0.15);
+  --color-accent: #3B7BF6;
+  --color-accent-light: rgba(59,123,246,0.08);
+  --color-accent-border: rgba(59,123,246,0.25);
+  --color-text: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94A3B8;
+  --color-success: #16A34A;
+  --color-success-bg: rgba(22,163,74,0.08);
+  --color-warning: #D97706;
+  --color-warning-bg: rgba(217,119,6,0.08);
+  --radius: 8px;
+  --radius-lg: 12px;
+  --nav-bg: rgba(255,255,255,0.92);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0A0E1A;
+    --color-surface: #111827;
+    --color-surface-2: #1A2236;
+    --color-border: rgba(255,255,255,0.08);
+    --color-border-strong: rgba(255,255,255,0.15);
+    --color-accent: #3B7BF6;
+    --color-accent-light: rgba(59,123,246,0.12);
+    --color-accent-border: rgba(59,123,246,0.3);
+    --color-text: #F0F4FF;
+    --color-text-secondary: #94A3B8;
+    --color-text-muted: #64748B;
+    --color-success: #22C55E;
+    --color-success-bg: rgba(34,197,94,0.1);
+    --color-warning: #F59E0B;
+    --color-warning-bg: rgba(245,158,11,0.1);
+    --nav-bg: rgba(10,14,26,0.92);
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { direction: rtl; scroll-behavior: smooth; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-arabic);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--color-accent); color: white; }
+
+a { color: inherit; text-decoration: none; }
+
+input, textarea, select, button { font-family: inherit; }
+
+/* تقليل المساحات الفارغة */
+section { padding: 2.5rem 1.5rem !important; }
+
+@media (max-width: 768px) {
+  section { padding: 2rem 1rem !important; }
+}
