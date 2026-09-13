@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
   { href: "/features", label: "المميزات" },
@@ -73,6 +74,7 @@ export default function Navbar() {
 
         {/* زر ابدأ مجاناً — يسار */}
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <ThemeToggle />
           <Link href="/pricing" style={{
             background: "var(--color-accent)", color: "white",
             padding: "8px 18px", borderRadius: "var(--radius)",

@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const isDev = process.env.NODE_ENV !== "production";
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
 
 const csp = [
   "default-src 'self'",
@@ -11,8 +12,8 @@ const csp = [
   // Fonts are self-hosted via next/font — no external font host needed.
   "font-src 'self'",
   "img-src 'self' data:",
-  // Dev mode needs the HMR websocket; never present in production builds.
-  `connect-src 'self' https://formspree.io${isDev ? " ws://localhost:*" : ""}`,
+  // Supabase Auth (OTP) + database calls from the waitlist page; dev mode also needs the HMR websocket.
+  `connect-src 'self' https://formspree.io${supabaseUrl ? ` ${supabaseUrl}` : ""}${isDev ? " ws://localhost:*" : ""}`,
   "form-action 'self' https://formspree.io",
   "frame-ancestors 'self'",
   "base-uri 'self'",

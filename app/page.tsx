@@ -70,6 +70,12 @@ export default function Home() {
             padding: "13px 30px", borderRadius: "var(--radius)",
             border: "0.5px solid var(--color-border-strong)", fontSize: "15px",
           }}>تعرف على المميزات ←</Link>
+          <Link href="/waitlist" className="btn-scale" style={{
+            display: "inline-flex", alignItems: "center", gap: "6px",
+            background: "transparent", color: "var(--color-accent)",
+            padding: "13px 30px", borderRadius: "var(--radius)",
+            border: "0.5px solid var(--color-accent-border)", fontSize: "15px",
+          }}><Icon name="users" size={16} /> انضم لقائمة الانتظار</Link>
         </div>
 
         {/* Stats */}

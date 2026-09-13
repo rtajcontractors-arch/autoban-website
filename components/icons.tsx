@@ -6,6 +6,7 @@ import {
   Handshake, Headset, Heart, HardHat, Lock, Mail, MapPin, MessageSquare, MessageCircle, Newspaper, CirclePlay, Puzzle,
   Receipt, ClipboardList, BarChartHorizontalBig, Rocket, Ruler, Search, Send, ShieldCheck, Signal, Sparkles, Star, Tag,
   Target, Wrench, TrendingUp, Truck, User, UserCheck, UserX, Users, UserRoundGroup, Video, Globe, X,
+  Sun, Moon, Loader2,
   type LucideProps,
 } from "lucide-react";
 
@@ -85,6 +86,9 @@ const iconMap: Record<string, ComponentType<LucideProps>> = {
   video: Video,
   world: Globe,
   x: X,
+  sun: Sun,
+  moon: Moon,
+  loading: Loader2,
 };
 
 export function Icon({ name, size = 20, ...props }: { name: string } & LucideProps) {

@@ -22,6 +22,7 @@
   --nav-bg: rgba(248,250,252,0.92);
 }
 
+/* الوضع الداكن حسب إعداد الجهاز (لا اختيار يدوي بعد) */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #0A0E1A;
@@ -43,6 +44,45 @@
   }
 }
 
+/* اختيار المستخدم اليدوي عبر زر التبديل — يتجاوز إعداد الجهاز في كلا الاتجاهين */
+:root[data-theme="light"] {
+  --color-bg: #ffffff;
+  --color-surface: #f8fafc;
+  --color-surface-2: #f1f5f9;
+  --color-border: rgba(0,0,0,0.08);
+  --color-border-strong: rgba(0,0,0,0.15);
+  --color-accent: #3B7BF6;
+  --color-accent-light: rgba(59,123,246,0.08);
+  --color-accent-border: rgba(59,123,246,0.25);
+  --color-text: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #5B6B82;
+  --color-success: #16A34A;
+  --color-success-bg: rgba(22,163,74,0.08);
+  --color-warning: #D97706;
+  --color-warning-bg: rgba(217,119,6,0.08);
+  --nav-bg: rgba(248,250,252,0.92);
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #0A0E1A;
+  --color-surface: #111827;
+  --color-surface-2: #1A2236;
+  --color-border: rgba(255,255,255,0.08);
+  --color-border-strong: rgba(255,255,255,0.15);
+  --color-accent: #3B7BF6;
+  --color-accent-light: rgba(59,123,246,0.12);
+  --color-accent-border: rgba(59,123,246,0.3);
+  --color-text: #F0F4FF;
+  --color-text-secondary: #94A3B8;
+  --color-text-muted: #8796AC;
+  --color-success: #22C55E;
+  --color-success-bg: rgba(34,197,94,0.1);
+  --color-warning: #F59E0B;
+  --color-warning-bg: rgba(245,158,11,0.1);
+  --nav-bg: rgba(17,24,39,0.9);
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { direction: rtl; scroll-behavior: smooth; }
 
@@ -52,6 +92,7 @@ body {
   font-family: var(--font-arabic);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 ::selection { background: var(--color-accent); color: white; }
