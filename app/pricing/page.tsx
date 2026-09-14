@@ -2,34 +2,50 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Icon } from "@/components/icons";
-import { toArabicNumber } from "@/lib/format";
 
 type BillingType = "monthly" | "biannual" | "annual";
-type PlanKey = "basic" | "pro" | "ent";
 
-// كل الأسعار الأساسية بالدولار الأمريكي — تُحوَّل للعملة المحلية عند العرض حسب الدولة المختارة.
-const monthlyPrice: Record<PlanKey, number> = { basic: 20, pro: 100, ent: 200 };
-const discountedMonthlyPrice: Record<"biannual" | "annual", Record<PlanKey, number>> = {
-  biannual: { basic: 18, pro: 85, ent: 160 },
-  annual: { basic: 17, pro: 80, ent: 150 },
+const plans = {
+  monthly: {
+    basic: { p: 20, period: "شهرياً", rows: [] as {cls:string,icon:string,text:string}[] },
+    pro:   { p: 100, period: "شهرياً", rows: [] as {cls:string,icon:string,text:string}[] },
+    ent:   { p: 200, period: "شهرياً", rows: [] as {cls:string,icon:string,text:string}[] },
+  },
+  biannual: {
+    basic: { p: 18, period: "شهرياً (٦ أشهر)", rows: [
+      { cls: "discount", icon: "discount", text: "خصم ١٠٪ على الباقة السداسية" },
+      { cls: "saving",   icon: "calculator", text: "تدفع ١٠٨$ بدلاً من ١٢٠$ (توفير ١٢$)" },
+      { cls: "free",     icon: "calendar-plus", text: "+ شهر مجاني عند التعاقد" },
+    ]},
+    pro:   { p: 85, period: "شهرياً (٦ أشهر)", rows: [
+      { cls: "discount", icon: "discount", text: "خصم ١٥٪ على الباقة السداسية" },
+      { cls: "saving",   icon: "calculator", text: "تدفع ٥١٠$ بدلاً من ٦٠٠$ (توفير ٩٠$)" },
+      { cls: "free",     icon: "calendar-plus", text: "+ شهر مجاني عند التعاقد" },
+    ]},
+    ent:   { p: 160, period: "شهرياً (٦ أشهر)", rows: [
+      { cls: "discount", icon: "discount", text: "خصم ٢٠٪ على الباقة السداسية" },
+      { cls: "saving",   icon: "calculator", text: "تدفع ٩٦٠$ بدلاً من ١٢٠٠$ (توفير ٢٤٠$)" },
+      { cls: "free",     icon: "calendar-plus", text: "+ شهر مجاني عند التعاقد" },
+    ]},
+  },
+  annual: {
+    basic: { p: 17, period: "شهرياً (سنوي)", rows: [
+      { cls: "discount", icon: "discount", text: "خصم ١٥٪ على الباقة السنوية" },
+      { cls: "saving",   icon: "calculator", text: "تدفع ٢٠٤$ بدلاً من ٢٤٠$ (توفير ٣٦$)" },
+      { cls: "free",     icon: "calendar-plus", text: "+ شهران مجانيان عند التعاقد" },
+    ]},
+    pro:   { p: 80, period: "شهرياً (سنوي)", rows: [
+      { cls: "discount", icon: "discount", text: "خصم ٢٠٪ على الباقة السنوية" },
+      { cls: "saving",   icon: "calculator", text: "تدفع ٩٦٠$ بدلاً من ١٢٠٠$ (توفير ٢٤٠$)" },
+      { cls: "free",     icon: "calendar-plus", text: "+ شهران مجانيان عند التعاقد" },
+    ]},
+    ent:   { p: 150, period: "شهرياً (سنوي)", rows: [
+      { cls: "discount", icon: "discount", text: "خصم ٢٥٪ على الباقة السنوية" },
+      { cls: "saving",   icon: "calculator", text: "تدفع ١٨٠٠$ بدلاً من ٢٤٠٠$ (توفير ٦٠٠$)" },
+      { cls: "free",     icon: "calendar-plus", text: "+ شهران مجانيان عند التعاقد" },
+    ]},
+  },
 };
-const discountPercent: Record<"biannual" | "annual", Record<PlanKey, number>> = {
-  biannual: { basic: 10, pro: 15, ent: 20 },
-  annual: { basic: 15, pro: 20, ent: 25 },
-};
-const periodMonths = { biannual: 6, annual: 12 };
-const periodNameGenitive = { biannual: "السداسية", annual: "السنوية" };
-const freeMonthsText = { biannual: "+ شهر مجاني عند التعاقد", annual: "+ شهران مجانيان عند التعاقد" };
-const periodLabel: Record<BillingType, string> = {
-  monthly: "شهرياً",
-  biannual: "شهرياً (٦ أشهر)",
-  annual: "شهرياً (سنوي)",
-};
-
-// الأسعار دائماً بالدولار الأمريكي، ثابتة بغضّ النظر عن الدولة المختارة في شريط أعلى الموقع.
-function formatUsd(usd: number) {
-  return `${toArabicNumber(usd)}$`;
-}
 
 const infoRowStyle = (cls: string) => {
   const base = { display:"flex", alignItems:"center", gap:"6px", fontSize:"12px", borderRadius:"6px", padding:"5px 8px" };
@@ -51,7 +67,8 @@ const compareRows = [
   { label: "أشهر مجانية عند السنوي", basic: "+ شهران", pro: "+ شهران", ent: "+ شهران" },
 ];
 
-function PlanCard({ planKey, billing, featured }: { planKey: PlanKey, billing: BillingType, featured?: boolean }) {
+function PlanCard({ planKey, billing, featured }: { planKey: "basic"|"pro"|"ent", billing: BillingType, featured?: boolean }) {
+  const data = plans[billing][planKey];
   const names = { basic: "الأساسية", pro: "الاحترافية", ent: "المتكاملة" };
   const extras: { icon: string; text: string }[] = planKey === "pro" ? [
     { icon: "chart-bar", text: "تقارير متقدمة وتحليل مالي" },
@@ -61,20 +78,6 @@ function PlanCard({ planKey, billing, featured }: { planKey: PlanKey, billing: B
     { icon: "briefcase", text: "سوق المحاسبين المعتمدين" },
     { icon: "certificate", text: "اعتماد أوتوبان التخصصي" },
   ] : [];
-
-  const displayedMonthly = billing === "monthly" ? monthlyPrice[planKey] : discountedMonthlyPrice[billing][planKey];
-  const rows: { cls: string; icon: string; text: string }[] = billing === "monthly" ? [] : (() => {
-    const months = periodMonths[billing];
-    const originalTotal = monthlyPrice[planKey] * months;
-    const discountedTotal = displayedMonthly * months;
-    const savings = originalTotal - discountedTotal;
-    const pct = discountPercent[billing][planKey];
-    return [
-      { cls: "discount", icon: "discount", text: `خصم ${toArabicNumber(pct)}٪ على الباقة ${periodNameGenitive[billing]}` },
-      { cls: "saving", icon: "calculator", text: `تدفع ${formatUsd(discountedTotal)} بدلاً من ${formatUsd(originalTotal)} (توفير ${formatUsd(savings)})` },
-      { cls: "free", icon: "calendar-plus", text: freeMonthsText[billing] },
-    ];
-  })();
 
   return (
     <div style={{
@@ -91,12 +94,12 @@ function PlanCard({ planKey, billing, featured }: { planKey: PlanKey, billing: B
       )}
       <div style={{ fontSize: "13px", color: "var(--color-text-secondary)", marginBottom: "6px" }}>{names[planKey]}</div>
       <div style={{ fontSize: "36px", fontWeight: 500, lineHeight: 1 }}>
-        <sup style={{ fontSize: "16px", fontWeight: 400, verticalAlign: "super" }}>$</sup>{toArabicNumber(displayedMonthly)}
+        <sup style={{ fontSize: "16px", fontWeight: 400, verticalAlign: "super" }}>$</sup>{data.p}
       </div>
-      <div style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "3px", marginBottom: "10px" }}>{periodLabel[billing]}</div>
+      <div style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "3px", marginBottom: "10px" }}>{data.period}</div>
 
       <div style={{ minHeight: "84px", display: "flex", flexDirection: "column", gap: "5px", marginBottom: "12px" }}>
-        {rows.length > 0 ? rows.map((r, i) => (
+        {data.rows.length > 0 ? data.rows.map((r, i) => (
           <div key={i} style={infoRowStyle(r.cls)}>
             <Icon name={r.icon} size={13} style={{ flexShrink: 0 }} />
             <span>{r.text}</span>
@@ -149,13 +152,6 @@ export default function PricingPage() {
     { key: "biannual", label: "٦ أشهر", pill: "+ شهر مجاني" },
     { key: "annual", label: "سنوي", pill: "+ شهران مجانيان" },
   ];
-
-  const entSummary = billing === "monthly" ? null : (() => {
-    const months = periodMonths[billing];
-    const entTotal = discountedMonthlyPrice[billing].ent * months;
-    const entSavings = (monthlyPrice.ent - discountedMonthlyPrice[billing].ent) * months;
-    return { entTotal, entSavings };
-  })();
 
   return (
     <>
@@ -235,7 +231,7 @@ export default function PricingPage() {
         </div>
 
         {/* Summary box for non-monthly */}
-        {entSummary && (
+        {billing !== "monthly" && (
           <div style={{
             background: "var(--color-accent-light)", border: "0.5px solid var(--color-accent-border)",
             borderRadius: "var(--radius-lg)", padding: "1.25rem",
@@ -243,8 +239,8 @@ export default function PricingPage() {
             display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px,1fr))", gap: "12px",
           }}>
             {[
-              { num: formatUsd(entSummary.entTotal), label: "المتكاملة — تدفع" },
-              { num: formatUsd(entSummary.entSavings), label: "توفير على السعر الشهري" },
+              { num: billing === "annual" ? "١٨٠٠$" : "٩٦٠$", label: "المتكاملة — تدفع" },
+              { num: billing === "annual" ? "٦٠٠$" : "٢٤٠$", label: "توفير على السعر الشهري" },
               { num: billing === "annual" ? "١٤ شهراً" : "٧ أشهر", label: "مدة الخدمة الفعلية" },
               { num: "شهر مجاناً", label: "تجربة قبل أي دفع" },
             ].map(s => (

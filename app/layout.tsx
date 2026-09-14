@@ -3,8 +3,6 @@ import { Tajawal } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CountrySelector from "@/components/CountrySelector";
-import { CountryProvider } from "@/lib/country-context";
 
 const tajawal = Tajawal({
   subsets: ["arabic", "latin"],
@@ -50,16 +48,11 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ar" dir="rtl" className={tajawal.variable} data-country="SA" suppressHydrationWarning>
+    <html lang="ar" dir="rtl" className={tajawal.variable} suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
             __html: `try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}`,
-          }}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{var c=localStorage.getItem('country');if(c==='SA'||c==='KW'||c==='QA'||c==='EG')document.documentElement.setAttribute('data-country',c);}catch(e){}`,
           }}
         />
         <script
@@ -69,12 +62,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <a href="#main-content" className="skip-link">تخطي إلى المحتوى</a>
-        <CountryProvider>
-          <CountrySelector />
-          <Navbar />
-          <main id="main-content">{children}</main>
-          <Footer />
-        </CountryProvider>
+        <Navbar />
+        <main id="main-content">{children}</main>
+        <Footer />
       </body>
     </html>
   );

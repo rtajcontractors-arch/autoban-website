@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Icon } from "@/components/icons";
-import MarketsSection from "@/components/MarketsSection";
 
 export const metadata: Metadata = {
   title: "من نحن — أوتوبان",
@@ -28,6 +27,13 @@ const vision = [
   { icon: "users", title: "مجتمع حقيقي", desc: "شبكة مقاولين ومحاسبين متخصصين تبني علاقات تجارية حقيقية." },
   { icon: "certificate", title: "جهة اعتماد", desc: "شهادة أوتوبان للمحاسب المتخصص في المقاولات — معيار جديد في القطاع." },
   { icon: "world", title: "توسع إقليمي", desc: "نفس النموذج، نفس التخصص — في دول الخليج ومصر." },
+];
+
+const markets = [
+  { flag: "🇸🇦", name: "المملكة العربية السعودية", desc: "زاتكا — المرحلتان", status: "متاح الآن", active: true },
+  { flag: "🇰🇼", name: "الكويت", desc: "معايير المحاسبة الكويتية", status: "قريباً", active: false },
+  { flag: "🇶🇦", name: "قطر", desc: "معايير المحاسبة القطرية", status: "قريباً", active: false },
+  { flag: "🇪🇬", name: "مصر", desc: "معايير المحاسبة المصرية", status: "قريباً", active: false },
 ];
 
 const standards = [
@@ -164,7 +170,49 @@ export default function AboutPage() {
             مُصمَّم من البداية لخدمة المنطقة مع مراعاة متطلبات الفوترة والمعايير المحاسبية لكل دولة.
           </p>
 
-          <MarketsSection />
+          <p style={{ fontSize: "12px", color: "var(--color-text-muted)", marginBottom: "10px", display:"flex", alignItems:"center", gap:"8px" }}>
+            دول الخليج العربي
+            <span style={{ flex:1, height:"0.5px", background:"var(--color-border)", display:"block" }} />
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px,1fr))", gap: "10px", marginBottom: "1.5rem" }}>
+            {markets.slice(0,3).map(m => (
+              <div key={m.name} style={{
+                background: "var(--color-surface-2)", border: "0.5px solid var(--color-border)",
+                borderRadius: "var(--radius-lg)", padding: "1rem",
+                display: "flex", alignItems: "center", gap: "10px",
+              }}>
+                <span style={{ fontSize: "26px" }}>{m.flag}</span>
+                <div>
+                  <h3 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>{m.name}</h3>
+                  <p style={{ fontSize: "11px", color: "var(--color-text-secondary)", marginBottom: "4px" }}>{m.desc}</p>
+                  <span style={{
+                    fontSize: "10px", padding: "2px 7px", borderRadius: "8px",
+                    background: m.active ? "rgba(34,197,94,0.1)" : "rgba(245,158,11,0.1)",
+                    color: m.active ? "#22C55E" : "#F59E0B",
+                  }}>{m.status}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p style={{ fontSize: "12px", color: "var(--color-text-muted)", marginBottom: "10px", display:"flex", alignItems:"center", gap:"8px" }}>
+            شمال أفريقيا
+            <span style={{ flex:1, height:"0.5px", background:"var(--color-border)", display:"block" }} />
+          </p>
+          <div style={{ maxWidth: "260px" }}>
+            <div style={{
+              background: "var(--color-surface-2)", border: "0.5px solid var(--color-border)",
+              borderRadius: "var(--radius-lg)", padding: "1rem",
+              display: "flex", alignItems: "center", gap: "10px",
+            }}>
+              <span style={{ fontSize: "26px" }}>🇪🇬</span>
+              <div>
+                <h3 style={{ fontSize: "13px", fontWeight: 500, marginBottom: "2px" }}>مصر</h3>
+                <p style={{ fontSize: "11px", color: "var(--color-text-secondary)", marginBottom: "4px" }}>معايير المحاسبة المصرية</p>
+                <span style={{ fontSize: "10px", padding: "2px 7px", borderRadius: "8px", background: "rgba(245,158,11,0.1)", color: "#F59E0B" }}>قريباً</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
