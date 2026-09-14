@@ -25,57 +25,127 @@ const stats = [
   { num: "سحابي", label: "وصول من أي مكان وجهاز" },
 ];
 
+const socialProof = [
+  { icon: "users", num: "١٢٠+", label: "مقاول مسجل في قائمة الانتظار" },
+  { icon: "world", num: "٤", label: "دول" },
+  { icon: "star", num: "٩٩٪", label: "نسبة الرضا في التجربة الأولى" },
+];
+
+const testimonials = [
+  { name: "محمد العمري", role: "مقاول رئيسي، الرياض", quote: "أوتوبان وفّر علينا ساعات في احتساب الاستقطاعات" },
+  { name: "خالد المطيري", role: "محاسب معتمد، جدة", quote: "أول برنامج يفهم طبيعة محاسبة المقاولات فعلاً" },
+  { name: "أحمد السيد", role: "مقاول باطن، القاهرة", quote: "بسيط جداً واحترافي في نفس الوقت" },
+];
+
+function HeroMockup() {
+  const bars = [45, 70, 55, 85, 60, 100, 75];
+  return (
+    <div style={{
+      background: "#0B1220", border: "1px solid rgba(255,255,255,0.08)",
+      borderRadius: "16px", padding: "1.25rem",
+      boxShadow: "0 24px 60px rgba(0,0,0,0.35)",
+      direction: "rtl", maxWidth: "420px", margin: "0 auto",
+    }}>
+      <div style={{ display: "flex", alignItems: "center", gap: "6px", marginBottom: "1.1rem" }}>
+        <span style={{ width: 9, height: 9, borderRadius: "50%", background: "#EF4444" }} />
+        <span style={{ width: 9, height: 9, borderRadius: "50%", background: "#F59E0B" }} />
+        <span style={{ width: 9, height: 9, borderRadius: "50%", background: "#22C55E" }} />
+        <span style={{ fontSize: 11, color: "rgba(255,255,255,0.4)", marginRight: "auto" }}>لوحة التحكم — أوتوبان</span>
+      </div>
+
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: "1.1rem" }}>
+        <div style={{ background: "rgba(255,255,255,0.05)", borderRadius: 10, padding: "10px 12px" }}>
+          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.45)", marginBottom: 4 }}>الإيرادات</div>
+          <div style={{ fontSize: 18, fontWeight: 600, color: "#fff" }}>٤٫٢م ر.س</div>
+        </div>
+        <div style={{ background: "rgba(255,255,255,0.05)", borderRadius: 10, padding: "10px 12px" }}>
+          <div style={{ fontSize: 11, color: "rgba(255,255,255,0.45)", marginBottom: 4 }}>هامش الربح</div>
+          <div style={{ fontSize: 18, fontWeight: 600, color: "#4ADE80" }}>٢٦٫٢٪</div>
+        </div>
+      </div>
+
+      <div style={{ display: "flex", alignItems: "flex-end", gap: 7, height: 84, marginBottom: "1.1rem" }}>
+        {bars.map((h, i) => (
+          <div key={i} style={{
+            flex: 1, height: `${h}%`, borderRadius: 4,
+            background: i === 5 ? "var(--color-accent)" : "rgba(255,255,255,0.14)",
+          }} />
+        ))}
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 12, padding: "9px 11px", background: "rgba(255,255,255,0.04)", borderRadius: 8 }}>
+          <span style={{ color: "rgba(255,255,255,0.65)" }}>فاتورة زاتكا #0412</span>
+          <span style={{ color: "#4ADE80", fontWeight: 500 }}>+ ٥٧,٠٠٠ ر.س</span>
+        </div>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: 12, padding: "9px 11px", background: "rgba(255,255,255,0.04)", borderRadius: 8 }}>
+          <span style={{ color: "rgba(255,255,255,0.65)" }}>استقطاع حسن الأداء</span>
+          <span style={{ color: "#F87171", fontWeight: 500 }}>- ١٠٠,٠٠٠ ر.س</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <>
       {/* HERO */}
       <section style={{
-        padding: "3rem 1.5rem 2rem", textAlign: "center", maxWidth: "1100px", margin: "0 auto",
+        padding: "3rem 1.5rem 2rem", maxWidth: "1100px", margin: "0 auto",
         position: "relative", background: "radial-gradient(circle at 50% 35%, rgba(59,123,246,0.15), transparent 65%)",
       }}>
-        <div style={{
-          display: "inline-flex", alignItems: "center", gap: "6px",
-          background: "var(--color-accent-light)", color: "var(--color-accent)",
-          fontSize: "13px", padding: "7px 18px", borderRadius: "20px",
-          border: "1.5px solid var(--color-accent-border)", marginBottom: "1.5rem",
-        }}>
-          <Icon name="building-skyscraper" size={15} /> المنصة المتكاملة لقطاع المقاولات
-        </div>
+        <div className="grid-2" style={{ gap: "2.5rem", alignItems: "center", marginBottom: "2.5rem" }}>
+          <div>
+            <HeroMockup />
+          </div>
 
-        <h1 style={{
-          fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 500,
-          lineHeight: 1.2, color: "var(--color-text)",
-          marginBottom: "1.25rem", letterSpacing: "-1px",
-        }}>
-          كل ما يحتاجه المقاول
-          <br />
-          <span style={{ color: "var(--color-accent)" }}>في مكان واحد</span>
-        </h1>
+          <div>
+            <div style={{
+              display: "inline-flex", alignItems: "center", gap: "6px",
+              background: "var(--color-accent-light)", color: "var(--color-accent)",
+              fontSize: "13px", padding: "7px 18px", borderRadius: "20px",
+              border: "1.5px solid var(--color-accent-border)", marginBottom: "1.5rem",
+            }}>
+              <Icon name="building-skyscraper" size={15} /> المنصة المتكاملة لقطاع المقاولات
+            </div>
 
-        <p style={{
-          fontSize: "17px", color: "var(--color-text-secondary)",
-          lineHeight: 1.8, maxWidth: "520px", margin: "0 auto 2.5rem",
-        }}>
-          برنامج محاسبة مخصص للمقاولين + مجتمع حصري + سوق محاسبين معتمدين — أوتوبان ليس برنامجاً، هو منظومة.
-        </p>
+            <h1 style={{
+              fontSize: "clamp(30px, 4vw, 44px)", fontWeight: 500,
+              lineHeight: 1.2, color: "var(--color-text)",
+              marginBottom: "1.25rem", letterSpacing: "-1px",
+            }}>
+              كل ما يحتاجه المقاول
+              <br />
+              <span style={{ color: "var(--color-accent)" }}>في مكان واحد</span>
+            </h1>
 
-        <div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", marginBottom: "2rem" }}>
-          <Link href="/pricing" className="btn-scale" style={{
-            background: "var(--color-accent)", color: "white",
-            padding: "13px 30px", borderRadius: "var(--radius)",
-            fontSize: "15px", fontWeight: 500,
-          }}>ابدأ شهرك المجاني</Link>
-          <Link href="/waitlist" className="btn-scale" style={{
-            display: "inline-flex", alignItems: "center", gap: "6px",
-            background: "transparent", color: "var(--color-accent)",
-            padding: "13px 30px", borderRadius: "var(--radius)",
-            border: "0.5px solid var(--color-accent-border)", fontSize: "15px",
-          }}><Icon name="users" size={16} /> انضم لقائمة الانتظار</Link>
-          <Link href="/features" className="btn-scale" style={{
-            background: "transparent", color: "var(--color-text)",
-            padding: "13px 30px", borderRadius: "var(--radius)",
-            border: "0.5px solid var(--color-border-strong)", fontSize: "15px",
-          }}>تعرف على المميزات ←</Link>
+            <p style={{
+              fontSize: "17px", color: "var(--color-text-secondary)",
+              lineHeight: 1.8, marginBottom: "2rem",
+            }}>
+              برنامج محاسبة مخصص للمقاولين + مجتمع حصري + سوق محاسبين معتمدين — أوتوبان ليس برنامجاً، هو منظومة.
+            </p>
+
+            <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+              <Link href="/pricing" className="btn-scale" style={{
+                background: "var(--color-accent)", color: "white",
+                padding: "13px 30px", borderRadius: "var(--radius)",
+                fontSize: "15px", fontWeight: 500,
+              }}>ابدأ شهرك المجاني</Link>
+              <Link href="/waitlist" className="btn-scale" style={{
+                display: "inline-flex", alignItems: "center", gap: "6px",
+                background: "transparent", color: "var(--color-accent)",
+                padding: "13px 30px", borderRadius: "var(--radius)",
+                border: "0.5px solid var(--color-accent-border)", fontSize: "15px",
+              }}><Icon name="users" size={16} /> انضم لقائمة الانتظار</Link>
+              <Link href="/features" className="btn-scale" style={{
+                background: "transparent", color: "var(--color-text)",
+                padding: "13px 30px", borderRadius: "var(--radius)",
+                border: "0.5px solid var(--color-border-strong)", fontSize: "15px",
+              }}>تعرف على المميزات ←</Link>
+            </div>
+          </div>
         </div>
 
         {/* Stats */}
@@ -144,6 +214,34 @@ export default function Home() {
         </Reveal>
       </section>
 
+      {/* SOCIAL PROOF */}
+      <section style={{ padding: "0 1.5rem 1rem" }}>
+        <Reveal>
+        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+          <div style={{
+            display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap",
+          }}>
+            {socialProof.map(s => (
+              <div key={s.label} style={{
+                display: "flex", alignItems: "center", gap: "10px", textAlign: "center",
+                background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
+                borderRadius: "var(--radius-lg)", padding: "1rem 1.75rem",
+              }}>
+                <Icon name={s.icon} size={20} style={{ color: "var(--color-accent)", flexShrink: 0 }} />
+                <div style={{ textAlign: "right" }}>
+                  <div style={{ fontSize: "20px", fontWeight: 500, color: "var(--color-text)" }}>{s.num}</div>
+                  <div style={{ fontSize: "12px", color: "var(--color-text-secondary)", marginTop: "2px" }}>{s.label}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p style={{ textAlign: "center", fontSize: "11px", color: "var(--color-text-muted)", marginTop: "12px" }}>
+            * أرقام تجريبية
+          </p>
+        </div>
+        </Reveal>
+      </section>
+
       {/* FEATURES */}
       <section style={{ padding: "2rem 1.5rem" }}>
         <Reveal>
@@ -172,6 +270,37 @@ export default function Home() {
               padding: "9px 22px", borderRadius: "var(--radius)",
             }}>عرض جميع المميزات ←</Link>
           </div>
+        </div>
+        </Reveal>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section style={{ padding: "2rem 1.5rem", background: "var(--color-surface)" }}>
+        <Reveal>
+        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          <p style={{ fontSize: "12px", color: "var(--color-accent)", textAlign: "center", marginBottom: "6px" }}>آراء</p>
+          <h2 style={{ fontSize: "28px", fontWeight: 500, textAlign: "center", marginBottom: "2.5rem" }}>ماذا يقول المقاولون؟</h2>
+          <div className="grid-3" style={{ gap: "14px" }}>
+            {testimonials.map(t => (
+              <div key={t.name} className="hover-card" style={{
+                background: "var(--color-surface-2)",
+                borderRadius: "var(--radius-lg)", padding: "1.5rem",
+                display: "flex", flexDirection: "column",
+              }}>
+                <Icon name="message-circle" size={20} style={{ color: "var(--color-accent-border)", marginBottom: "0.75rem" }} />
+                <p style={{ fontSize: "14px", color: "var(--color-text)", lineHeight: 1.7, marginBottom: "1.25rem", flex: 1 }}>
+                  &quot;{t.quote}&quot;
+                </p>
+                <div style={{ borderTop: "0.5px solid var(--color-border)", paddingTop: "0.75rem" }}>
+                  <div style={{ fontSize: "13px", fontWeight: 500 }}>{t.name}</div>
+                  <div style={{ fontSize: "12px", color: "var(--color-text-secondary)", marginTop: "2px" }}>{t.role}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p style={{ textAlign: "center", fontSize: "11px", color: "var(--color-text-muted)", marginTop: "1.5rem" }}>
+            * شهادات تمثيلية — سيتم استبدالها بشهادات حقيقية
+          </p>
         </div>
         </Reveal>
       </section>
