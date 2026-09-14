@@ -7,7 +7,7 @@ export default function CountrySelector() {
   return (
     <div style={{
       display: "flex", justifyContent: "center", alignItems: "center", gap: "4px",
-      background: "var(--color-surface)", borderBottom: "0.5px solid var(--color-border)",
+      background: "var(--color-surface)", borderBottom: "2px solid var(--color-accent)",
       padding: "6px 1rem", direction: "rtl", flexWrap: "wrap",
     }}>
       {countryOrder.map(code => {

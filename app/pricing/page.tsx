@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Icon } from "@/components/icons";
-import { useCountry, type CountryInfo } from "@/lib/country-context";
 import { toArabicNumber } from "@/lib/format";
 
 type BillingType = "monthly" | "biannual" | "annual";
@@ -27,9 +26,9 @@ const periodLabel: Record<BillingType, string> = {
   annual: "شهرياً (سنوي)",
 };
 
-function formatCurrency(usd: number, data: CountryInfo) {
-  const converted = Math.round(usd * data.usdRate);
-  return `${toArabicNumber(converted)} ${data.currencyCode}`;
+// الأسعار دائماً بالدولار الأمريكي، ثابتة بغضّ النظر عن الدولة المختارة في شريط أعلى الموقع.
+function formatUsd(usd: number) {
+  return `${toArabicNumber(usd)}$`;
 }
 
 const infoRowStyle = (cls: string) => {
@@ -53,7 +52,6 @@ const compareRows = [
 ];
 
 function PlanCard({ planKey, billing, featured }: { planKey: PlanKey, billing: BillingType, featured?: boolean }) {
-  const { data } = useCountry();
   const names = { basic: "الأساسية", pro: "الاحترافية", ent: "المتكاملة" };
   const extras: { icon: string; text: string }[] = planKey === "pro" ? [
     { icon: "chart-bar", text: "تقارير متقدمة وتحليل مالي" },
@@ -73,7 +71,7 @@ function PlanCard({ planKey, billing, featured }: { planKey: PlanKey, billing: B
     const pct = discountPercent[billing][planKey];
     return [
       { cls: "discount", icon: "discount", text: `خصم ${toArabicNumber(pct)}٪ على الباقة ${periodNameGenitive[billing]}` },
-      { cls: "saving", icon: "calculator", text: `تدفع ${formatCurrency(discountedTotal, data)} بدلاً من ${formatCurrency(originalTotal, data)} (توفير ${formatCurrency(savings, data)})` },
+      { cls: "saving", icon: "calculator", text: `تدفع ${formatUsd(discountedTotal)} بدلاً من ${formatUsd(originalTotal)} (توفير ${formatUsd(savings)})` },
       { cls: "free", icon: "calendar-plus", text: freeMonthsText[billing] },
     ];
   })();
@@ -93,8 +91,7 @@ function PlanCard({ planKey, billing, featured }: { planKey: PlanKey, billing: B
       )}
       <div style={{ fontSize: "13px", color: "var(--color-text-secondary)", marginBottom: "6px" }}>{names[planKey]}</div>
       <div style={{ fontSize: "36px", fontWeight: 500, lineHeight: 1 }}>
-        {toArabicNumber(Math.round(displayedMonthly * data.usdRate))}
-        <span style={{ fontSize: "16px", fontWeight: 400 }}> {data.currencyCode}</span>
+        <sup style={{ fontSize: "16px", fontWeight: 400, verticalAlign: "super" }}>$</sup>{toArabicNumber(displayedMonthly)}
       </div>
       <div style={{ fontSize: "12px", color: "var(--color-text-muted)", marginTop: "3px", marginBottom: "10px" }}>{periodLabel[billing]}</div>
 
@@ -146,7 +143,6 @@ function PlanCard({ planKey, billing, featured }: { planKey: PlanKey, billing: B
 
 export default function PricingPage() {
   const [billing, setBilling] = useState<BillingType>("monthly");
-  const { data } = useCountry();
 
   const tabs: { key: BillingType; label: string; pill?: string }[] = [
     { key: "monthly", label: "شهري" },
@@ -238,10 +234,6 @@ export default function PricingPage() {
           <PlanCard planKey="ent" billing={billing} />
         </div>
 
-        <p style={{ fontSize: "11px", color: "var(--color-text-muted)", marginBottom: "1.5rem" }}>
-          الأسعار الأساسية بالدولار الأمريكي، وتُعرض بـ{data.currency} تقريبياً حسب سعر الصرف الحالي.
-        </p>
-
         {/* Summary box for non-monthly */}
         {entSummary && (
           <div style={{
@@ -251,8 +243,8 @@ export default function PricingPage() {
             display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px,1fr))", gap: "12px",
           }}>
             {[
-              { num: formatCurrency(entSummary.entTotal, data), label: "المتكاملة — تدفع" },
-              { num: formatCurrency(entSummary.entSavings, data), label: "توفير على السعر الشهري" },
+              { num: formatUsd(entSummary.entTotal), label: "المتكاملة — تدفع" },
+              { num: formatUsd(entSummary.entSavings), label: "توفير على السعر الشهري" },
               { num: billing === "annual" ? "١٤ شهراً" : "٧ أشهر", label: "مدة الخدمة الفعلية" },
               { num: "شهر مجاناً", label: "تجربة قبل أي دفع" },
             ].map(s => (

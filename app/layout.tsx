@@ -50,11 +50,16 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ar" dir="rtl" className={tajawal.variable} suppressHydrationWarning>
+    <html lang="ar" dir="rtl" className={tajawal.variable} data-country="SA" suppressHydrationWarning>
       <head>
         <script
           dangerouslySetInnerHTML={{
             __html: `try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}`,
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var c=localStorage.getItem('country');if(c==='SA'||c==='KW'||c==='QA'||c==='EG')document.documentElement.setAttribute('data-country',c);}catch(e){}`,
           }}
         />
         <script

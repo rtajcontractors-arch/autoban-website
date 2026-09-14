@@ -104,6 +104,10 @@ export function CountryProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
+  useEffect(() => {
+    document.documentElement.setAttribute("data-country", country);
+  }, [country]);
+
   function setCountry(c: CountryCode) {
     setCountryState(c);
     window.localStorage.setItem(STORAGE_KEY, c);
