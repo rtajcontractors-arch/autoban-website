@@ -3,6 +3,8 @@ import { Tajawal } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CountrySelector from "@/components/CountrySelector";
+import { CountryProvider } from "@/lib/country-context";
 
 const tajawal = Tajawal({
   subsets: ["arabic", "latin"],
@@ -62,9 +64,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <a href="#main-content" className="skip-link">تخطي إلى المحتوى</a>
-        <Navbar />
-        <main id="main-content">{children}</main>
-        <Footer />
+        <CountryProvider>
+          <CountrySelector />
+          <Navbar />
+          <main id="main-content">{children}</main>
+          <Footer />
+        </CountryProvider>
       </body>
     </html>
   );

@@ -1,6 +1,14 @@
 "use client";
 import { useState } from "react";
 import { Icon } from "@/components/icons";
+import { useCountry, type CountryCode } from "@/lib/country-context";
+
+const countryFormLabels: Record<CountryCode, string> = {
+  SA: "المملكة العربية السعودية",
+  KW: "الكويت",
+  QA: "قطر",
+  EG: "مصر",
+};
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwlkdodn";
 
@@ -34,8 +42,12 @@ const faqs = [
 ];
 
 export default function ContactPage() {
+  const { country } = useCountry();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  // null يعني: لم يغيّر المستخدم القائمة يدوياً بعد، فتُعرض دولته المختارة من الشريط العلوي تلقائياً.
+  const [countryOverride, setCountryOverride] = useState<string | null>(null);
+  const selectedCountry = countryOverride ?? countryFormLabels[country];
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -182,11 +194,15 @@ export default function ContactPage() {
               </div>
               <div style={{ marginBottom: "1rem" }}>
                 <label htmlFor="country" style={{ fontSize: "12px", color: "var(--color-text-secondary)", display: "block", marginBottom: "5px" }}>الدولة</label>
-                <select id="country" name="country" style={{
-                  width: "100%", background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
-                  borderRadius: "var(--radius)", padding: "9px 12px", fontSize: "13px", color: "var(--color-text)",
-                  fontFamily: "inherit", direction: "rtl", outline: "none",
-                }}>
+                <select
+                  id="country" name="country"
+                  value={selectedCountry}
+                  onChange={e => setCountryOverride(e.target.value)}
+                  style={{
+                    width: "100%", background: "var(--color-surface)", border: "0.5px solid var(--color-border)",
+                    borderRadius: "var(--radius)", padding: "9px 12px", fontSize: "13px", color: "var(--color-text)",
+                    fontFamily: "inherit", direction: "rtl", outline: "none",
+                  }}>
                   {["المملكة العربية السعودية", "الكويت", "قطر", "مصر"].map(c => <option key={c}>{c}</option>)}
                 </select>
               </div>
